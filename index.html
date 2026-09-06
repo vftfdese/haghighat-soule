@@ -4,9 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>حقیقت سوله | ساخت سوله و تأمین آهن‌آلات</title>
+<title>حقیقت سوله | طراحی، ساخت و تأمین آهن‌آلات</title>
+
+<meta name="description"
+content="حقیقت سوله؛ طراحی و ساخت سوله و تأمین انواع آهن‌آلات و محصولات فولادی.">
 
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
@@ -18,10 +26,11 @@ html{
 }
 
 body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#080b0d;
-    color:#f5f5f5;
+    font-family:Tahoma, Arial, sans-serif;
+    background:#090b0d;
+    color:#fff;
     line-height:1.8;
+    overflow-x:hidden;
 }
 
 a{
@@ -30,785 +39,1360 @@ a{
 }
 
 img{
-    width:100%;
-    display:block;
+    max-width:100%;
 }
 
-.container{
-    width:90%;
-    max-width:1150px;
-    margin:auto;
-}
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
-    position:sticky;
+    position:fixed;
     top:0;
+    right:0;
+    left:0;
     z-index:1000;
-    background:rgba(8,11,13,.94);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid #242a2e;
+
+    background:rgba(8,10,12,.78);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-nav{
-    min-height:72px;
+.navbar{
+    max-width:1250px;
+    height:78px;
+    margin:auto;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
+    padding:0 25px;
 }
 
 .logo{
-    font-size:22px;
-    font-weight:bold;
+    font-size:24px;
+    font-weight:900;
+    letter-spacing:-1px;
 }
 
 .logo span{
-    color:#f3b544;
+    color:#f5b400;
 }
 
 .nav-links{
-    display:flex;
     list-style:none;
-    gap:25px;
+
+    display:flex;
+    align-items:center;
+    gap:32px;
 }
 
 .nav-links a{
-    color:#c7cbd0;
+    color:#d5d5d5;
     font-size:14px;
+    transition:.3s;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    right:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:#f5b400;
+    transition:.3s;
 }
 
 .nav-links a:hover{
-    color:#f3b544;
+    color:#fff;
 }
 
-/* HERO */
+.nav-links a:hover::after{
+    width:100%;
+}
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-btn{
+    display:none;
+
+    width:45px;
+    height:45px;
+
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;
+
+    background:#15181b;
+    color:#fff;
+
+    font-size:24px;
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.menu-btn:hover{
+    border-color:#f5b400;
+    color:#f5b400;
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu{
+    position:fixed;
+
+    top:78px;
+    right:0;
+
+    width:100%;
+
+    padding:15px;
+
+    background:rgba(10,12,14,.97);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    transform:translateY(-120%);
+    opacity:0;
+    visibility:hidden;
+
+    transition:.4s ease;
+
+    z-index:999;
+}
+
+.mobile-menu.active{
+    transform:translateY(0);
+    opacity:1;
+    visibility:visible;
+}
+
+.mobile-menu a{
+    display:block;
+
+    padding:15px 18px;
+    margin-bottom:8px;
+
+    background:#15181b;
+
+    border:1px solid rgba(255,255,255,.05);
+    border-radius:12px;
+
+    color:#ddd;
+
+    transition:.3s;
+}
+
+.mobile-menu a:hover{
+    background:#f5b400;
+    color:#111;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-    min-height:88vh;
-    position:relative;
+    min-height:100vh;
+
     display:flex;
     align-items:center;
-    overflow:hidden;
-}
 
-.hero-bg{
-    position:absolute;
-    inset:0;
-    z-index:-2;
-}
+    position:relative;
 
-.hero-bg img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.hero-overlay{
-    position:absolute;
-    inset:0;
-    z-index:-1;
     background:
         linear-gradient(
             90deg,
-            rgba(8,11,13,.98),
-            rgba(8,11,13,.78),
-            rgba(8,11,13,.38)
+            rgba(0,0,0,.88),
+            rgba(0,0,0,.45)
+        ),
+        url("soule.jpg") center/cover no-repeat;
+}
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.2),
+            #090b0d
         );
+
+    pointer-events:none;
 }
 
 .hero-content{
-    max-width:720px;
-    padding:90px 0;
+    position:relative;
+    z-index:2;
+
+    max-width:1250px;
+    width:100%;
+
+    margin:auto;
+
+    padding:140px 25px 100px;
 }
 
-.badge{
-    display:inline-block;
-    padding:7px 14px;
-    border:1px solid #51575b;
-    border-radius:30px;
-    color:#f3b544;
-    font-size:13px;
-    margin-bottom:22px;
+.hero-content-inner{
+    max-width:750px;
 }
 
 .hero h1{
-    font-size:clamp(38px,7vw,70px);
-    line-height:1.3;
-    margin-bottom:20px;
+    font-size:58px;
+    line-height:1.25;
+    font-weight:900;
+
+    margin-bottom:22px;
+
+    letter-spacing:-2px;
 }
 
 .hero h1 span{
-    color:#f3b544;
+    color:#f5b400;
 }
 
 .hero p{
-    color:#c2c7ca;
-    max-width:620px;
-    font-size:16px;
-    margin-bottom:32px;
+    color:#d0d0d0;
+
+    font-size:18px;
+
+    max-width:650px;
+
+    margin-bottom:35px;
 }
 
-.buttons{
+.hero-buttons{
     display:flex;
-    gap:12px;
+    gap:14px;
     flex-wrap:wrap;
 }
 
 .btn{
-    display:inline-block;
-    padding:13px 22px;
-    border-radius:7px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:13px 25px;
+
+    border-radius:9px;
+
     font-weight:bold;
+
     transition:.3s;
 }
 
 .btn-primary{
-    background:#f3b544;
-    color:#101010;
+    background:#f5b400;
+    color:#111;
 }
 
 .btn-primary:hover{
+    background:#ffc52b;
     transform:translateY(-3px);
 }
 
 .btn-secondary{
-    border:1px solid #555d62;
-    color:#fff;
+    border:1px solid rgba(245,180,0,.7);
+    color:#f5b400;
+    background:rgba(0,0,0,.2);
 }
 
 .btn-secondary:hover{
-    border-color:#f3b544;
-    color:#f3b544;
+    background:#f5b400;
+    color:#111;
+
+    transform:translateY(-3px);
 }
 
-/* SECTIONS */
+
+/* =========================
+   GENERAL
+========================= */
 
 section{
-    padding:90px 0;
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
 }
 
 .section-title{
-    margin-bottom:40px;
-}
-
-.section-title small{
-    color:#f3b544;
+    text-align:center;
+    margin-bottom:55px;
 }
 
 .section-title h2{
-    font-size:34px;
-    margin-top:6px;
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.section-title h2 span{
+    color:#f5b400;
 }
 
 .section-title p{
-    color:#92999e;
-    margin-top:8px;
+    color:#858585;
 }
 
-/* SERVICES */
 
-.services-grid{
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    background:#0d1012;
+}
+
+.cards{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
-.service{
-    background:#111619;
-    border:1px solid #242b30;
-    padding:27px 22px;
-    border-radius:12px;
-    transition:.3s;
+.card{
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181c1f,
+            #101315
+        );
+
+    border:1px solid rgba(255,255,255,.07);
+
+    padding:32px;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    transition:.4s;
 }
 
-.service:hover{
-    transform:translateY(-5px);
-    border-color:#f3b544;
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    right:0;
+
+    width:4px;
+    height:0;
+
+    background:#f5b400;
+
+    transition:.4s;
 }
 
-.service-number{
-    color:#f3b544;
-    font-size:13px;
-    margin-bottom:12px;
+.card:hover{
+    transform:translateY(-8px);
+
+    border-color:rgba(245,180,0,.45);
 }
 
-.service h3{
-    margin-bottom:8px;
+.card:hover::before{
+    height:100%;
 }
 
-.service p{
-    color:#969da2;
+.card-icon{
+    font-size:35px;
+    margin-bottom:18px;
+}
+
+.card h3{
+    margin-bottom:10px;
+    font-size:20px;
+}
+
+.card p{
+    color:#999;
     font-size:14px;
 }
 
-/* PRODUCTS */
+
+/* =========================
+   PRODUCTS
+========================= */
 
 .products{
-    background:#0e1316;
+    background:#090b0d;
 }
 
-.product-grid{
+.products-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    gap:20px;
 }
 
 .product{
-    background:#151b1f;
-    border:1px solid #293137;
-    border-radius:12px;
+    background:#121518;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    border-radius:16px;
+
     overflow:hidden;
-    transition:.3s;
+
+    transition:.4s;
 }
 
 .product:hover{
-    transform:translateY(-5px);
-    border-color:#f3b544;
+    transform:translateY(-8px);
+
+    border-color:rgba(245,180,0,.5);
 }
 
 .product-image{
-    height:210px;
+    position:relative;
     overflow:hidden;
 }
 
-.product-image img{
-    height:100%;
+.product-image::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        180deg,
+        transparent,
+        rgba(0,0,0,.35)
+    );
+}
+
+.product img{
+    display:block;
+
+    width:100%;
+    height:220px;
+
     object-fit:cover;
+
     transition:.5s;
 }
 
 .product:hover img{
-    transform:scale(1.05);
+    transform:scale(1.06);
 }
 
-.product-info{
-    padding:20px;
+.product-content{
+    padding:22px;
 }
 
-.product-info h3{
+.product-content h3{
+    font-size:19px;
     margin-bottom:7px;
 }
 
-.product-info p{
-    color:#969da2;
+.product-content p{
+    color:#8f8f8f;
     font-size:13px;
 }
 
-/* ABOUT */
+
+/* =========================
+   ABOUT
+========================= */
 
 .about{
+    background:#0e1113;
+}
+
+.about-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:60px;
+
     align-items:center;
 }
 
+.about-text h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.about-text h2 span{
+    color:#f5b400;
+}
+
 .about-text p{
-    color:#aab1b5;
-    margin-bottom:25px;
+    color:#a3a3a3;
+    margin-bottom:15px;
 }
 
-.features{
-    display:grid;
-    gap:13px;
+.about-box{
+    background:#15191c;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    border-radius:18px;
+
+    padding:30px;
 }
 
-.feature{
-    background:#111619;
-    border:1px solid #242b30;
-    padding:17px;
-    border-radius:8px;
+.about-box div{
+    padding:17px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.07);
 }
 
-.feature strong{
-    color:#f3b544;
+.about-box div:last-child{
+    border-bottom:none;
 }
 
-/* CTA */
+.about-box strong{
+    color:#f5b400;
+    font-size:18px;
+}
+
+
+/* =========================
+   CTA
+========================= */
 
 .cta{
+    position:relative;
+
     background:
         linear-gradient(
             135deg,
-            #171d21,
-            #0b0f11
-        );
-    border-top:1px solid #252c31;
-    border-bottom:1px solid #252c31;
-}
+            rgba(245,180,0,.13),
+            rgba(245,180,0,.02)
+        ),
+        #101315;
 
-.cta-box{
     text-align:center;
-    max-width:750px;
-    margin:auto;
+
+    border-top:1px solid rgba(255,255,255,.05);
 }
 
 .cta h2{
-    font-size:36px;
+    font-size:38px;
     margin-bottom:12px;
 }
 
 .cta p{
-    color:#a6adb1;
-    margin-bottom:25px;
+    color:#999;
+    margin-bottom:28px;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    background:#050708;
-    padding:40px 0 25px;
-}
+    background:#060708;
 
-.footer-grid{
-    display:flex;
-    justify-content:space-between;
-    gap:30px;
-    flex-wrap:wrap;
-}
+    padding:35px 20px;
 
-.footer-grid p{
-    color:#8f969b;
-    font-size:13px;
-}
-
-.phone{
-    color:#f3b544 !important;
-    font-weight:bold;
-    font-size:16px !important;
-}
-
-.copyright{
     text-align:center;
-    border-top:1px solid #202529;
-    margin-top:30px;
-    padding-top:20px;
+
+    color:#666;
 }
 
-/* MOBILE */
+footer strong{
+    color:#f5b400;
+}
 
-@media(max-width:850px){
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp{
+    position:fixed;
+
+    left:22px;
+    bottom:22px;
+
+    width:60px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#25D366;
+    color:#fff;
+
+    font-size:28px;
+
+    z-index:1001;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.45);
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
 
     .nav-links{
         display:none;
     }
 
-    .hero{
-        min-height:80vh;
-    }
-
-    .hero-overlay{
-        background:
-            linear-gradient(
-                90deg,
-                rgba(8,11,13,.95),
-                rgba(8,11,13,.70)
-            );
-    }
-
-    .services-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .product-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .about{
-        grid-template-columns:1fr;
-    }
-}
-
-@media(max-width:520px){
-
-    section{
-        padding:65px 0;
-    }
-
-    .hero-content{
-        padding:70px 0;
+    .menu-btn{
+        display:block;
     }
 
     .hero h1{
-        font-size:38px;
+        font-size:46px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .navbar{
+        height:70px;
+        padding:0 15px;
+    }
+
+    .mobile-menu{
+        top:70px;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .hero{
+        min-height:92vh;
+    }
+
+    .hero-content{
+        padding:120px 18px 80px;
+    }
+
+    .hero h1{
+        font-size:34px;
+        letter-spacing:-1px;
     }
 
     .hero p{
-        font-size:14px;
+        font-size:15px;
     }
 
-    .buttons{
+    .hero-buttons{
         flex-direction:column;
     }
 
     .btn{
-        text-align:center;
+        width:100%;
     }
 
-    .services-grid,
-    .product-grid{
-        grid-template-columns:1fr;
+    section{
+        padding:75px 16px;
     }
 
-    .product-image{
-        height:230px;
+    .section-title{
+        margin-bottom:35px;
     }
 
     .section-title h2{
         font-size:29px;
     }
 
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product img{
+        height:240px;
+    }
+
+    .about-text h2{
+        font-size:30px;
+    }
+
     .cta h2{
         font-size:29px;
     }
+
+    .whatsapp{
+        width:54px;
+        height:54px;
+
+        left:16px;
+        bottom:16px;
+
+        font-size:24px;
+    }
+
 }
+
+
+/* =========================
+   BODY LOCK
+========================= */
+
+body.menu-open{
+    overflow:hidden;
+}
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
-<div class="container">
+
+<div class="navbar">
+
+<a href="#home" class="logo">
+حقیقت <span>سوله</span>
+</a>
+
+
 <nav>
 
-<div class="logo">
-حقیقت <span>سوله</span>
-</div>
-
 <ul class="nav-links">
-<li><a href="#services">خدمات</a></li>
-<li><a href="#products">محصولات</a></li>
-<li><a href="#about">درباره ما</a></li>
-<li><a href="#contact">تماس</a></li>
+
+<li>
+<a href="#home">خانه</a>
+</li>
+
+<li>
+<a href="#services">خدمات</a>
+</li>
+
+<li>
+<a href="#products">محصولات</a>
+</li>
+
+<li>
+<a href="#about">درباره ما</a>
+</li>
+
+<li>
+<a href="#contact">تماس با ما</a>
+</li>
+
 </ul>
 
 </nav>
+
+
+<button
+class="menu-btn"
+id="menuBtn"
+aria-label="منوی موبایل"
+>
+☰
+</button>
+
+
 </div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     MOBILE MENU
+========================= -->
 
-<section class="hero">
+<div class="mobile-menu" id="mobileMenu">
 
-<div class="hero-bg">
-<img src="soule.jpg" alt="حقیقت سوله">
+<a href="#home">
+⌂ &nbsp; خانه
+</a>
+
+<a href="#services">
+⚙ &nbsp; خدمات
+</a>
+
+<a href="#products">
+▣ &nbsp; محصولات
+</a>
+
+<a href="#about">
+▤ &nbsp; درباره ما
+</a>
+
+<a href="#contact">
+☎ &nbsp; تماس با ما
+</a>
+
+<a href="tel:09121326034">
+📞 &nbsp; تماس مستقیم
+</a>
+
 </div>
 
-<div class="hero-overlay"></div>
 
-<div class="container">
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
 
 <div class="hero-content">
 
-<div class="badge">
-ساخت • اجرا • تأمین آهن‌آلات
-</div>
+<div class="hero-content-inner">
 
 <h1>
-ساختن آینده<br>
-<span>با سازه‌ای مطمئن</span>
+ساخت <span>سوله</span><br>
+با استاندارد حرفه‌ای
 </h1>
 
 <p>
-حقیقت سوله؛ ارائه خدمات ساخت و اجرای سوله‌های صنعتی
-و تأمین انواع آهن‌آلات مورد نیاز پروژه‌های ساختمانی و صنعتی.
+طراحی، ساخت و تأمین آهن‌آلات مورد نیاز پروژه‌های صنعتی و ساختمانی
+با رویکردی حرفه‌ای و دقیق.
 </p>
 
-<div class="buttons">
 
-<a class="btn btn-primary" href="#contact">
-استعلام قیمت
+<div class="hero-buttons">
+
+<a
+href="#contact"
+class="btn btn-primary"
+>
+درخواست مشاوره
 </a>
 
-<a class="btn btn-secondary" href="#products">
+
+<a
+href="#products"
+class="btn btn-secondary"
+>
 مشاهده محصولات
 </a>
 
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 
-<!-- SERVICES -->
+<!-- =========================
+     SERVICES
+========================= -->
 
-<section id="services">
+<section
+class="services"
+id="services"
+>
 
 <div class="container">
 
 <div class="section-title">
-<small>خدمات حقیقت سوله</small>
-<h2>از ایده تا اجرای سازه</h2>
-<p>
-خدمات مورد نیاز پروژه‌های صنعتی و ساختمانی
-</p>
-</div>
 
-<div class="services-grid">
-
-<div class="service">
-<div class="service-number">01</div>
-<h3>ساخت سوله</h3>
-<p>
-ساخت سازه‌های صنعتی متناسب با نیاز پروژه.
-</p>
-</div>
-
-<div class="service">
-<div class="service-number">02</div>
-<h3>طراحی سازه</h3>
-<p>
-ارائه راهکار برای طراحی و اجرای سازه‌های صنعتی.
-</p>
-</div>
-
-<div class="service">
-<div class="service-number">03</div>
-<h3>تأمین آهن‌آلات</h3>
-<p>
-تأمین محصولات فولادی مورد نیاز پروژه.
-</p>
-</div>
-
-<div class="service">
-<div class="service-number">04</div>
-<h3>اجرای پروژه</h3>
-<p>
-همراهی در مسیر اجرای پروژه و نصب سازه.
-</p>
-</div>
-
-</div>
-</div>
-</section>
-
-
-<!-- PRODUCTS -->
-
-<section id="products" class="products">
-
-<div class="container">
-
-<div class="section-title">
-<small>محصولات فولادی</small>
-<h2>آهن‌آلات مورد نیاز پروژه</h2>
-<p>
-بخشی از محصولات قابل تأمین توسط حقیقت سوله
-</p>
-</div>
-
-<div class="product-grid">
-
-
-<div class="product">
-
-<div class="product-image">
-<img src="milgerd.jpg" alt="میلگرد">
-</div>
-
-<div class="product-info">
-<h3>میلگرد</h3>
-<p>
-انواع میلگرد مورد استفاده در پروژه‌های ساختمانی.
-</p>
-</div>
-
-</div>
-
-
-<div class="product">
-
-<div class="product-image">
-<img src="tirahan.jpg" alt="تیرآهن">
-</div>
-
-<div class="product-info">
-<h3>تیرآهن</h3>
-<p>
-انواع تیرآهن مورد نیاز پروژه‌های ساختمانی و صنعتی.
-</p>
-</div>
-
-</div>
-
-
-<div class="product">
-
-<div class="product-image">
-<img src="varagh.jpg" alt="ورق فولادی">
-</div>
-
-<div class="product-info">
-<h3>ورق فولادی</h3>
-<p>
-تأمین ورق فولادی در ضخامت‌های مختلف.
-</p>
-</div>
-
-</div>
-
-
-<div class="product">
-
-<div class="product-image">
-<img src="profile.jpg" alt="پروفیل">
-</div>
-
-<div class="product-info">
-<h3>پروفیل</h3>
-<p>
-انواع پروفیل و مقاطع فولادی مورد نیاز پروژه.
-</p>
-</div>
-
-</div>
-
-
-</div>
-</div>
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<div class="container">
-
-<div class="about">
-
-<div>
-
-<div class="section-title">
-<small>درباره حقیقت سوله</small>
 <h2>
-یک مجموعه برای نیازهای پروژه شما
+خدمات <span>ما</span>
 </h2>
+
+<p>
+راهکارهای تخصصی برای پروژه‌های صنعتی و ساختمانی
+</p>
+
 </div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="card-icon">
+🏗️
+</div>
+
+<h3>
+طراحی و ساخت سوله
+</h3>
+
+<p>
+طراحی و اجرای سازه‌های فلزی و سوله متناسب با نیاز پروژه.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">
+🔩
+</div>
+
+<h3>
+تأمین آهن‌آلات
+</h3>
+
+<p>
+تأمین انواع آهن‌آلات و محصولات فولادی مورد نیاز پروژه.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">
+📐
+</div>
+
+<h3>
+مشاوره پروژه
+</h3>
+
+<p>
+کمک به انتخاب محصولات و راهکار مناسب برای پروژه‌های شما.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section
+class="products"
+id="products"
+>
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+محصولات <span>فولادی</span>
+</h2>
+
+<p>
+برخی از محصولات قابل تأمین توسط حقیقت سوله
+</p>
+
+</div>
+
+
+<div class="products-grid">
+
+
+<div class="product">
+
+<div class="product-image">
+
+<img
+src="milgerd.jpg"
+alt="میلگرد"
+>
+
+</div>
+
+<div class="product-content">
+
+<h3>
+میلگرد
+</h3>
+
+<p>
+انواع میلگرد مورد استفاده در پروژه‌های ساختمانی
+</p>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+
+<img
+src="tirahan.jpg"
+alt="تیرآهن"
+>
+
+</div>
+
+<div class="product-content">
+
+<h3>
+تیرآهن
+</h3>
+
+<p>
+تیرآهن و مقاطع فولادی مورد نیاز پروژه
+</p>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+
+<img
+src="varagh.jpg"
+alt="ورق فولادی"
+>
+
+</div>
+
+<div class="product-content">
+
+<h3>
+ورق فولادی
+</h3>
+
+<p>
+انواع ورق فولادی برای مصارف صنعتی و ساختمانی
+</p>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+
+<img
+src="profile.jpg"
+alt="پروفیل"
+>
+
+</div>
+
+<div class="product-content">
+
+<h3>
+پروفیل
+</h3>
+
+<p>
+انواع پروفیل و مقاطع فولادی
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+class="about"
+id="about"
+>
+
+<div class="container">
+
+<div class="about-grid">
+
 
 <div class="about-text">
 
-<p>
-حقیقت سوله در زمینه ساخت و اجرای سوله‌های صنعتی
-و تأمین آهن‌آلات فعالیت می‌کند و تلاش دارد مسیر
-تأمین و اجرای پروژه را ساده‌تر و مطمئن‌تر کند.
-</p>
-
-<a class="btn btn-secondary" href="#contact">
-ارتباط با ما
-</a>
-
-</div>
-
-</div>
-
-
-<div class="features">
-
-<div class="feature">
-<strong>01</strong>
-<br>
-مشاوره و راهنمایی
-</div>
-
-<div class="feature">
-<strong>02</strong>
-<br>
-تأمین محصولات فولادی
-</div>
-
-<div class="feature">
-<strong>03</strong>
-<br>
-ساخت و اجرای سازه
-</div>
-
-<div class="feature">
-<strong>04</strong>
-<br>
-پاسخگویی و پیگیری سفارش
-</div>
-
-</div>
-
-</div>
-</div>
-</section>
-
-
-<!-- CTA -->
-
-<section id="contact" class="cta">
-
-<div class="container">
-
-<div class="cta-box">
-
 <h2>
-پروژه‌ای در پیش دارید؟
+درباره <span>حقیقت سوله</span>
 </h2>
 
 <p>
-برای مشاوره یا استعلام قیمت با حقیقت سوله در ارتباط باشید.
+حقیقت سوله با تمرکز بر سازه‌های فلزی، سوله و تأمین محصولات فولادی فعالیت می‌کند.
 </p>
 
-<div class="buttons">
+<p>
+هدف ما ارائه خدمات حرفه‌ای، پاسخ‌گویی مناسب و تأمین محصولات مورد نیاز پروژه‌هاست.
+</p>
 
-<a class="btn btn-primary" href="tel:09121326034">
-📞 تماس با ما
-</a>
+</div>
 
-<a class="btn btn-secondary"
-href="https://wa.me/989121326034">
-واتساپ
-</a>
+
+<div class="about-box">
+
+<div>
+<strong>✓</strong>
+&nbsp;&nbsp;
+مشاوره تخصصی
+</div>
+
+<div>
+<strong>✓</strong>
+&nbsp;&nbsp;
+تأمین محصولات فولادی
+</div>
+
+<div>
+<strong>✓</strong>
+&nbsp;&nbsp;
+خدمات پروژه‌های صنعتی
+</div>
+
+<div>
+<strong>✓</strong>
+&nbsp;&nbsp;
+پاسخ‌گویی و پیگیری سفارش
+</div>
+
+</div>
+
 
 </div>
 
 </div>
-</div>
+
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     CONTACT CTA
+========================= -->
 
-<footer>
+<section
+class="cta"
+id="contact"
+>
 
 <div class="container">
 
-<div class="footer-grid">
-
-<div>
-<div class="logo">
-حقیقت <span>سوله</span>
-</div>
+<h2>
+برای پروژه خود مشاوره بگیرید
+</h2>
 
 <p>
-ساخت و اجرای سوله و تأمین آهن‌آلات
+برای استعلام قیمت و دریافت مشاوره با ما در ارتباط باشید.
 </p>
+
+
+<div class="hero-buttons">
+
+<a
+href="tel:09121326034"
+class="btn btn-primary"
+>
+📞 تماس با ما
+</a>
+
+
+<a
+href="https://wa.me/989121326034"
+class="btn btn-secondary"
+target="_blank"
+>
+💬 واتساپ
+</a>
+
 </div>
 
-<div>
-<p>تماس با ما</p>
-<p class="phone">
-09121326034
-</p>
 </div>
 
-</div>
+</section>
 
-<div class="copyright">
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
 <p>
-© ۱۴۰۵ حقیقت سوله — تمامی حقوق محفوظ است.
+© 2026
+<strong>حقیقت سوله</strong>
 </p>
-</div>
 
-</div>
+<p>
+طراحی و توسعه وب‌سایت
+</p>
 
 </footer>
 
+
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
+
+<a
+href="https://wa.me/989121326034"
+class="whatsapp"
+target="_blank"
+aria-label="واتساپ"
+>
+💬
+</a>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const mobileMenu =
+document.getElementById("mobileMenu");
+
+
+menuBtn.addEventListener(
+"click",
+function(){
+
+mobileMenu.classList.toggle("active");
+
+document.body.classList.toggle("menu-open");
+
+
+if(
+mobileMenu.classList.contains("active")
+){
+
+menuBtn.innerHTML="✕";
+
+}else{
+
+menuBtn.innerHTML="☰";
+
+}
+
+});
+
+
+const mobileLinks =
+mobileMenu.querySelectorAll("a");
+
+
+mobileLinks.forEach(
+function(link){
+
+link.addEventListener(
+"click",
+function(){
+
+mobileMenu.classList.remove(
+"active"
+);
+
+document.body.classList.remove(
+"menu-open"
+);
+
+menuBtn.innerHTML="☰";
+
+});
+
+});
+
+
+document.addEventListener(
+"click",
+function(event){
+
+if(
+
+mobileMenu.classList.contains("active")
+
+&&
+
+!mobileMenu.contains(
+event.target
+)
+
+&&
+
+!menuBtn.contains(
+event.target
+)
+
+){
+
+mobileMenu.classList.remove(
+"active"
+);
+
+document.body.classList.remove(
+"menu-open"
+);
+
+menuBtn.innerHTML="☰";
+
+}
+
+});
+
+</script>
+
+
 </body>
-    </html>
+                                 </html>
