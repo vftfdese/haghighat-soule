@@ -317,4 +317,498 @@ section{
 .feature{
     background:#111619;
     border:1px solid #242b30;
-    padding:17
+    padding:17px;
+    border-radius:8px;
+}
+
+.feature strong{
+    color:#f3b544;
+}
+
+/* CTA */
+
+.cta{
+    background:
+        linear-gradient(
+            135deg,
+            #171d21,
+            #0b0f11
+        );
+    border-top:1px solid #252c31;
+    border-bottom:1px solid #252c31;
+}
+
+.cta-box{
+    text-align:center;
+    max-width:750px;
+    margin:auto;
+}
+
+.cta h2{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.cta p{
+    color:#a6adb1;
+    margin-bottom:25px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#050708;
+    padding:40px 0 25px;
+}
+
+.footer-grid{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.footer-grid p{
+    color:#8f969b;
+    font-size:13px;
+}
+
+.phone{
+    color:#f3b544 !important;
+    font-weight:bold;
+    font-size:16px !important;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid #202529;
+    margin-top:30px;
+    padding-top:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        min-height:80vh;
+    }
+
+    .hero-overlay{
+        background:
+            linear-gradient(
+                90deg,
+                rgba(8,11,13,.95),
+                rgba(8,11,13,.70)
+            );
+    }
+
+    .services-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:520px){
+
+    section{
+        padding:65px 0;
+    }
+
+    .hero-content{
+        padding:70px 0;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        text-align:center;
+    }
+
+    .services-grid,
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-image{
+        height:230px;
+    }
+
+    .section-title h2{
+        font-size:29px;
+    }
+
+    .cta h2{
+        font-size:29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+
+<div class="logo">
+حقیقت <span>سوله</span>
+</div>
+
+<ul class="nav-links">
+<li><a href="#services">خدمات</a></li>
+<li><a href="#products">محصولات</a></li>
+<li><a href="#about">درباره ما</a></li>
+<li><a href="#contact">تماس</a></li>
+</ul>
+
+</nav>
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-bg">
+<img src="soule.jpg" alt="حقیقت سوله">
+</div>
+
+<div class="hero-overlay"></div>
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="badge">
+ساخت • اجرا • تأمین آهن‌آلات
+</div>
+
+<h1>
+ساختن آینده<br>
+<span>با سازه‌ای مطمئن</span>
+</h1>
+
+<p>
+حقیقت سوله؛ ارائه خدمات ساخت و اجرای سوله‌های صنعتی
+و تأمین انواع آهن‌آلات مورد نیاز پروژه‌های ساختمانی و صنعتی.
+</p>
+
+<div class="buttons">
+
+<a class="btn btn-primary" href="#contact">
+استعلام قیمت
+</a>
+
+<a class="btn btn-secondary" href="#products">
+مشاهده محصولات
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-title">
+<small>خدمات حقیقت سوله</small>
+<h2>از ایده تا اجرای سازه</h2>
+<p>
+خدمات مورد نیاز پروژه‌های صنعتی و ساختمانی
+</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service">
+<div class="service-number">01</div>
+<h3>ساخت سوله</h3>
+<p>
+ساخت سازه‌های صنعتی متناسب با نیاز پروژه.
+</p>
+</div>
+
+<div class="service">
+<div class="service-number">02</div>
+<h3>طراحی سازه</h3>
+<p>
+ارائه راهکار برای طراحی و اجرای سازه‌های صنعتی.
+</p>
+</div>
+
+<div class="service">
+<div class="service-number">03</div>
+<h3>تأمین آهن‌آلات</h3>
+<p>
+تأمین محصولات فولادی مورد نیاز پروژه.
+</p>
+</div>
+
+<div class="service">
+<div class="service-number">04</div>
+<h3>اجرای پروژه</h3>
+<p>
+همراهی در مسیر اجرای پروژه و نصب سازه.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section id="products" class="products">
+
+<div class="container">
+
+<div class="section-title">
+<small>محصولات فولادی</small>
+<h2>آهن‌آلات مورد نیاز پروژه</h2>
+<p>
+بخشی از محصولات قابل تأمین توسط حقیقت سوله
+</p>
+</div>
+
+<div class="product-grid">
+
+
+<div class="product">
+
+<div class="product-image">
+<img src="milgerd.jpg" alt="میلگرد">
+</div>
+
+<div class="product-info">
+<h3>میلگرد</h3>
+<p>
+انواع میلگرد مورد استفاده در پروژه‌های ساختمانی.
+</p>
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+<img src="tirahan.jpg" alt="تیرآهن">
+</div>
+
+<div class="product-info">
+<h3>تیرآهن</h3>
+<p>
+انواع تیرآهن مورد نیاز پروژه‌های ساختمانی و صنعتی.
+</p>
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+<img src="varagh.jpg" alt="ورق فولادی">
+</div>
+
+<div class="product-info">
+<h3>ورق فولادی</h3>
+<p>
+تأمین ورق فولادی در ضخامت‌های مختلف.
+</p>
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+<img src="profile.jpg" alt="پروفیل">
+</div>
+
+<div class="product-info">
+<h3>پروفیل</h3>
+<p>
+انواع پروفیل و مقاطع فولادی مورد نیاز پروژه.
+</p>
+</div>
+
+</div>
+
+
+</div>
+</div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="about">
+
+<div>
+
+<div class="section-title">
+<small>درباره حقیقت سوله</small>
+<h2>
+یک مجموعه برای نیازهای پروژه شما
+</h2>
+</div>
+
+<div class="about-text">
+
+<p>
+حقیقت سوله در زمینه ساخت و اجرای سوله‌های صنعتی
+و تأمین آهن‌آلات فعالیت می‌کند و تلاش دارد مسیر
+تأمین و اجرای پروژه را ساده‌تر و مطمئن‌تر کند.
+</p>
+
+<a class="btn btn-secondary" href="#contact">
+ارتباط با ما
+</a>
+
+</div>
+
+</div>
+
+
+<div class="features">
+
+<div class="feature">
+<strong>01</strong>
+<br>
+مشاوره و راهنمایی
+</div>
+
+<div class="feature">
+<strong>02</strong>
+<br>
+تأمین محصولات فولادی
+</div>
+
+<div class="feature">
+<strong>03</strong>
+<br>
+ساخت و اجرای سازه
+</div>
+
+<div class="feature">
+<strong>04</strong>
+<br>
+پاسخگویی و پیگیری سفارش
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- CTA -->
+
+<section id="contact" class="cta">
+
+<div class="container">
+
+<div class="cta-box">
+
+<h2>
+پروژه‌ای در پیش دارید؟
+</h2>
+
+<p>
+برای مشاوره یا استعلام قیمت با حقیقت سوله در ارتباط باشید.
+</p>
+
+<div class="buttons">
+
+<a class="btn btn-primary" href="tel:09121326034">
+📞 تماس با ما
+</a>
+
+<a class="btn btn-secondary"
+href="https://wa.me/989121326034">
+واتساپ
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<div class="logo">
+حقیقت <span>سوله</span>
+</div>
+
+<p>
+ساخت و اجرای سوله و تأمین آهن‌آلات
+</p>
+</div>
+
+<div>
+<p>تماس با ما</p>
+<p class="phone">
+09121326034
+</p>
+</div>
+
+</div>
+
+<div class="copyright">
+<p>
+© ۱۴۰۵ حقیقت سوله — تمامی حقوق محفوظ است.
+</p>
+</div>
+
+</div>
+
+</footer>
+
+</body>
+    </html>
