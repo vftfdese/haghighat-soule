@@ -3,21 +3,728 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>حقیقت سوله | ساخت و اجرای سوله صنعتی</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background: #0b0f12;
+            color: #f4f4f4;
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 15, 18, 0.96);
+            border-bottom: 1px solid #252b30;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #f2b84b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #d5d5d5;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f2b84b;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(242,184,75,0.12), transparent 30%),
+                linear-gradient(135deg, #0b0f12 0%, #12181d 100%);
+        }
+
+        .hero-content {
+            max-width: 750px;
+            padding: 80px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            border: 1px solid #3b4248;
+            color: #f2b84b;
+            padding: 7px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 8vw, 72px);
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #f2b84b;
+        }
+
+        .hero p {
+            color: #b8bec3;
+            font-size: 17px;
+            max-width: 650px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 23px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #f2b84b;
+            color: #111;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #ffc963;
+        }
+
+        .btn-secondary {
+            border: 1px solid #414950;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            border-color: #f2b84b;
+            color: #f2b84b;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            margin-bottom: 45px;
+        }
+
+        .section-title small {
+            color: #f2b84b;
+            font-size: 13px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            margin-top: 8px;
+        }
+
+        .section-title p {
+            color: #9da5ab;
+            margin-top: 10px;
+        }
+
+        /* SERVICES */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: #12181d;
+            border: 1px solid #252d33;
+            padding: 28px 22px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #f2b84b;
+        }
+
+        .icon {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #9da5ab;
+            font-size: 14px;
+        }
+
+        /* PRODUCTS */
+
+        .products {
+            background: #101519;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .product {
+            padding: 25px;
+            background: #171d22;
+            border-right: 3px solid #f2b84b;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            margin-bottom: 7px;
+        }
+
+        .product p {
+            color: #9da5ab;
+            font-size: 14px;
+        }
+
+        /* WHY US */
+
+        .why {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .why-text p {
+            color: #aeb5ba;
+            margin-top: 20px;
+        }
+
+        .features {
+            display: grid;
+            gap: 15px;
+        }
+
+        .feature {
+            background: #12181d;
+            border: 1px solid #252d33;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .feature strong {
+            color: #f2b84b;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: linear-gradient(135deg, #171d22, #0d1114);
+            border-top: 1px solid #252d33;
+            border-bottom: 1px solid #252d33;
+        }
+
+        .cta-box {
+            text-align: center;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #aeb5ba;
+            margin-bottom: 28px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 40px 0 25px;
+            background: #080b0d;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        footer p {
+            color: #8f969b;
+            font-size: 13px;
+        }
+
+        .phone {
+            color: #f2b84b;
+            font-weight: bold;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #20262b;
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 78vh;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            section {
+                padding: 65px 0;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+
+            .section-title h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>حقیقت سوله</h1>
+<header>
+    <div class="container">
+        <nav>
 
-    <h2>ساخت و اجرای سوله‌های صنعتی</h2>
+            <div class="logo">
+                حقیقت <span>سوله</span>
+            </div>
 
-    <p>
-        طراحی، ساخت و اجرای سوله و تأمین آهن‌آلات
-    </p>
+            <ul class="nav-links">
+                <li><a href="#services">خدمات</a></li>
+                <li><a href="#products">محصولات</a></li>
+                <li><a href="#about">درباره ما</a></li>
+                <li><a href="#contact">تماس</a></li>
+            </ul>
 
-    <button>استعلام قیمت</button>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    ساخت • اجرا • تأمین آهن‌آلات
+                </div>
+
+                <h1>
+                    سازه‌ای که<br>
+                    <span>برای آینده ساخته می‌شود.</span>
+                </h1>
+
+                <p>
+                    حقیقت سوله؛ ارائه خدمات طراحی، ساخت و اجرای سوله‌های صنعتی
+                    و تأمین انواع آهن‌آلات مورد نیاز پروژه‌های ساختمانی و صنعتی.
+                </p>
+
+                <div class="buttons">
+
+                    <a class="btn btn-primary" href="#contact">
+                        استعلام قیمت
+                    </a>
+
+                    <a class="btn btn-secondary" href="#services">
+                        مشاهده خدمات
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <small>خدمات ما</small>
+
+                <h2>از طراحی تا اجرای سازه</h2>
+
+                <p>
+                    راهکارهای تخصصی برای پروژه‌های صنعتی و ساختمانی
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="icon">🏭</div>
+                    <h3>ساخت سوله</h3>
+                    <p>
+                        طراحی و ساخت سازه‌های صنعتی متناسب با نیاز پروژه.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">📐</div>
+                    <h3>طراحی سازه</h3>
+                    <p>
+                        ارائه راهکار مناسب برای طراحی و اجرای سازه‌های صنعتی.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🔩</div>
+                    <h3>تأمین آهن‌آلات</h3>
+                    <p>
+                        تأمین انواع مقاطع و محصولات فولادی مورد نیاز پروژه.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🏗️</div>
+                    <h3>اجرای پروژه</h3>
+                    <p>
+                        همراهی در مسیر اجرای پروژه از ساخت تا نصب سازه.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section id="products" class="products">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <small>محصولات فولادی</small>
+
+                <h2>تأمین آهن‌آلات پروژه</h2>
+
+                <p>
+                    بخشی از محصولات قابل تأمین توسط حقیقت سوله
+                </p>
+
+            </div>
+
+
+            <div class="product-grid">
+
+                <div class="product">
+                    <h3>تیرآهن</h3>
+                    <p>
+                        انواع تیرآهن مورد استفاده در پروژه‌های ساختمانی و صنعتی.
+                    </p>
+                </div>
+
+                <div class="product">
+                    <h3>ورق فولادی</h3>
+                    <p>
+                        تأمین ورق‌های فولادی در ضخامت‌های مختلف.
+                    </p>
+                </div>
+
+                <div class="product">
+                    <h3>میلگرد</h3>
+                    <p>
+                        انواع میلگرد مورد نیاز پروژه‌های ساختمانی.
+                    </p>
+                </div>
+
+                <div class="product">
+                    <h3>پروفیل</h3>
+                    <p>
+                        انواع پروفیل و مقاطع فولادی.
+                    </p>
+                </div>
+
+                <div class="product">
+                    <h3>پرلین Z</h3>
+                    <p>
+                        تأمین پرلین و مقاطع مورد استفاده در سازه‌های سوله.
+                    </p>
+                </div>
+
+                <div class="product">
+                    <h3>ورق و پوشش سقف</h3>
+                    <p>
+                        محصولات مورد نیاز برای پوشش سقف و دیواره سازه.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="why">
+
+                <div class="why-text">
+
+                    <div class="section-title">
+
+                        <small>حقیقت سوله</small>
+
+                        <h2>یک تأمین‌کننده، برای یک پروژه کامل</h2>
+
+                    </div>
+
+                    <p>
+                        هدف حقیقت سوله ارائه خدمات و محصولات مورد نیاز
+                        پروژه‌های صنعتی و ساختمانی در یک مسیر ساده و قابل اعتماد است.
+                    </p>
+
+                </div>
+
+
+                <div class="features">
+
+                    <div class="feature">
+                        <strong>01</strong>
+                        <br>
+                        مشاوره و راهنمایی برای انتخاب مناسب
+                    </div>
+
+                    <div class="feature">
+                        <strong>02</strong>
+                        <br>
+                        تأمین محصولات فولادی مورد نیاز پروژه
+                    </div>
+
+                    <div class="feature">
+                        <strong>03</strong>
+                        <br>
+                        تمرکز بر کیفیت و اجرای اصولی
+                    </div>
+
+                    <div class="feature">
+                        <strong>04</strong>
+                        <br>
+                        پاسخگویی و پیگیری سفارش
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section id="contact" class="cta">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <h2>
+                    برای پروژه‌تان قیمت بگیرید.
+                </h2>
+
+                <p>
+                    برای دریافت مشاوره یا استعلام قیمت آهن‌آلات و خدمات سوله‌سازی
+                    با ما در ارتباط باشید.
+                </p>
+
+                <div class="buttons">
+
+                    <a class="btn btn-primary" href="tel:09121326034">
+                        📞 تماس با حقیقت سوله
+                    </a>
+
+                    <a class="btn btn-secondary"
+                       href="https://wa.me/989121326034">
+                        واتساپ
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+                <div class="logo">
+                    حقیقت <span>سوله</span>
+                </div>
+
+                <p>
+                    ساخت و اجرای سوله و تأمین آهن‌آلات
+                </p>
+            </div>
+
+            <div>
+                <p>تماس با ما</p>
+                <p class="phone">
+                    09121326034
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                © ۱۴۰۵ حقیقت سوله — تمامی حقوق محفوظ است.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
 
 </body>
-    
-</html>
+    </html>
