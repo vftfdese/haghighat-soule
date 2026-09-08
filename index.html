@@ -4,20 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>حقیقت سوله | فروش آهن‌آلات</title>
-
-  <meta name="description"
-        content="فروش و تأمین انواع آهن‌آلات، تیرآهن، میلگرد، ورق فولادی و پروفیل توسط حقیقت سوله">
+  <title>حقیقت سوله | فروش و تأمین آهن‌آلات</title>
+  <meta name="description" content="فروش و تأمین انواع آهن‌آلات، تیرآهن، میلگرد، ورق فولادی و پروفیل توسط حقیقت سوله">
 
   <style>
     /* =========================
        RESET
     ========================= */
-
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -26,117 +23,129 @@
 
     body {
       font-family: Tahoma, Arial, sans-serif;
-      background: #0b0d0f;
+      background: #0b0e10;
       color: #f5f5f5;
       line-height: 1.8;
+      overflow-x: hidden;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     button,
     input,
-    textarea,
-    select {
+    textarea {
       font-family: inherit;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
+    /* =========================
+       VARIABLES
+    ========================= */
     :root {
-      --bg: #0b0d0f;
-      --bg2: #111418;
-      --card: #15191d;
-      --card2: #1b2025;
-      --text: #f5f5f5;
-      --muted: #9ba2aa;
-      --yellow: #f5c400;
-      --yellow2: #ffd83d;
-      --border: rgba(255,255,255,0.08);
-      --max: 1180px;
+      --yellow: #ffc400;
+      --yellow-dark: #dca800;
+      --black: #080a0c;
+      --dark: #0b0e10;
+      --dark-2: #111518;
+      --dark-3: #171c20;
+      --border: rgba(255,255,255,.09);
+      --muted: #a9afb4;
+      --white: #ffffff;
+      --green: #20c76b;
     }
 
+    /* =========================
+       CONTAINER
+    ========================= */
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
     /* =========================
        HEADER
     ========================= */
-
     header {
-      position: fixed;
+      position: sticky;
       top: 0;
-      right: 0;
-      left: 0;
       z-index: 1000;
-
-      background: rgba(11,13,15,0.88);
-      backdrop-filter: blur(15px);
+      background: rgba(8,10,12,.96);
       border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
     .header-inner {
-      width: min(100% - 32px, var(--max));
-      height: 74px;
-      margin: auto;
-
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
 
-    .logo {
+    .brand {
       display: flex;
       align-items: center;
       gap: 12px;
       font-weight: 900;
-      font-size: 20px;
       white-space: nowrap;
     }
 
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
       background: var(--yellow);
       color: #111;
-
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 25px;
+      font-weight: 900;
+    }
 
-      font-weight: 1000;
-      font-size: 18px;
+    .brand-text strong {
+      display: block;
+      font-size: 17px;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: -3px;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 25px;
     }
 
     nav a {
-      color: #d7d7d7;
+      color: #ddd;
       font-size: 14px;
-      transition: 0.2s;
+      transition: .2s;
     }
 
     nav a:hover {
       color: var(--yellow);
     }
 
-    .header-call {
+    .header-phone {
       background: var(--yellow);
       color: #111;
-      padding: 9px 16px;
-      border-radius: 8px;
+      padding: 10px 16px;
+      border-radius: 10px;
       font-weight: 900;
       font-size: 13px;
+      white-space: nowrap;
     }
 
     .menu-btn {
@@ -144,85 +153,77 @@
       border: 0;
       background: transparent;
       color: white;
-      font-size: 28px;
+      font-size: 32px;
       cursor: pointer;
     }
-
 
     /* =========================
        HERO
     ========================= */
-
     .hero {
-      min-height: 720px;
-      padding-top: 74px;
-
+      min-height: 620px;
       position: relative;
-      overflow: hidden;
-
       display: flex;
       align-items: center;
-    }
-
-    .hero-image {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.45;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-
+      overflow: hidden;
       background:
         linear-gradient(
           90deg,
-          rgba(11,13,15,0.96) 0%,
-          rgba(11,13,15,0.82) 45%,
-          rgba(11,13,15,0.42) 100%
+          rgba(8,10,12,.96) 0%,
+          rgba(8,10,12,.86) 42%,
+          rgba(8,10,12,.50) 100%
+        ),
+        url("soule.jpg") center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,196,0,.06),
+          transparent 40%
         );
+      pointer-events: none;
     }
 
     .hero-content {
-      width: min(100% - 32px, var(--max));
-      margin: auto;
       position: relative;
       z-index: 2;
+      max-width: 680px;
+      padding: 80px 0;
     }
 
-    .hero-small {
+    .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-
+      background: rgba(255,196,0,.1);
+      border: 1px solid rgba(255,196,0,.28);
       color: var(--yellow);
-      font-size: 14px;
-      font-weight: 900;
-
-      margin-bottom: 18px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 20px;
     }
 
-    .hero-small::before {
+    .eyebrow::before {
       content: "";
-      width: 28px;
-      height: 3px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
       background: var(--yellow);
     }
 
     .hero h1 {
-      max-width: 720px;
-      font-size: clamp(38px, 6vw, 72px);
-      line-height: 1.15;
-      font-weight: 1000;
-      margin-bottom: 24px;
+      font-size: clamp(34px, 6vw, 67px);
+      line-height: 1.18;
+      font-weight: 950;
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
     }
 
     .hero h1 span {
@@ -230,10 +231,10 @@
     }
 
     .hero p {
-      max-width: 650px;
-      color: #d0d3d6;
+      color: #c8cdd1;
       font-size: 17px;
-      margin-bottom: 32px;
+      max-width: 620px;
+      margin-bottom: 30px;
     }
 
     .hero-buttons {
@@ -243,19 +244,16 @@
     }
 
     .btn {
-      min-height: 50px;
-      padding: 0 22px;
-
-      border-radius: 9px;
-
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
-      font-size: 14px;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 11px;
       font-weight: 900;
-
-      transition: 0.2s;
+      font-size: 14px;
+      border: 1px solid transparent;
+      transition: .2s;
     }
 
     .btn-primary {
@@ -264,101 +262,103 @@
     }
 
     .btn-primary:hover {
-      background: var(--yellow2);
+      background: #ffd633;
       transform: translateY(-2px);
     }
 
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.05);
+    .btn-outline {
+      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.04);
       color: white;
     }
 
-    .btn-secondary:hover {
+    .btn-outline:hover {
       border-color: var(--yellow);
       color: var(--yellow);
     }
 
+    /* =========================
+       QUICK BAR
+    ========================= */
+    .quick-bar {
+      background: var(--yellow);
+      color: #111;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .quick-item {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+      border-left: 1px solid rgba(0,0,0,.12);
+      padding: 10px;
+    }
+
+    .quick-item:last-child {
+      border-left: 0;
+    }
+
+    .quick-icon {
+      font-size: 25px;
+    }
+
+    .quick-item strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .quick-item span {
+      display: block;
+      font-size: 11px;
+      opacity: .7;
+    }
 
     /* =========================
-       GENERAL
+       SECTIONS
     ========================= */
-
     section {
       padding: 90px 0;
     }
 
-    .container {
-      width: min(100% - 32px, var(--max));
-      margin: auto;
-    }
-
     .section-head {
-      margin-bottom: 40px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 35px;
     }
 
     .section-label {
       color: var(--yellow);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 900;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
     .section-title {
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 1000;
+      font-size: clamp(26px, 4vw, 40px);
       line-height: 1.3;
+      font-weight: 950;
     }
 
     .section-description {
+      max-width: 500px;
       color: var(--muted);
-      margin-top: 10px;
-      max-width: 650px;
+      font-size: 14px;
     }
-
-
-    /* =========================
-       STATS
-    ========================= */
-
-    .stats {
-      margin-top: -45px;
-      position: relative;
-      z-index: 5;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .stat {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 25px;
-      border-radius: 12px;
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--yellow);
-      font-size: 27px;
-      margin-bottom: 4px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
 
     /* =========================
        PRODUCTS
     ========================= */
-
-    .products {
-      background: #0e1114;
+    #products {
+      background: #0d1012;
     }
 
     .products-grid {
@@ -368,23 +368,21 @@
     }
 
     .product-card {
-      background: var(--card);
+      background: var(--dark-2);
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 18px;
       overflow: hidden;
-
-      transition: 0.25s;
+      transition: .25s;
     }
 
     .product-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(245,196,0,0.45);
+      transform: translateY(-5px);
+      border-color: rgba(255,196,0,.45);
     }
 
     .product-image {
       height: 220px;
-      background: #080a0c;
-      position: relative;
+      background: #1a1e21;
       overflow: hidden;
     }
 
@@ -392,213 +390,294 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: 0.35s;
+      transition: .4s;
     }
 
     .product-card:hover .product-image img {
       transform: scale(1.04);
     }
 
-    .product-body {
+    .product-info {
       padding: 20px;
     }
 
-    .product-tag {
-      display: inline-block;
+    .product-number {
       color: var(--yellow);
-      background: rgba(245,196,0,0.1);
-      padding: 3px 9px;
-      border-radius: 5px;
       font-size: 11px;
-      margin-bottom: 10px;
-    }
-
-    .product-body h3 {
-      font-size: 21px;
-      margin-bottom: 8px;
-    }
-
-    .product-body p {
-      color: var(--muted);
-      font-size: 13px;
-      min-height: 58px;
-      margin-bottom: 18px;
-    }
-
-    .product-btn {
-      width: 100%;
-      height: 44px;
-
-      border-radius: 7px;
-      background: transparent;
-      border: 1px solid rgba(245,196,0,0.5);
-      color: var(--yellow);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 13px;
       font-weight: 900;
-
-      transition: 0.2s;
+      margin-bottom: 6px;
     }
 
-    .product-btn:hover {
-      background: var(--yellow);
-      color: #111;
+    .product-info h3 {
+      font-size: 20px;
+      margin-bottom: 7px;
     }
 
+    .product-info p {
+      color: var(--muted);
+      font-size: 12px;
+      min-height: 48px;
+    }
+
+    .product-link {
+      display: inline-flex;
+      margin-top: 15px;
+      color: var(--yellow);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+    #about {
+      background: var(--black);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: #b9bec2;
+      font-size: 15px;
+      margin-top: 18px;
+    }
+
+    .about-boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .about-box {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .about-box strong {
+      display: block;
+      font-size: 20px;
+      color: var(--yellow);
+      margin-bottom: 4px;
+    }
+
+    .about-box span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .about-visual {
+      min-height: 430px;
+      border-radius: 22px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(rgba(8,10,12,.15), rgba(8,10,12,.55)),
+        url("soule.jpg") center/cover no-repeat;
+      border: 1px solid var(--border);
+    }
+
+    .about-visual-card {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      left: 22px;
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(8,10,12,.86);
+      border: 1px solid rgba(255,255,255,.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .about-visual-card strong {
+      color: var(--yellow);
+      font-size: 18px;
+    }
+
+    .about-visual-card p {
+      color: #ccc;
+      font-size: 12px;
+      margin-top: 5px;
+    }
 
     /* =========================
        WHY US
     ========================= */
+    #why {
+      background: #0d1012;
+    }
 
     .why-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 15px;
     }
 
     .why-card {
-      background: var(--card);
+      padding: 25px 20px;
+      background: var(--dark-2);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 26px;
+      border-radius: 17px;
     }
 
-    .why-number {
-      width: 42px;
-      height: 42px;
-
+    .why-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      background: rgba(255,196,0,.1);
+      color: var(--yellow);
       display: flex;
       align-items: center;
       justify-content: center;
-
-      border-radius: 8px;
-
-      background: var(--yellow);
-      color: #111;
-
-      font-weight: 1000;
-      margin-bottom: 20px;
+      font-size: 22px;
+      margin-bottom: 18px;
     }
 
     .why-card h3 {
-      font-size: 18px;
+      font-size: 16px;
       margin-bottom: 8px;
     }
 
     .why-card p {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
     }
-
 
     /* =========================
        CTA
     ========================= */
+    .cta {
+      padding: 0 0 90px;
+      background: #0d1012;
+    }
 
     .cta-box {
       position: relative;
       overflow: hidden;
-
-      border: 1px solid rgba(245,196,0,0.3);
-      border-radius: 18px;
-
+      border-radius: 24px;
       padding: 55px 45px;
-
       background:
         linear-gradient(
-          135deg,
-          #181b1f,
-          #0d0f11
+          100deg,
+          rgba(255,196,0,.98),
+          rgba(255,196,0,.78)
         );
+      color: #111;
     }
 
     .cta-box::after {
-      content: "";
+      content: "H";
       position: absolute;
+      left: 30px;
+      bottom: -70px;
+      font-size: 240px;
+      line-height: 1;
+      font-weight: 950;
+      opacity: .08;
+    }
 
-      width: 250px;
-      height: 250px;
-
-      left: -100px;
-      bottom: -130px;
-
-      border-radius: 50%;
-      background: rgba(245,196,0,0.08);
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
     }
 
     .cta-box h2 {
-      max-width: 650px;
-      font-size: clamp(28px, 4vw, 44px);
+      font-size: clamp(27px, 4vw, 42px);
       line-height: 1.3;
-      margin-bottom: 14px;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 12px;
     }
 
     .cta-box p {
       max-width: 620px;
-      color: var(--muted);
-      margin-bottom: 25px;
-      position: relative;
-      z-index: 1;
+      font-size: 14px;
+      margin-bottom: 22px;
+      opacity: .8;
     }
 
-    .cta-box .btn {
-      position: relative;
-      z-index: 2;
+    .btn-dark {
+      background: #111;
+      color: white;
     }
 
+    .btn-dark:hover {
+      background: #252525;
+    }
 
     /* =========================
        CONTACT
     ========================= */
-
-    .contact {
-      background: #0e1114;
+    #contact {
+      background: var(--black);
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 25px;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 30px;
     }
 
     .contact-info,
     .contact-form {
-      background: var(--card);
+      background: var(--dark-2);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px;
+      border-radius: 20px;
+      padding: 30px;
     }
 
-    .contact-info h3,
-    .contact-form h3 {
-      font-size: 22px;
-      margin-bottom: 22px;
+    .contact-list {
+      margin-top: 25px;
+      display: grid;
+      gap: 13px;
     }
 
     .contact-item {
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 14px;
+      background: rgba(255,255,255,.03);
+      border-radius: 12px;
     }
 
-    .contact-item:last-child {
-      border-bottom: 0;
-    }
-
-    .contact-item small {
-      display: block;
-      color: var(--muted);
-      font-size: 12px;
-      margin-bottom: 4px;
+    .contact-item-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,196,0,.1);
+      color: var(--yellow);
+      border-radius: 10px;
     }
 
     .contact-item strong {
-      font-size: 15px;
+      display: block;
+      font-size: 13px;
+    }
+
+    .contact-item span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .contact-form h3 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .contact-form > p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 22px;
     }
 
     .form-grid {
@@ -608,9 +687,7 @@
     }
 
     .field {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
+      margin-bottom: 13px;
     }
 
     .field.full {
@@ -618,106 +695,105 @@
     }
 
     .field label {
-      font-size: 12px;
-      color: #c5c8ca;
+      display: block;
+      color: #ccc;
+      font-size: 11px;
+      margin-bottom: 6px;
     }
 
     .field input,
-    .field select,
     .field textarea {
       width: 100%;
-
       border: 1px solid var(--border);
-      background: #0e1114;
+      background: #0c0f11;
       color: white;
-
-      border-radius: 7px;
-      padding: 12px;
-
       outline: none;
-    }
-
-    .field textarea {
-      min-height: 110px;
-      resize: vertical;
+      border-radius: 10px;
+      padding: 13px;
+      font-size: 13px;
     }
 
     .field input:focus,
-    .field select:focus,
     .field textarea:focus {
-      border-color: var(--yellow);
+      border-color: rgba(255,196,0,.55);
     }
 
-    .form-submit {
-      margin-top: 15px;
-      border: 0;
-      cursor: pointer;
+    .field textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
       width: 100%;
+      cursor: pointer;
+      border: 0;
     }
-
 
     /* =========================
        FOOTER
     ========================= */
-
     footer {
-      padding: 30px 0;
-      background: #080a0c;
+      background: #060708;
       border-top: 1px solid var(--border);
+      padding: 35px 0 25px;
     }
 
-    .footer-inner {
-      width: min(100% - 32px, var(--max));
-      margin: auto;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 30px;
+      padding-bottom: 30px;
     }
 
-    .footer-brand {
-      font-weight: 900;
+    footer h3 {
+      font-size: 15px;
+      margin-bottom: 13px;
     }
 
-    .footer-brand span {
-      color: var(--yellow);
-    }
-
-    footer p {
-      color: var(--muted);
+    footer p,
+    footer a {
+      color: #858b90;
       font-size: 12px;
     }
 
+    footer a:hover {
+      color: var(--yellow);
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 7px;
+    }
+
+    .copyright {
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      color: #666;
+      font-size: 10px;
+      text-align: center;
+    }
 
     /* =========================
        FLOATING BUTTONS
     ========================= */
-
     .floating {
       position: fixed;
-      left: 18px;
-      bottom: 18px;
+      left: 16px;
+      bottom: 16px;
       z-index: 900;
-
-      display: flex;
-      flex-direction: column;
+      display: grid;
       gap: 9px;
     }
 
-    .float-btn {
-      width: 50px;
-      height: 50px;
-
+    .floating a {
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
-      font-size: 20px;
-
-      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      font-size: 21px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.35);
     }
 
     .float-call {
@@ -726,50 +802,39 @@
     }
 
     .float-whatsapp {
-      background: #25d366;
+      background: var(--green);
       color: white;
     }
-
 
     /* =========================
        MOBILE
     ========================= */
-
     @media (max-width: 900px) {
 
       nav {
         display: none;
-
         position: absolute;
-        top: 74px;
-        right: 16px;
-        left: 16px;
-
-        background: #111418;
-        border: 1px solid var(--border);
-        border-radius: 12px;
-
-        padding: 15px;
-
+        top: 76px;
+        right: 0;
+        left: 0;
+        background: #080a0c;
+        border-bottom: 1px solid var(--border);
+        padding: 15px 20px;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
       }
 
-      nav.active {
+      nav.open {
         display: flex;
       }
 
       nav a {
-        padding: 13px 8px;
-        border-bottom: 1px solid var(--border);
+        padding: 13px 5px;
+        border-bottom: 1px solid rgba(255,255,255,.06);
       }
 
-      nav a:last-child {
-        border-bottom: 0;
-      }
-
-      .header-call {
+      .header-phone {
         display: none;
       }
 
@@ -777,6 +842,30 @@
         display: block;
       }
 
+      .header-inner {
+        min-height: 70px;
+      }
+
+      .brand-logo {
+        width: 44px;
+        height: 44px;
+      }
+
+      .hero {
+        min-height: 570px;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(8,10,12,.94),
+            rgba(8,10,12,.72)
+          ),
+          url("soule.jpg") center/cover no-repeat;
+      }
+
+      .hero-content {
+        padding: 65px 0;
+      }
+
       .products-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -785,43 +874,36 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .about-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
-    }
 
+      .about-visual {
+        min-height: 350px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
 
     @media (max-width: 600px) {
 
-      .header-inner {
-        height: 66px;
+      .container {
+        width: min(100% - 24px, 1160px);
       }
 
-      .logo {
-        font-size: 17px;
-      }
-
-      .logo-mark {
-        width: 38px;
-        height: 38px;
+      section {
+        padding: 65px 0;
       }
 
       .hero {
-        min-height: 650px;
-        padding-top: 66px;
-      }
-
-      .hero-overlay {
-        background:
-          linear-gradient(
-            180deg,
-            rgba(11,13,15,0.82),
-            rgba(11,13,15,0.94)
-          );
+        min-height: 590px;
       }
 
       .hero h1 {
-        font-size: 40px;
+        font-size: 38px;
       }
 
       .hero p {
@@ -829,23 +911,33 @@
       }
 
       .hero-buttons {
-        flex-direction: column;
+        display: grid;
       }
 
-      .hero-buttons .btn {
+      .btn {
         width: 100%;
       }
 
-      section {
-        padding: 65px 0;
-      }
-
-      .stats {
-        margin-top: -25px;
-      }
-
-      .stats-grid {
+      .quick-grid {
         grid-template-columns: 1fr;
+      }
+
+      .quick-item {
+        min-height: 62px;
+        border-left: 0;
+        border-bottom: 1px solid rgba(0,0,0,.12);
+      }
+
+      .quick-item:last-child {
+        border-bottom: 0;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-description {
+        margin-top: 12px;
       }
 
       .products-grid {
@@ -853,15 +945,28 @@
       }
 
       .product-image {
-        height: 230px;
+        height: 235px;
       }
 
       .why-grid {
         grid-template-columns: 1fr;
       }
 
+      .about-boxes {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-visual {
+        min-height: 300px;
+      }
+
       .cta-box {
-        padding: 35px 24px;
+        padding: 35px 25px;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 22px;
       }
 
       .form-grid {
@@ -872,273 +977,87 @@
         grid-column: auto;
       }
 
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .floating {
+        left: 12px;
+        bottom: 12px;
       }
     }
-
-
-    /* =========================
-       ANIMATION
-    ========================= */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: 0.6s ease;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
   </style>
 </head>
 
-
 <body>
-
 
   <!-- =========================
        HEADER
-  ========================= -->
-
+  ========================== -->
   <header>
+    <div class="container header-inner">
 
-    <div class="header-inner">
+      <a href="#home" class="brand">
+        <div class="brand-logo">ح</div>
 
-      <a href="#home" class="logo">
-        <div class="logo-mark">ح</div>
-        <span>حقیقت سوله</span>
+        <div class="brand-text">
+          <strong>حقیقت سوله</strong>
+          <span>فروش و تأمین آهن‌آلات</span>
+        </div>
       </a>
 
-      <nav id="nav">
-
+      <nav id="mainNav">
         <a href="#home">خانه</a>
         <a href="#products">محصولات</a>
-        <a href="#why">چرا ما؟</a>
+        <a href="#about">درباره ما</a>
+        <a href="#why">مزیت‌ها</a>
         <a href="#contact">تماس با ما</a>
-
       </nav>
 
-      <a
-        class="header-call"
-        href="tel:09121326034"
-      >
-        📞 ۰۹۱۲۱۳۲۶۰۳۴
+      <a class="header-phone" href="tel:09121326034">
+        ☎ 0912 132 6034
       </a>
 
-      <button
-        class="menu-btn"
-        id="menuBtn"
-        aria-label="باز کردن منو"
-      >
+      <button class="menu-btn" id="menuBtn" aria-label="منو">
         ☰
       </button>
 
     </div>
-
   </header>
-
 
 
   <!-- =========================
        HERO
-  ========================= -->
-
+  ========================== -->
   <main id="home">
 
     <section class="hero">
 
-      <div class="hero-image">
-
-        <img
-          src="soule.jpg"
-          alt="آهن‌آلات و محصولات فولادی حقیقت سوله"
-          onerror="this.style.display='none'"
-        >
-
-      </div>
-
-      <div class="hero-overlay"></div>
-
-      <div class="hero-content">
-
-        <div class="hero-small">
-          تأمین و فروش آهن‌آلات
-        </div>
-
-        <h1>
-          آهن مورد نیاز پروژه‌ات،
-          <span>مطمئن تأمین کن.</span>
-        </h1>
-
-        <p>
-          حقیقت سوله تأمین‌کننده انواع آهن‌آلات و محصولات فولادی
-          برای پروژه‌های ساختمانی، صنعتی و عمرانی است.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a
-            class="btn btn-primary"
-            href="#products"
-          >
-            مشاهده محصولات
-          </a>
-
-          <a
-            class="btn btn-secondary"
-            href="https://wa.me/989121326034?text=سلام، برای خرید آهن‌آلات نیاز به استعلام قیمت دارم."
-            target="_blank"
-          >
-            استعلام قیمت در واتساپ
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         STATS
-    ========================= -->
-
-    <div class="stats">
-
       <div class="container">
 
-        <div class="stats-grid">
+        <div class="hero-content">
 
-          <div class="stat reveal">
-            <strong>۴+</strong>
-            <span>دسته اصلی محصولات</span>
+          <div class="eyebrow">
+            تأمین مستقیم آهن‌آلات
           </div>
 
-          <div class="stat reveal">
-            <strong>مستقیم</strong>
-            <span>تأمین و فروش آهن‌آلات</span>
-          </div>
+          <h1>
+            خرید آهن‌آلات
+            <br>
+            <span>مطمئن و حرفه‌ای</span>
+          </h1>
 
-          <div class="stat reveal">
-            <strong>سریع</strong>
-            <span>پاسخگویی و استعلام سفارش</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- =========================
-         PRODUCTS
-    ========================= -->
-
-    <section class="products" id="products">
-
-      <div class="container">
-
-        <div class="section-head reveal">
-
-          <div class="section-label">
-            محصولات
-          </div>
-
-          <h2 class="section-title">
-            آهن‌آلات مورد نیاز شما
-          </h2>
-
-          <p class="section-description">
-            برای اطلاع از موجودی و قیمت روز هر محصول،
-            با کارشناسان حقیقت سوله در ارتباط باشید.
+          <p>
+            حقیقت سوله، تأمین‌کننده انواع آهن‌آلات و مقاطع فولادی
+            برای پروژه‌های ساختمانی، صنعتی و تجاری.
+            برای دریافت قیمت و مشاوره با ما در ارتباط باشید.
           </p>
 
-        </div>
+          <div class="hero-buttons">
 
+            <a href="#products" class="btn btn-primary">
+              مشاهده محصولات
+            </a>
 
-        <div class="products-grid">
-
-
-          <!-- تیرآهن -->
-
-          <article class="product-card reveal">
-
-            <div class="product-image">
-
-              <img
-                src="tirahan.jpg"
-                alt="تیرآهن"
-                onerror="this.style.display='none'"
-              >
-
-            </div>
-
-            <div class="product-body">
-
-              <span class="product-tag">
-                مقاطع فولادی
-              </span>
-
-              <h3>
-                تیرآهن
-              </h3>
-
-              <p>
-                انواع تیرآهن مناسب برای پروژه‌های ساختمانی
-                و سازه‌های مختلف.
-              </p>
-
-              <a
-                class="product-btn"
-                href="https://wa.me/989121326034?text=سلام، برای خرید تیرآهن درخواست استعلام قیمت دارم."
-                target="_blank"
-              >
-                استعلام قیمت
-              </a>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- میلگرد -->
-
-          <article class="product-card reveal">
-
-            <div class="product-image">
-
-              <img
-                src="milgerd.jpg"
-                alt="میلگرد"
-                onerror="this.style.display='none'"
-              >
-
-            </div>
-
-            <div class="product-body">
-
-              <span class="product-tag">
-                مقاطع فولادی
-              </span>
-
-              <h3>
-                میلگرد
-              </h3>
-
-              <p>
-                تأمین میلگرد مورد نیاز پروژه‌های ساختمانی
-                و عمرانی در سایزهای مختلف.
-              </p>
-
-              <a
-                class="product-btn"
-                href="https://wa.me/989121326034?text=سلام، برای خرید میلگرد درخواست استعلام قیمت
+            <a
+              href="https://wa.me/989121326034?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%AE%D8%B1%DB%8C%D8%AF%20%D8%A2%D9%87%D9%86%E2%80%8C%D8%A2%D9%84%D8%A7%D8%AA%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8
