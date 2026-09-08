@@ -1,1437 +1,661 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>حقیقت سوله | طراحی، ساخت و تأمین آهن‌آلات</title>
-
-<meta
-name="description"
-content="حقیقت سوله؛ طراحی و ساخت سوله و تأمین انواع آهن‌آلات و محصولات فولادی."
->
+<title>حقیقت سوله | ساخت سوله و فروش آهن‌آلات</title>
 
 <style>
+:root{
+    --bg:#090b0d;
+    --bg2:#0e1114;
+    --card:#15191d;
+    --card2:#111417;
+    --text:#ffffff;
+    --muted:#a7adb2;
+    --yellow:#ffc400;
+    --yellow2:#e0a900;
+    --border:rgba(255,255,255,.08);
+    --header:rgba(9,11,13,.86);
+    --shadow:0 20px 50px rgba(0,0,0,.25);
+}
 
-/* =====================================================
-   RESET
-===================================================== */
+body.light{
+    --bg:#f5f6f7;
+    --bg2:#ffffff;
+    --card:#ffffff;
+    --card2:#eef0f2;
+    --text:#111315;
+    --muted:#5f666c;
+    --border:rgba(0,0,0,.10);
+    --header:rgba(255,255,255,.88);
+    --shadow:0 20px 50px rgba(0,0,0,.10);
+}
 
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 html{
     scroll-behavior:smooth;
 }
 
-:root{
-
-    --accent:#f5b400;
-
-    --bg:#090b0d;
-    --bg2:#0d1012;
-    --card:#15191c;
-    --card2:#121518;
-
-    --text:#ffffff;
-    --muted:#999;
-
-    --border:rgba(255,255,255,.08);
-
-    --header:rgba(8,10,12,.78);
-}
-
-
-/* LIGHT MODE */
-
-body.light{
-
-    --bg:#f5f6f7;
-    --bg2:#ffffff;
-    --card:#ffffff;
-    --card2:#f0f1f2;
-
-    --text:#111315;
-    --muted:#60656a;
-
-    --border:rgba(0,0,0,.10);
-
-    --header:rgba(255,255,255,.82);
-}
-
-
 body{
-
     font-family:
     Tahoma,
     Arial,
     sans-serif;
-
     background:var(--bg);
-
     color:var(--text);
-
     line-height:1.8;
-
-    overflow-x:hidden;
-
-    transition:
-    background .35s ease,
-    color .35s ease;
+    transition:.3s;
 }
-
 
 a{
     text-decoration:none;
     color:inherit;
 }
 
-img{
-    max-width:100%;
+button{
+    font-family:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title span{
+    display:block;
+    color:var(--yellow);
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.section-title h2{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:var(--muted);
+    max-width:650px;
+    margin:auto;
 }
 
 
-/* =====================================================
-   SCROLL PROGRESS
-===================================================== */
-
-.scroll-progress{
-
-    position:fixed;
-
-    top:0;
-    right:0;
-
-    height:3px;
-
-    width:0%;
-
-    background:var(--accent);
-
-    z-index:2000;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
+/* HEADER */
 
 header{
-
     position:fixed;
-
     top:0;
-    right:0;
     left:0;
-
+    right:0;
     z-index:1000;
-
     background:var(--header);
-
-    backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);
-
+    backdrop-filter:blur(18px);
     border-bottom:1px solid var(--border);
-
-    transition:.35s;
 }
-
 
 .navbar{
-
-    max-width:1250px;
-
-    height:78px;
-
-    margin:auto;
-
+    height:75px;
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
-    padding:0 25px;
+    gap:20px;
 }
-
 
 .logo{
-
-    font-size:24px;
-
+    font-size:22px;
     font-weight:900;
-
-    letter-spacing:-1px;
+    white-space:nowrap;
 }
-
 
 .logo span{
-    color:var(--accent);
+    color:var(--yellow);
 }
-
 
 .nav-links{
-
-    list-style:none;
-
     display:flex;
-
     align-items:center;
-
-    gap:30px;
+    gap:28px;
 }
-
 
 .nav-links a{
-
     color:var(--muted);
-
     font-size:14px;
-
-    transition:.3s;
-
-    position:relative;
+    transition:.25s;
 }
-
-
-.nav-links a::after{
-
-    content:"";
-
-    position:absolute;
-
-    right:0;
-
-    bottom:-8px;
-
-    width:0;
-
-    height:2px;
-
-    background:var(--accent);
-
-    transition:.3s;
-}
-
 
 .nav-links a:hover{
-
-    color:var(--text);
+    color:var(--yellow);
 }
 
-
-.nav-links a:hover::after{
-
-    width:100%;
-}
-
-
-/* =====================================================
-   HEADER ACTIONS
-===================================================== */
-
-.header-actions{
-
+.nav-actions{
     display:flex;
-
     align-items:center;
-
     gap:10px;
 }
 
-
 .theme-btn,
 .menu-btn{
-
-    width:45px;
-    height:45px;
-
+    width:42px;
+    height:42px;
     border:1px solid var(--border);
-
-    border-radius:12px;
-
     background:var(--card);
-
     color:var(--text);
-
-    font-size:21px;
-
+    border-radius:12px;
     cursor:pointer;
-
-    transition:.3s;
+    font-size:18px;
 }
-
-
-.theme-btn:hover,
-.menu-btn:hover{
-
-    border-color:var(--accent);
-
-    color:var(--accent);
-
-    transform:translateY(-2px);
-}
-
 
 .menu-btn{
     display:none;
 }
 
 
-/* =====================================================
-   MOBILE MENU
-===================================================== */
-
-.mobile-menu{
-
-    position:fixed;
-
-    top:78px;
-    right:0;
-
-    width:100%;
-
-    padding:15px;
-
-    background:var(--header);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid var(--border);
-
-    transform:translateY(-120%);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:.4s ease;
-
-    z-index:999;
-}
-
-
-.mobile-menu.active{
-
-    transform:translateY(0);
-
-    opacity:1;
-
-    visibility:visible;
-}
-
-
-.mobile-menu a{
-
-    display:block;
-
-    padding:14px 18px;
-
-    margin-bottom:8px;
-
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    border-radius:12px;
-
-    color:var(--text);
-
-    transition:.3s;
-}
-
-
-.mobile-menu a:hover{
-
-    background:var(--accent);
-
-    color:#111;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
+/* HERO */
 
 .hero{
-
     min-height:100vh;
-
     display:flex;
-
     align-items:center;
-
     position:relative;
-
-    background:
-
-    linear-gradient(
-        90deg,
-        rgba(0,0,0,.88),
-        rgba(0,0,0,.45)
-    ),
-
-    url("soule.jpg")
-    center/cover no-repeat;
+    overflow:hidden;
+    padding-top:100px;
 }
 
-
-body.light .hero{
-
-    background:
-
-    linear-gradient(
-        90deg,
-        rgba(255,255,255,.90),
-        rgba(255,255,255,.55)
-    ),
-
-    url("soule.jpg")
-    center/cover no-repeat;
-}
-
-
-.hero::after{
-
+.hero::before{
     content:"";
-
     position:absolute;
-
-    inset:0;
-
-    background:
-
-    linear-gradient(
-        180deg,
-        rgba(0,0,0,.1),
-        var(--bg)
-    );
-
-    pointer-events:none;
+    width:500px;
+    height:500px;
+    background:rgba(255,196,0,.08);
+    filter:blur(100px);
+    border-radius:50%;
+    top:10%;
+    right:-150px;
 }
 
-
-body.light .hero::after{
-
-    background:
-
-    linear-gradient(
-        180deg,
-        rgba(255,255,255,.05),
-        var(--bg)
-    );
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
 }
-
 
 .hero-content{
-
     position:relative;
-
     z-index:2;
-
-    max-width:1250px;
-
-    width:100%;
-
-    margin:auto;
-
-    padding:150px 25px 100px;
 }
 
-
-.hero-content-inner{
-
-    max-width:760px;
+.badge{
+    display:inline-flex;
+    padding:7px 14px;
+    border:1px solid rgba(255,196,0,.35);
+    background:rgba(255,196,0,.08);
+    color:var(--yellow);
+    border-radius:30px;
+    font-size:13px;
+    margin-bottom:20px;
 }
-
 
 .hero h1{
-
-    font-size:58px;
-
+    font-size:clamp(38px,5vw,68px);
     line-height:1.25;
-
-    font-weight:900;
-
-    margin-bottom:22px;
-
-    letter-spacing:-2px;
+    margin-bottom:20px;
 }
-
 
 .hero h1 span{
-    color:var(--accent);
+    color:var(--yellow);
 }
-
 
 .hero p{
-
     color:var(--muted);
-
-    font-size:18px;
-
-    max-width:650px;
-
-    margin-bottom:35px;
+    font-size:17px;
+    max-width:600px;
+    margin-bottom:30px;
 }
 
-
 .hero-buttons{
-
     display:flex;
-
-    gap:14px;
-
+    gap:12px;
     flex-wrap:wrap;
 }
 
-
 .btn{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:13px 25px;
-
-    border-radius:9px;
-
+    padding:13px 22px;
+    border-radius:12px;
+    border:none;
+    cursor:pointer;
     font-weight:bold;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    transition:.25s;
+}
 
+.btn-primary{
+    background:var(--yellow);
+    color:#111;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+}
+
+.btn-outline:hover{
+    border-color:var(--yellow);
+}
+
+.hero-image{
+    min-height:450px;
+    border-radius:28px;
+    overflow:hidden;
+    background:var(--card);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    position:relative;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    min-height:450px;
+    object-fit:cover;
+    display:block;
+}
+
+.image-placeholder{
+    min-height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    color:var(--muted);
+    gap:8px;
+    background:
+        linear-gradient(135deg,
+        rgba(255,255,255,.02),
+        rgba(255,255,255,.06));
+}
+
+.image-placeholder strong{
+    color:var(--yellow);
+    font-size:28px;
+}
+
+
+/* SERVICES */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service-card{
+    padding:30px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
     transition:.3s;
 }
 
-
-.btn-primary{
-
-    background:var(--accent);
-
-    color:#111;
+.service-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(255,196,0,.35);
 }
 
-
-.btn-primary:hover{
-
-    background:#ffc52b;
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 10px 30px rgba(245,180,0,.18);
+.icon{
+    width:55px;
+    height:55px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,196,0,.1);
+    color:var(--yellow);
+    font-size:25px;
+    margin-bottom:20px;
 }
 
-
-.btn-secondary{
-
-    border:1px solid rgba(245,180,0,.7);
-
-    color:var(--accent);
-
-    background:rgba(0,0,0,.15);
-}
-
-
-body.light .btn-secondary{
-
-    background:rgba(255,255,255,.6);
-}
-
-
-.btn-secondary:hover{
-
-    background:var(--accent);
-
-    color:#111;
-
-    transform:translateY(-3px);
-}
-
-
-/* =====================================================
-   GENERAL
-===================================================== */
-
-section{
-    padding:100px 20px;
-}
-
-
-.container{
-
-    max-width:1200px;
-
-    margin:auto;
-}
-
-
-.section-title{
-
-    text-align:center;
-
-    margin-bottom:55px;
-}
-
-
-.section-title h2{
-
-    font-size:36px;
-
+.service-card h3{
     margin-bottom:10px;
 }
 
-
-.section-title h2 span{
-    color:var(--accent);
-}
-
-
-.section-title p{
+.service-card p{
     color:var(--muted);
-}
-
-
-/* =====================================================
-   REVEAL ANIMATION
-===================================================== */
-
-.reveal{
-
-    opacity:0;
-
-    transform:translateY(35px);
-
-    transition:
-    opacity .7s ease,
-    transform .7s ease;
-}
-
-
-.reveal.show{
-
-    opacity:1;
-
-    transform:translateY(0);
-}
-
-
-/* =====================================================
-   ADVANTAGES
-===================================================== */
-
-.advantages{
-
-    background:var(--bg2);
-}
-
-
-.advantages-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:18px;
-}
-
-
-.advantage{
-
-    padding:25px;
-
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
-
-    text-align:center;
-
-    transition:.35s;
-}
-
-
-.advantage:hover{
-
-    transform:translateY(-7px);
-
-    border-color:rgba(245,180,0,.45);
-}
-
-
-.advantage-icon{
-
-    font-size:32px;
-
-    margin-bottom:12px;
-}
-
-
-.advantage h3{
-
-    font-size:18px;
-
-    margin-bottom:6px;
-}
-
-
-.advantage p{
-
-    color:var(--muted);
-
-    font-size:13px;
-}
-
-
-/* =====================================================
-   SERVICES
-===================================================== */
-
-.services{
-
-    background:var(--bg2);
-}
-
-
-.cards{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:22px;
-}
-
-
-.card{
-
-    position:relative;
-
-    background:
-
-    linear-gradient(
-        145deg,
-        var(--card),
-        var(--card2)
-    );
-
-    border:1px solid var(--border);
-
-    padding:32px;
-
-    border-radius:16px;
-
-    overflow:hidden;
-
-    transition:.4s;
-}
-
-
-.card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    right:0;
-
-    width:4px;
-
-    height:0;
-
-    background:var(--accent);
-
-    transition:.4s;
-}
-
-
-.card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:rgba(245,180,0,.45);
-}
-
-
-.card:hover::before{
-
-    height:100%;
-}
-
-
-.card-icon{
-
-    font-size:35px;
-
-    margin-bottom:18px;
-}
-
-
-.card h3{
-
-    margin-bottom:10px;
-
-    font-size:20px;
-}
-
-
-.card p{
-
-    color:var(--muted);
-
     font-size:14px;
-}
-
-
-/* =====================================================
-   PRODUCTS
-===================================================== */
-
-.products{
-
-    background:var(--bg);
 }
 
 
 /* FILTER */
 
-.product-filters{
-
+.filters{
     display:flex;
-
     justify-content:center;
-
-    flex-wrap:wrap;
-
     gap:10px;
-
+    flex-wrap:wrap;
     margin-bottom:35px;
 }
 
-
 .filter-btn{
-
-    padding:10px 18px;
-
-    border-radius:9px;
-
     border:1px solid var(--border);
-
     background:var(--card);
-
     color:var(--muted);
-
+    padding:9px 17px;
+    border-radius:30px;
     cursor:pointer;
-
-    font-family:inherit;
-
-    transition:.3s;
+    transition:.25s;
 }
 
-
+.filter-btn.active,
 .filter-btn:hover{
-
-    border-color:var(--accent);
-
-    color:var(--accent);
-}
-
-
-.filter-btn.active{
-
-    background:var(--accent);
-
+    background:var(--yellow);
     color:#111;
-
-    border-color:var(--accent);
+    border-color:var(--yellow);
 }
 
 
-/* PRODUCT GRID */
+/* PRODUCTS */
 
 .products-grid{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:20px;
 }
 
-
-.product{
-
-    background:var(--card2);
-
+.product-card{
+    background:var(--card);
     border:1px solid var(--border);
-
-    border-radius:16px;
-
+    border-radius:20px;
     overflow:hidden;
-
-    transition:.4s;
-
-    animation:productIn .45s ease;
+    transition:.3s;
 }
 
-
-.product:hover{
-
-    transform:translateY(-8px);
-
-    border-color:rgba(245,180,0,.5);
-
-    box-shadow:
-    0 15px 35px rgba(0,0,0,.15);
+.product-card:hover{
+    transform:translateY(-5px);
 }
-
-
-@keyframes productIn{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(15px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-    }
-}
-
 
 .product-image{
-
+    height:210px;
+    background:var(--card2);
     position:relative;
-
     overflow:hidden;
 }
 
-
-.product-image::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-    linear-gradient(
-        180deg,
-        transparent,
-        rgba(0,0,0,.35)
-    );
-}
-
-
-.product img{
-
-    display:block;
-
+.product-image img{
     width:100%;
-
-    height:210px;
-
+    height:100%;
     object-fit:cover;
-
-    transition:.5s;
+    display:block;
 }
 
-
-.product:hover img{
-
-    transform:scale(1.06);
+.product-info{
+    padding:20px;
 }
 
-
-.product-content{
-
-    padding:21px;
-}
-
-
-.product-content h3{
-
-    font-size:19px;
-
+.product-info h3{
     margin-bottom:7px;
 }
 
-
-.product-content p{
-
+.product-info p{
     color:var(--muted);
-
     font-size:13px;
-
+    min-height:50px;
     margin-bottom:15px;
 }
 
-
-.product-specs{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:6px;
-
-    margin-bottom:17px;
-}
-
-
-.spec{
-
-    font-size:11px;
-
-    padding:4px 8px;
-
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    border-radius:6px;
-
-    color:var(--muted);
-}
-
-
-.price-btn{
-
-    display:block;
-
+.product-btn{
     width:100%;
-
-    text-align:center;
-
-    padding:10px;
-
-    border-radius:8px;
-
-    background:var(--accent);
-
-    color:#111;
-
-    font-size:13px;
-
-    font-weight:bold;
-
-    transition:.3s;
 }
 
 
-.price-btn:hover{
+/* ADVANTAGES */
 
-    background:#ffc52b;
-
-    transform:translateY(-2px);
-}
-
-
-/* =====================================================
-   ABOUT
-===================================================== */
-
-.about{
-
+.advantages{
     background:var(--bg2);
 }
 
-
-.about-grid{
-
+.advantages-grid{
     display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
 
-    grid-template-columns:
-    1.1fr .9fr;
+.advantage{
+    padding:25px;
+    text-align:center;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:var(--card);
+}
 
-    gap:60px;
+.advantage strong{
+    display:block;
+    margin:10px 0 5px;
+}
 
-    align-items:center;
+.advantage p{
+    color:var(--muted);
+    font-size:13px;
 }
 
 
-.about-text h2{
+/* PROJECTS */
 
-    font-size:40px;
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
 
+.project{
+    height:300px;
+    border-radius:20px;
+    overflow:hidden;
+    background:var(--card);
+    border:1px solid var(--border);
+    position:relative;
+}
+
+.project img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.project-overlay{
+    position:absolute;
+    inset:auto 0 0;
+    padding:30px 20px 20px;
+    background:linear-gradient(transparent,rgba(0,0,0,.85));
+}
+
+.project-overlay h3{
+    color:white;
+}
+
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-text p{
+    color:var(--muted);
     margin-bottom:20px;
 }
 
-
-.about-text h2 span{
-    color:var(--accent);
-}
-
-
-.about-text p{
-
-    color:var(--muted);
-
-    margin-bottom:15px;
-}
-
-
-.about-box{
-
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    border-radius:18px;
-
-    padding:30px;
-}
-
-
-.about-box div{
-
-    padding:17px 0;
-
-    border-bottom:1px solid var(--border);
-}
-
-
-.about-box div:last-child{
-
-    border-bottom:none;
-}
-
-
-.about-box strong{
-
-    color:var(--accent);
-
-    font-size:18px;
-}
-
-
-/* =====================================================
-   PROJECTS
-===================================================== */
-
-.projects{
-
-    background:var(--bg);
-}
-
-
-.projects-grid{
-
+.info-box{
     display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:20px;
+    gap:12px;
 }
 
-
-.project{
-
-    position:relative;
-
-    height:300px;
-
-    overflow:hidden;
-
-    border-radius:16px;
-
-    border:1px solid var(--border);
-
+.info-item{
+    padding:18px;
     background:var(--card);
-}
-
-
-.project img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    transition:.5s;
-}
-
-
-.project:hover img{
-
-    transform:scale(1.07);
-}
-
-
-.project-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-end;
-
-    padding:25px;
-
-    background:
-
-    linear-gradient(
-        180deg,
-        transparent 30%,
-        rgba(0,0,0,.85)
-    );
-
-    color:#fff;
-}
-
-
-.project-overlay h3{
-
-    font-size:20px;
-
-    margin-bottom:4px;
-}
-
-
-.project-overlay p{
-
-    font-size:13px;
-
-    color:#ddd;
-}
-
-
-/* =====================================================
-   COMPANY INFO
-===================================================== */
-
-.company-info{
-
-    background:var(--bg2);
-}
-
-
-.info-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:20px;
-}
-
-
-.info-card{
-
-    background:var(--card);
-
     border:1px solid var(--border);
-
-    border-radius:16px;
-
-    padding:25px;
-
-    transition:.35s;
+    border-radius:15px;
 }
 
-
-.info-card:hover{
-
-    transform:translateY(-5px);
-
-    border-color:rgba(245,180,0,.4);
-}
-
-
-.info-card-icon{
-
-    font-size:30px;
-
-    margin-bottom:12px;
-}
-
-
-.info-card h3{
-
-    font-size:18px;
-
-    margin-bottom:8px;
-}
-
-
-.info-card p{
-
+.info-item span{
+    display:block;
     color:var(--muted);
+    font-size:12px;
+}
 
-    font-size:14px;
+.info-item strong{
+    font-size:16px;
 }
 
 
-/* =====================================================
-   CTA
-===================================================== */
+/* CTA */
 
 .cta{
+    padding:70px 0;
+}
 
-    position:relative;
-
+.cta-box{
     background:
-
-    linear-gradient(
-        135deg,
-        rgba(245,180,0,.13),
-        rgba(245,180,0,.02)
-    ),
-
-    var(--card2);
-
+        linear-gradient(135deg,
+        rgba(255,196,0,.14),
+        transparent),
+        var(--card);
+    border:1px solid rgba(255,196,0,.25);
+    border-radius:25px;
+    padding:50px;
     text-align:center;
-
-    border-top:1px solid var(--border);
 }
 
-
-.cta h2{
-
-    font-size:38px;
-
-    margin-bottom:12px;
+.cta-box h2{
+    font-size:35px;
+    margin-bottom:10px;
 }
 
-
-.cta p{
-
+.cta-box p{
     color:var(--muted);
-
-    margin-bottom:28px;
+    margin-bottom:25px;
 }
 
 
-.cta .hero-buttons{
-
-    justify-content:center;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
+/* FOOTER */
 
 footer{
-
-    background:#060708;
-
-    padding:40px 20px;
-
-    text-align:center;
-
-    color:#666;
+    border-top:1px solid var(--border);
+    padding:35px 0;
 }
 
-
-footer strong{
-    color:var(--accent);
-}
-
-
-/* =====================================================
-   FLOATING CONTACT
-===================================================== */
-
-.contact-float{
-
-    position:fixed;
-
-    left:20px;
-
-    bottom:20px;
-
-    z-index:1001;
-
+.footer-content{
     display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
 }
 
+.footer-content p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+
+/* FLOATING */
+
+.floating{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    z-index:999;
+}
 
 .float-btn{
-
-    width:56px;
-
-    height:56px;
-
+    width:52px;
+    height:52px;
     border-radius:50%;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
+    font-size:22px;
+    box-shadow:0 8px 25px rgba(0,0,0,.3);
+}
 
-    font-size:24px;
+.call{
+    background:#1e88e5;
+    color:white;
+}
 
-    color:#fff;
-
-    box-shadow:
-    0 8px 30px rgba(0,0,0,.35);
-
-    transition:.3s;
+.whatsapp{
+    background:#25d366;
+    color:white;
 }
 
 
-.float-btn:hover{
+/* MOBILE MENU */
 
-    transform:scale(1.1);
+.mobile-menu{
+    display:none;
+    position:absolute;
+    top:75px;
+    right:0;
+    left:0;
+    background:var(--bg2);
+    border-bottom:1px solid var(--border);
+    padding:20px;
+}
+
+.mobile-menu a{
+    display:block;
+    padding:13px;
+    border-bottom:1px solid var(--border);
+    color:var(--muted);
 }
 
 
-.float-whatsapp{
+/* ANIMATION */
 
-    background:#25D366;
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:.7s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
 }
 
 
-.float-call{
+/* RESPONSIVE */
 
-    background:#1769aa;
-}
-
-
-/* =====================================================
-   BODY LOCK
-===================================================== */
-
-body.menu-open{
-    overflow:hidden;
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:1000px){
+@media(max-width:950px){
 
     .nav-links{
         display:none;
@@ -1441,411 +665,274 @@ body.menu-open{
         display:block;
     }
 
-    .hero h1{
-        font-size:46px;
-    }
-
-    .advantages-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .products-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-    .projects-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
+    .hero-grid,
     .about-grid{
         grid-template-columns:1fr;
     }
 
-    .info-grid{
-        grid-template-columns:
-        repeat(2,1fr);
+    .hero{
+        padding-top:120px;
     }
 
+    .hero-image{
+        min-height:350px;
+    }
+
+    .hero-image img{
+        min-height:350px;
+    }
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .advantages-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .projects-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 
 @media(max-width:600px){
 
-    .navbar{
-
-        height:70px;
-
-        padding:0 15px;
+    section{
+        padding:65px 0;
     }
 
+    .navbar{
+        height:65px;
+    }
 
     .mobile-menu{
-        top:70px;
+        top:65px;
     }
-
-
-    .logo{
-        font-size:20px;
-    }
-
-
-    .header-actions{
-        gap:6px;
-    }
-
-
-    .theme-btn,
-    .menu-btn{
-
-        width:42px;
-        height:42px;
-    }
-
 
     .hero{
-
-        min-height:92vh;
+        min-height:auto;
+        padding-top:110px;
+        padding-bottom:60px;
     }
-
-
-    .hero-content{
-
-        padding:
-        120px 18px 80px;
-    }
-
 
     .hero h1{
-
-        font-size:34px;
-
-        letter-spacing:-1px;
+        font-size:38px;
     }
 
-
     .hero p{
-
         font-size:15px;
     }
 
-
-    .hero-buttons{
-
-        flex-direction:column;
+    .hero-image{
+        min-height:270px;
     }
 
-
-    .btn{
-
-        width:100%;
+    .hero-image img{
+        min-height:270px;
     }
-
-
-    section{
-
-        padding:
-        75px 16px;
-    }
-
-
-    .section-title{
-
-        margin-bottom:35px;
-    }
-
-
-    .section-title h2{
-
-        font-size:29px;
-    }
-
-
-    .advantages-grid{
-
-        grid-template-columns:1fr;
-    }
-
 
     .products-grid{
-
         grid-template-columns:1fr;
     }
 
-
-    .product img{
-
-        height:240px;
-    }
-
-
-    .product-filters{
-
-        justify-content:flex-start;
-
-        overflow-x:auto;
-
-        flex-wrap:nowrap;
-
-        padding-bottom:8px;
-    }
-
-
-    .filter-btn{
-
-        white-space:nowrap;
-    }
-
-
-    .about-text h2{
-
-        font-size:30px;
-    }
-
-
-    .projects-grid{
-
+    .advantages-grid{
         grid-template-columns:1fr;
     }
 
-
-    .project{
-
-        height:260px;
+    .section-title h2{
+        font-size:28px;
     }
 
-
-    .info-grid{
-
-        grid-template-columns:1fr;
+    .cta-box{
+        padding:35px 20px;
     }
 
-
-    .cta h2{
-
-        font-size:29px;
+    .cta-box h2{
+        font-size:27px;
     }
 
-
-    .contact-float{
-
-        left:15px;
-
-        bottom:15px;
+    .footer-content{
+        flex-direction:column;
+        text-align:center;
     }
-
-
-    .float-btn{
-
-        width:52px;
-
-        height:52px;
-
-        font-size:22px;
-    }
-
 }
-
 </style>
-
 </head>
 
 
 <body>
 
-
-<!-- SCROLL PROGRESS -->
-
-<div
-class="scroll-progress"
-id="scrollProgress"
-></div>
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- HEADER -->
 
 <header>
 
-<div class="navbar">
+<div class="container navbar">
 
-
-<a
-href="#home"
-class="logo"
->
+<a href="#home" class="logo">
 حقیقت <span>سوله</span>
 </a>
 
+<nav class="nav-links">
 
-<nav>
-
-<ul class="nav-links">
-
-<li>
 <a href="#home">خانه</a>
-</li>
-
-<li>
 <a href="#services">خدمات</a>
-</li>
-
-<li>
 <a href="#products">محصولات</a>
-</li>
-
-<li>
 <a href="#projects">پروژه‌ها</a>
-</li>
-
-<li>
 <a href="#about">درباره ما</a>
-</li>
-
-<li>
 <a href="#contact">تماس با ما</a>
-</li>
-
-</ul>
 
 </nav>
 
+<div class="nav-actions">
 
-<div class="header-actions">
-
-
-<!-- THEME -->
-
-<button
-class="theme-btn"
-id="themeBtn"
-aria-label="تغییر حالت نمایش"
->
+<button class="theme-btn" id="themeBtn">
 ☀️
 </button>
 
-
-<!-- MENU -->
-
-<button
-class="menu-btn"
-id="menuBtn"
-aria-label="منوی موبایل"
->
+<button class="menu-btn" id="menuBtn">
 ☰
 </button>
 
+</div>
 
 </div>
+
+
+<div class="mobile-menu" id="mobileMenu">
+
+<a href="#home">خانه</a>
+<a href="#services">خدمات</a>
+<a href="#products">محصولات</a>
+<a href="#projects">پروژه‌ها</a>
+<a href="#about">درباره ما</a>
+<a href="#contact">تماس با ما</a>
 
 </div>
 
 </header>
 
 
-<!-- =====================================================
-     MOBILE MENU
-===================================================== -->
+<!-- HERO -->
 
-<div
-class="mobile-menu"
-id="mobileMenu"
->
+<section class="hero" id="home">
 
-<a href="#home">
-⌂ &nbsp; خانه
+<div class="container hero-grid">
+
+<div class="hero-content reveal">
+
+<div class="badge">
+تأمین و فروش آهن‌آلات و اجرای سوله
+</div>
+
+<h1>
+ساخت سوله با
+<span>استاندارد حرفه‌ای</span>
+</h1>
+
+<p>
+حقیقت سوله؛ ارائه خدمات طراحی، ساخت و تأمین آهن‌آلات
+برای پروژه‌های صنعتی و ساختمانی.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#contact" class="btn btn-primary">
+درخواست مشاوره
 </a>
 
-<a href="#services">
-⚙ &nbsp; خدمات
-</a>
-
-<a href="#products">
-▣ &nbsp; محصولات
-</a>
-
-<a href="#projects">
-🏭 &nbsp; پروژه‌ها
-</a>
-
-<a href="#about">
-▤ &nbsp; درباره ما
-</a>
-
-<a href="#contact">
-☎ &nbsp; تماس با ما
-</a>
-
-<a href="tel:09121326034">
-📞 &nbsp; تماس مستقیم
+<a href="#products" class="btn btn-outline">
+مشاهده محصولات
 </a>
 
 </div>
 
+</div>
 
-<!-- =====================================================
-     HERO
-===================================================== -->
 
-<section
-class="hero"
-id="home"
+<div class="hero-image reveal">
+
+<!-- اگر soule.jpg وجود نداشت، این بخش به صورت جای خالی نمایش داده می‌شود -->
+
+<img
+src="soule.jpg"
+alt="حقیقت سوله"
+onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
 >
 
-<div class="hero-content">
+<div class="image-placeholder" style="display:none;">
+<strong>🏗️</strong>
+<span>تصویر سوله</span>
+</div>
 
-<div
-class="hero-content-inner reveal"
->
+</div>
 
-<h1>
+</div>
 
-ساخت
-<span>سوله</span>
-<br>
+</section>
 
-با استاندارد حرفه‌ای
 
-</h1>
+<!-- SERVICES -->
 
+<section id="services">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<span>خدمات ما</span>
+
+<h2>راهکارهای حرفه‌ای صنعتی</h2>
 
 <p>
-
-طراحی، ساخت و تأمین آهن‌آلات مورد نیاز پروژه‌های صنعتی و ساختمانی
-با رویکردی حرفه‌ای و دقیق.
-
+از تأمین آهن‌آلات تا اجرای پروژه‌های سوله‌سازی
+در کنار شما هستیم.
 </p>
 
-
-<div class="hero-buttons">
-
-
-<a
-href="#contact"
-class="btn btn-primary"
->
-
-درخواست مشاوره
-
-</a>
+</div>
 
 
-<a
-href="#products"
-class="btn btn-secondary"
->
+<div class="services-grid">
 
-مشاهده محصولات
+<div class="service-card reveal">
 
-</a>
+<div class="icon">🏗️</div>
 
+<h3>طراحی و ساخت سوله</h3>
+
+<p>
+طراحی و اجرای سازه‌های صنعتی با توجه به نیاز پروژه.
+</p>
+
+</div>
+
+
+<div class="service-card reveal">
+
+<div class="icon">⚙️</div>
+
+<h3>تأمین آهن‌آلات</h3>
+
+<p>
+تأمین انواع مقاطع فولادی مورد نیاز پروژه‌های صنعتی.
+</p>
+
+</div>
+
+
+<div class="service-card reveal">
+
+<div class="icon">📐</div>
+
+<h3>مشاوره پروژه</h3>
+
+<p>
+ارائه مشاوره برای انتخاب متریال و راهکار مناسب پروژه.
+</p>
 
 </div>
 
@@ -1856,4 +943,419 @@ class="btn btn-secondary"
 </section>
 
 
-<!-- ====
+<!-- PRODUCTS -->
+
+<section id="products">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<span>محصولات</span>
+
+<h2>فروش و تأمین آهن‌آلات</h2>
+
+<p>
+برای دریافت قیمت و اطلاعات بیشتر، محصول مورد نظر خود را انتخاب کنید.
+</p>
+
+</div>
+
+
+<div class="filters">
+
+<button class="filter-btn active" data-filter="all">
+همه
+</button>
+
+<button class="filter-btn" data-filter="steel">
+مقاطع فولادی
+</button>
+
+<button class="filter-btn" data-filter="sheet">
+ورق
+</button>
+
+<button class="filter-btn" data-filter="construction">
+مصالح ساختمانی
+</button>
+
+</div>
+
+
+<div class="products-grid">
+
+
+<!-- PRODUCT 1 -->
+
+<div class="product-card reveal" data-category="steel">
+
+<div class="product-image">
+
+<img
+src="milgerd.jpg"
+alt="میلگرد"
+onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+>
+
+<div class="image-placeholder" style="display:none;">
+<strong>میلگرد</strong>
+<span>تصویر محصول در دسترس نیست</span>
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>میلگرد</h3>
+
+<p>
+میلگرد در سایزهای مختلف برای پروژه‌های ساختمانی و صنعتی.
+</p>
+
+<a
+class="btn btn-primary product-btn"
+href="https://wa.me/989121326034?text=سلام، قیمت میلگرد را می‌خواستم."
+target="_blank"
+>
+استعلام قیمت
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 2 -->
+
+<div class="product-card reveal" data-category="steel">
+
+<div class="product-image">
+
+<img
+src="tirahan.jpg"
+alt="تیرآهن"
+onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+>
+
+<div class="image-placeholder" style="display:none;">
+<strong>تیرآهن</strong>
+<span>تصویر محصول در دسترس نیست</span>
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>تیرآهن</h3>
+
+<p>
+انواع تیرآهن مناسب پروژه‌های ساختمانی و صنعتی.
+</p>
+
+<a
+class="btn btn-primary product-btn"
+href="https://wa.me/989121326034?text=سلام، قیمت تیرآهن سایز 14 را می‌خواستم."
+target="_blank"
+>
+استعلام قیمت
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 3 -->
+
+<div class="product-card reveal" data-category="sheet">
+
+<div class="product-image">
+
+<img
+src="varagh.jpg"
+alt="ورق فولادی"
+onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+>
+
+<div class="image-placeholder" style="display:none;">
+<strong>ورق</strong>
+<span>تصویر محصول در دسترس نیست</span>
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>ورق فولادی</h3>
+
+<p>
+ورق‌های فولادی در ضخامت‌های مختلف برای پروژه‌های صنعتی.
+</p>
+
+<a
+class="btn btn-primary product-btn"
+href="https://wa.me/989121326034?text=سلام، قیمت ورق فولادی را می‌خواستم."
+target="_blank"
+>
+استعلام قیمت
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 4 -->
+
+<div class="product-card reveal" data-category="steel">
+
+<div class="product-image">
+
+<img
+src="profile.jpg"
+alt="پروفیل"
+onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+>
+
+<div class="image-placeholder" style="display:none;">
+<strong>پروفیل</strong>
+<span>تصویر محصول در دسترس نیست</span>
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>پروفیل</h3>
+
+<p>
+انواع پروفیل فولادی برای مصارف ساختمانی و صنعتی.
+</p>
+
+<a
+class="btn btn-primary product-btn"
+href="https://wa.me/989121326034?text=سلام، قیمت پروفیل را می‌خواستم."
+target="_blank"
+>
+استعلام قیمت
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 5 -->
+
+<div class="product-card reveal" data-category="steel">
+
+<div class="product-image">
+
+<img
+src="parlin.jpg"
+alt="زد و پرلین"
+onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+>
+
+<div class="image-placeholder" style="display:none;">
+<strong>زد / پرلین</strong>
+<span>تصویر محصول در دسترس نیست</span>
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>زد / پرلین</h3>
+
+<p>
+پرلین‌های مورد استفاده در سازه‌های سوله و ساختمان.
+</p>
+
+<a
+class="btn btn-primary product-btn"
+href="https://wa.me/989121326034?text=سلام، قیمت زد و پرلین را می‌خواستم."
+target="_blank"
+>
+استعلام قیمت
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 6 -->
+
+<div class="product-card reveal" data-category="sheet">
+
+<div class="product-image">
+
+<img
+src="galvanized.jpg"
+alt="ورق گالوانیزه"
+onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+>
+
+<div class="image-placeholder" style="display:none;">
+<strong>گالوانیزه</strong>
+<span>تصویر محصول در دسترس نیست</span>
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>ورق گالوانیزه</h3>
+
+<p>
+ورق گالوانیزه مناسب پوشش و اجرای سازه‌های صنعتی.
+</p>
+
+<a
+class="btn btn-primary product-btn"
+href="https://wa.me/989121326034?text=سلام، قیمت ورق گالوانیزه را می‌خواستم."
+target="_blank"
+>
+استعلام قیمت
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 7 -->
+
+<div class="product-card reveal" data-category="construction">
+
+<div class="product-image">
+
+<img
+src="nabshi.jpg"
+alt="نبشی و ناودانی"
+onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+>
+
+<div class="image-placeholder" style="display:none;">
+<strong>نبشی / ناودانی</strong>
+<span>تصویر محصول در دسترس نیست</span>
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>نبشی و ناودانی</h3>
+
+<p>
+مقاطع فولادی پرکاربرد برای پروژه‌های ساختمانی و صنعتی.
+</p>
+
+<a
+class="btn btn-primary product-btn"
+href="https://wa.me/989121326034?text=سلام، قیمت نبشی و ناودانی را می‌خواستم."
+target="_blank"
+>
+استعلام قیمت
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 8 -->
+
+<div class="product-card reveal" data-category="construction">
+
+<div class="product-image">
+
+<img
+src="other.jpg"
+alt="سایر مقاطع"
+onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+>
+
+<div class="image-placeholder" style="display:none;">
+<strong>مقاطع فولادی</strong>
+<span>تصویر محصول در دسترس نیست</span>
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>سایر مقاطع</h3>
+
+<p>
+برای دریافت لیست سایر محصولات با ما تماس بگیرید.
+</p>
+
+<a
+class="btn btn-primary product-btn"
+href="https://wa.me/989121326034?text=سلام، لیست سایر محصولات فولادی را می‌خواستم."
+target="_blank"
+>
+استعلام قیمت
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ADVANTAGES -->
+
+<section class="advantages">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<span>چرا حقیقت سوله؟</span>
+
+<h2>مزیت‌های همکاری با ما</h2>
+
+</div>
+
+
+<div class="advantages-grid">
+
+<div class="advantage reveal">
+
+<div class="icon" style="margin:auto">🚚</div>
+
+<strong>تأمین مستقیم</strong>
+
+<p>تأمین محصولات مورد نیاز پروژه.</p>
+
+</div>
+
+
+<div class="advantage reveal">
+
+<div class="icon" style="margin:auto">👨‍🔧</div>
+
+<strong>مشاوره تخصصی</strong>
+
+<p>راهنمایی برای انتخاب مناسب‌ترین محصول.</p>
+
+</div>
+
+
+<div class="advantage reveal">
+
+<div class="icon" style="margin:auto">📦</div>
+
+<strong>تنوع محصولات</strong>
+
+<p>دسترسی ب
