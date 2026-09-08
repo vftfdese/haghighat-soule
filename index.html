@@ -1,1282 +1,1144 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>حقیقت سوله | فروش آهن‌آلات و محصولات فولادی</title>
+  <title>حقیقت سوله | فروش آهن‌آلات</title>
 
-<meta name="description" content="حقیقت سوله؛ فروش و تأمین آهن‌آلات، تیرآهن، میلگرد، ورق، پروفیل و محصولات فولادی.">
+  <meta name="description"
+        content="فروش و تأمین انواع آهن‌آلات، تیرآهن، میلگرد، ورق فولادی و پروفیل توسط حقیقت سوله">
 
-<style>
+  <style>
+    /* =========================
+       RESET
+    ========================= */
 
-/* =====================================================
-   RESET
-===================================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-html{
-    scroll-behavior:smooth;
-}
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #0b0d0f;
+      color: #f5f5f5;
+      line-height: 1.8;
+    }
 
-body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#080a0c;
-    color:#fff;
-    line-height:1.8;
-    overflow-x:hidden;
-    transition:.3s ease;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-body.light{
-    background:#f4f5f6;
-    color:#111;
-}
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
 
-a{
-    color:inherit;
-    text-decoration:none;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-button,
-input,
-select,
-textarea{
-    font-family:inherit;
-}
-
-img{
-    max-width:100%;
-}
-
-
-/* =====================================================
-   VARIABLES
-===================================================== */
-
-:root{
-    --bg:#080a0c;
-    --bg2:#0d1013;
-    --card:#14181c;
-    --card2:#101316;
-    --text:#fff;
-    --muted:#92979c;
-    --border:rgba(255,255,255,.09);
-    --yellow:#f5b400;
-    --yellow2:#ffc72c;
-    --green:#25d366;
-    --blue:#1683ff;
-}
-
-body.light{
-    --bg:#f4f5f6;
-    --bg2:#ffffff;
-    --card:#ffffff;
-    --card2:#eceeef;
-    --text:#111;
-    --muted:#64686c;
-    --border:rgba(0,0,0,.1);
-}
+    :root {
+      --bg: #0b0d0f;
+      --bg2: #111418;
+      --card: #15191d;
+      --card2: #1b2025;
+      --text: #f5f5f5;
+      --muted: #9ba2aa;
+      --yellow: #f5c400;
+      --yellow2: #ffd83d;
+      --border: rgba(255,255,255,0.08);
+      --max: 1180px;
+    }
 
 
-/* =====================================================
-   GENERAL
-===================================================== */
+    /* =========================
+       HEADER
+    ========================= */
 
-.container{
-    width:min(1180px,92%);
-    margin:auto;
-}
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1000;
 
-section{
-    padding:95px 0;
-}
+      background: rgba(11,13,15,0.88);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+    }
 
-.section-title{
-    margin-bottom:45px;
-}
+    .header-inner {
+      width: min(100% - 32px, var(--max));
+      height: 74px;
+      margin: auto;
 
-.section-title small{
-    color:var(--yellow);
-    font-size:13px;
-    font-weight:bold;
-}
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-.section-title h2{
-    font-size:clamp(28px,4vw,44px);
-    line-height:1.3;
-    margin:8px 0 12px;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 20px;
+      white-space: nowrap;
+    }
 
-.section-title p{
-    color:var(--muted);
-    max-width:650px;
-    font-size:14px;
-}
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
 
+      background: var(--yellow);
+      color: #111;
 
-/* =====================================================
-   HEADER
-===================================================== */
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    z-index:1000;
-    height:76px;
-    background:rgba(8,10,12,.82);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid var(--border);
-}
+      font-weight: 1000;
+      font-size: 18px;
+    }
 
-body.light header{
-    background:rgba(255,255,255,.86);
-}
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
 
-.nav{
-    height:76px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-}
+    nav a {
+      color: #d7d7d7;
+      font-size: 14px;
+      transition: 0.2s;
+    }
 
-.logo{
-    font-size:23px;
-    font-weight:900;
-    white-space:nowrap;
-}
+    nav a:hover {
+      color: var(--yellow);
+    }
 
-.logo span{
-    color:var(--yellow);
-}
+    .header-call {
+      background: var(--yellow);
+      color: #111;
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-weight: 900;
+      font-size: 13px;
+    }
 
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:27px;
-}
-
-.nav-links a{
-    font-size:13px;
-    color:var(--muted);
-    transition:.25s;
-}
-
-.nav-links a:hover{
-    color:var(--yellow);
-}
-
-.nav-actions{
-    display:flex;
-    align-items:center;
-    gap:9px;
-}
-
-.header-call{
-    background:var(--yellow);
-    color:#111;
-    padding:9px 16px;
-    border-radius:11px;
-    font-size:12px;
-    font-weight:900;
-}
-
-.theme-btn,
-.menu-btn{
-    width:42px;
-    height:42px;
-    border:1px solid var(--border);
-    border-radius:12px;
-    background:var(--card);
-    color:var(--text);
-    cursor:pointer;
-    font-size:17px;
-}
-
-.menu-btn{
-    display:none;
-}
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
 
 
-/* =====================================================
-   MOBILE MENU
-===================================================== */
+    /* =========================
+       HERO
+    ========================= */
 
-.mobile-menu{
-    display:none;
-    background:var(--bg2);
-    border-bottom:1px solid var(--border);
-    padding:15px 20px 20px;
-}
+    .hero {
+      min-height: 720px;
+      padding-top: 74px;
 
-.mobile-menu.active{
-    display:block;
-}
+      position: relative;
+      overflow: hidden;
 
-.mobile-menu a{
-    display:block;
-    padding:12px 0;
-    border-bottom:1px solid var(--border);
-    color:var(--muted);
-}
+      display: flex;
+      align-items: center;
+    }
 
-.mobile-menu .mobile-call{
-    margin-top:14px;
-    text-align:center;
-    background:var(--yellow);
-    color:#111;
-    border-radius:11px;
-    border:0;
-    font-weight:bold;
-}
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
 
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+    }
 
-/* =====================================================
-   HERO
-===================================================== */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
 
-.hero{
-    min-height:760px;
-    padding-top:76px;
-    position:relative;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
-}
-
-.hero-bg{
-    position:absolute;
-    inset:0;
-    z-index:0;
-    background:
+      background:
         linear-gradient(
-            90deg,
-            rgba(0,0,0,.92),
-            rgba(0,0,0,.65),
-            rgba(0,0,0,.45)
+          90deg,
+          rgba(11,13,15,0.96) 0%,
+          rgba(11,13,15,0.82) 45%,
+          rgba(11,13,15,0.42) 100%
         );
-}
+    }
 
-body.light .hero-bg{
-    background:
+    .hero-content {
+      width: min(100% - 32px, var(--max));
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-small {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      color: var(--yellow);
+      font-size: 14px;
+      font-weight: 900;
+
+      margin-bottom: 18px;
+    }
+
+    .hero-small::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      background: var(--yellow);
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1.15;
+      font-weight: 1000;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #d0d3d6;
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      min-height: 50px;
+      padding: 0 22px;
+
+      border-radius: 9px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 14px;
+      font-weight: 900;
+
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      background: var(--yellow2);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.05);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: auto;
+    }
+
+    .section-head {
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      color: var(--yellow);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 1000;
+      line-height: 1.3;
+    }
+
+    .section-description {
+      color: var(--muted);
+      margin-top: 10px;
+      max-width: 650px;
+    }
+
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats {
+      margin-top: -45px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--yellow);
+      font-size: 27px;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
+    .products {
+      background: #0e1114;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+
+      transition: 0.25s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(245,196,0,0.45);
+    }
+
+    .product-image {
+      height: 220px;
+      background: #080a0c;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.35s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.04);
+    }
+
+    .product-body {
+      padding: 20px;
+    }
+
+    .product-tag {
+      display: inline-block;
+      color: var(--yellow);
+      background: rgba(245,196,0,0.1);
+      padding: 3px 9px;
+      border-radius: 5px;
+      font-size: 11px;
+      margin-bottom: 10px;
+    }
+
+    .product-body h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .product-body p {
+      color: var(--muted);
+      font-size: 13px;
+      min-height: 58px;
+      margin-bottom: 18px;
+    }
+
+    .product-btn {
+      width: 100%;
+      height: 44px;
+
+      border-radius: 7px;
+      background: transparent;
+      border: 1px solid rgba(245,196,0,0.5);
+      color: var(--yellow);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 13px;
+      font-weight: 900;
+
+      transition: 0.2s;
+    }
+
+    .product-btn:hover {
+      background: var(--yellow);
+      color: #111;
+    }
+
+
+    /* =========================
+       WHY US
+    ========================= */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .why-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px;
+    }
+
+    .why-number {
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 8px;
+
+      background: var(--yellow);
+      color: #111;
+
+      font-weight: 1000;
+      margin-bottom: 20px;
+    }
+
+    .why-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .why-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+
+      border: 1px solid rgba(245,196,0,0.3);
+      border-radius: 18px;
+
+      padding: 55px 45px;
+
+      background:
         linear-gradient(
-            90deg,
-            rgba(255,255,255,.94),
-            rgba(255,255,255,.75),
-            rgba(255,255,255,.55)
+          135deg,
+          #181b1f,
+          #0d0f11
         );
-}
-
-.hero-image{
-    position:absolute;
-    inset:0;
-    z-index:-1;
-    background:#111;
-}
-
-.hero-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.hero-image.placeholder{
-    background:
-        radial-gradient(
-            circle at 70% 40%,
-            rgba(245,180,0,.14),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #15191d,
-            #080a0c
-        );
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:720px;
-}
-
-.badge{
-    display:inline-flex;
-    padding:7px 13px;
-    border:1px solid rgba(245,180,0,.35);
-    background:rgba(245,180,0,.08);
-    color:var(--yellow);
-    border-radius:999px;
-    font-size:12px;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:clamp(40px,6vw,72px);
-    line-height:1.2;
-    font-weight:900;
-    margin-bottom:22px;
-}
-
-.hero h1 span{
-    color:var(--yellow);
-}
-
-.hero p{
-    color:#d7d7d7;
-    max-width:620px;
-    font-size:16px;
-    margin-bottom:30px;
-}
-
-body.light .hero p{
-    color:#414141;
-}
-
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.btn{
-    min-height:50px;
-    padding:0 22px;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:12px;
-    font-size:13px;
-    font-weight:900;
-    transition:.25s;
-}
-
-.btn-primary{
-    background:var(--yellow);
-    color:#111;
-}
-
-.btn-primary:hover{
-    background:var(--yellow2);
-    transform:translateY(-3px);
-}
-
-.btn-outline{
-    border:1px solid rgba(255,255,255,.25);
-    background:rgba(255,255,255,.05);
-    color:#fff;
-}
-
-body.light .btn-outline{
-    color:#111;
-    border-color:rgba(0,0,0,.15);
-    background:rgba(255,255,255,.6);
-}
-
-
-/* =====================================================
-   CATEGORIES
-===================================================== */
-
-.categories{
-    background:var(--bg2);
-}
-
-.category-grid{
-    display:grid;
-    grid-template-columns:repeat(6,1fr);
-    gap:12px;
-}
-
-.category{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:22px 12px;
-    text-align:center;
-    transition:.25s;
-}
-
-.category:hover{
-    transform:translateY(-5px);
-    border-color:rgba(245,180,0,.4);
-}
-
-.category-icon{
-    font-size:29px;
-    margin-bottom:7px;
-}
-
-.category strong{
-    display:block;
-    font-size:13px;
-}
-
-.category span{
-    color:var(--muted);
-    font-size:10px;
-}
-
-
-/* =====================================================
-   PRODUCTS
-===================================================== */
-
-.products{
-    background:var(--bg);
-}
-
-.product-tools{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    margin-bottom:28px;
-}
-
-.search{
-    width:100%;
-    max-width:480px;
-    height:48px;
-    padding:0 16px;
-    border:1px solid var(--border);
-    background:var(--card);
-    color:var(--text);
-    border-radius:12px;
-    outline:none;
-}
-
-.search:focus{
-    border-color:var(--yellow);
-}
-
-.filter-list{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-}
-
-.filter{
-    border:1px solid var(--border);
-    background:var(--card);
-    color:var(--muted);
-    border-radius:30px;
-    padding:8px 13px;
-    cursor:pointer;
-    font-size:11px;
-}
-
-.filter.active,
-.filter:hover{
-    background:var(--yellow);
-    color:#111;
-    border-color:var(--yellow);
-}
-
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.product-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:19px;
-    overflow:hidden;
-    transition:.3s;
-}
-
-.product-card:hover{
-    transform:translateY(-6px);
-    border-color:rgba(245,180,0,.4);
-}
-
-.product-image{
-    height:210px;
-    background:var(--card2);
-    position:relative;
-    overflow:hidden;
-}
-
-.product-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.product-placeholder{
-    position:absolute;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:var(--muted);
-    background:
-        linear-gradient(
-            135deg,
-            rgba(245,180,0,.04),
-            transparent
-        );
-}
-
-.product-placeholder .big{
-    font-size:35px;
-    margin-bottom:4px;
-}
-
-.product-placeholder strong{
-    color:var(--yellow);
-    font-size:15px;
-}
-
-.product-placeholder span{
-    font-size:10px;
-}
-
-.product-info{
-    padding:19px;
-}
-
-.product-info h3{
-    font-size:19px;
-    margin-bottom:7px;
-}
-
-.product-info p{
-    color:var(--muted);
-    font-size:12px;
-    min-height:46px;
-    margin-bottom:15px;
-}
-
-.product-meta{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:14px;
-}
-
-.product-meta span{
-    color:var(--yellow);
-    font-size:11px;
-    font-weight:bold;
-}
-
-.product-meta small{
-    color:var(--muted);
-    font-size:10px;
-}
-
-.product-button{
-    width:100%;
-    height:44px;
-    border-radius:10px;
-    background:var(--yellow);
-    color:#111;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:12px;
-    font-weight:900;
-}
-
-.product-button:hover{
-    background:var(--yellow2);
-}
-
-.no-results{
-    display:none;
-    text-align:center;
-    color:var(--muted);
-    padding:30px;
-}
-
-
-/* =====================================================
-   WHY
-===================================================== */
-
-.why{
-    background:var(--bg2);
-}
-
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
-}
-
-.why-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:28px 22px;
-}
-
-.why-number{
-    color:var(--yellow);
-    font-size:30px;
-    font-weight:900;
-    margin-bottom:10px;
-}
-
-.why-card h3{
-    font-size:17px;
-    margin-bottom:8px;
-}
-
-.why-card p{
-    color:var(--muted);
-    font-size:12px;
-}
-
-
-/* =====================================================
-   QUOTE
-===================================================== */
-
-.quote{
-    background:var(--bg);
-}
-
-.quote-box{
-    border:1px solid rgba(245,180,0,.25);
-    border-radius:24px;
-    padding:55px;
-    background:
-        radial-gradient(
-            circle at 80% 50%,
-            rgba(245,180,0,.13),
-            transparent 35%
-        ),
-        var(--card);
-}
-
-.quote-box h2{
-    font-size:clamp(28px,4vw,45px);
-    margin-bottom:12px;
-}
-
-.quote-box p{
-    color:var(--muted);
-    max-width:650px;
-    margin-bottom:24px;
-}
-
-
-/* =====================================================
-   CONTACT
-===================================================== */
-
-.contact{
-    background:var(--bg2);
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1.3fr;
-    gap:20px;
-}
-
-.contact-box{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:30px;
-}
-
-.contact-box h3{
-    font-size:22px;
-    margin-bottom:20px;
-}
-
-.contact-item{
-    display:flex;
-    gap:13px;
-    align-items:flex-start;
-    padding:16px 0;
-    border-bottom:1px solid var(--border);
-}
-
-.contact-item:last-child{
-    border-bottom:0;
-}
-
-.contact-icon{
-    width:42px;
-    height:42px;
-    flex-shrink:0;
-    display:grid;
-    place-items:center;
-    background:rgba(245,180,0,.1);
-    color:var(--yellow);
-    border-radius:11px;
-}
-
-.contact-item strong{
-    display:block;
-    font-size:13px;
-}
-
-.contact-item span,
-.contact-item a{
-    color:var(--muted);
-    font-size:11px;
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-}
-
-.form-group{
-    margin-bottom:12px;
-}
-
-.form-group.full{
-    grid-column:1/-1;
-}
-
-.form-group label{
-    display:block;
-    color:var(--muted);
-    font-size:11px;
-    margin-bottom:5px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea{
-    width:100%;
-    border:1px solid var(--border);
-    background:var(--bg2);
-    color:var(--text);
-    outline:none;
-    border-radius:10px;
-    padding:11px;
-    font-size:12px;
-}
-
-.form-group input,
-.form-group select{
-    height:44px;
-}
-
-.form-group textarea{
-    min-height:95px;
-    resize:vertical;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-    border-color:var(--yellow);
-}
-
-.form-submit{
-    width:100%;
-    height:47px;
-    border:0;
-    border-radius:11px;
-    background:var(--yellow);
-    color:#111;
-    font-weight:900;
-    cursor:pointer;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-    background:#060708;
-    color:white;
-    padding:55px 0 22px;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:1.5fr 1fr 1fr 1fr;
-    gap:35px;
-    padding-bottom:35px;
-    border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.footer-logo{
-    font-size:24px;
-    font-weight:900;
-    margin-bottom:12px;
-}
-
-.footer-logo span{
-    color:var(--yellow);
-}
-
-.footer-about{
-    color:#858585;
-    font-size:11px;
-    max-width:350px;
-}
-
-footer h4{
-    font-size:13px;
-    margin-bottom:13px;
-}
-
-footer ul{
-    list-style:none;
-}
-
-footer li{
-    margin-bottom:7px;
-}
-
-footer li a{
-    color:#858585;
-    font-size:11px;
-}
-
-.footer-bottom{
-    padding-top:18px;
-    display:flex;
-    justify-content:space-between;
-    color:#666;
-    font-size:10px;
-}
-
-
-/* =====================================================
-   FLOATING BUTTONS
-===================================================== */
-
-.floating{
-    position:fixed;
-    left:18px;
-    bottom:18px;
-    z-index:900;
-    display:flex;
-    flex-direction:column;
-    gap:9px;
-}
-
-.float{
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    color:white;
-    font-size:22px;
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
-}
-
-.float.whatsapp{
-    background:var(--green);
-}
-
-.float.call{
-    background:var(--blue);
-}
-
-
-/* =====================================================
-   REVEAL
-===================================================== */
-
-.reveal{
-    opacity:0;
-    transform:translateY(22px);
-    transition:.7s ease;
-}
-
-.reveal.show{
-    opacity:1;
-    transform:none;
-}
-
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media(max-width:1000px){
-
-    .nav-links,
-    .header-call{
-        display:none;
     }
 
-    .menu-btn{
-        display:block;
+    .cta-box::after {
+      content: "";
+      position: absolute;
+
+      width: 250px;
+      height: 250px;
+
+      left: -100px;
+      bottom: -130px;
+
+      border-radius: 50%;
+      background: rgba(245,196,0,0.08);
     }
 
-    .category-grid{
-        grid-template-columns:repeat(3,1fr);
+    .cta-box h2 {
+      max-width: 650px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.3;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
     }
 
-    .product-grid{
-        grid-template-columns:repeat(2,1fr);
+    .cta-box p {
+      max-width: 620px;
+      color: var(--muted);
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 1;
     }
 
-    .why-grid{
-        grid-template-columns:repeat(2,1fr);
+    .cta-box .btn {
+      position: relative;
+      z-index: 2;
     }
 
-    .footer-grid{
-        grid-template-columns:repeat(2,1fr);
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      background: #0e1114;
     }
 
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-}
-
-
-@media(max-width:700px){
-
-    section{
-        padding:70px 0;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 25px;
     }
 
-    .hero{
-        min-height:680px;
+    .contact-info,
+    .contact-form {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
     }
 
-    .hero h1{
-        font-size:42px;
+    .contact-info h3,
+    .contact-form h3 {
+      font-size: 22px;
+      margin-bottom: 22px;
     }
 
-    .hero p{
-        font-size:14px;
+    .contact-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .category-grid{
-        grid-template-columns:repeat(2,1fr);
+    .contact-item:last-child {
+      border-bottom: 0;
     }
 
-    .product-tools{
-        display:block;
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 4px;
     }
 
-    .search{
-        max-width:none;
-        margin-bottom:12px;
+    .contact-item strong {
+      font-size: 15px;
     }
 
-    .quote-box{
-        padding:35px 23px;
-    }
-}
-
-
-@media(max-width:520px){
-
-    .product-grid{
-        grid-template-columns:1fr;
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
     }
 
-    .why-grid{
-        grid-template-columns:1fr;
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
     }
 
-    .footer-grid{
-        grid-template-columns:1fr;
+    .field.full {
+      grid-column: 1 / -1;
     }
 
-    .footer-bottom{
-        display:block;
+    .field label {
+      font-size: 12px;
+      color: #c5c8ca;
     }
 
-    .footer-bottom div+div{
-        margin-top:7px;
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+
+      border: 1px solid var(--border);
+      background: #0e1114;
+      color: white;
+
+      border-radius: 7px;
+      padding: 12px;
+
+      outline: none;
     }
 
-    .form-grid{
-        grid-template-columns:1fr;
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
     }
 
-    .form-group.full{
-        grid-column:auto;
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--yellow);
     }
 
-    .hero-buttons{
-        flex-direction:column;
+    .form-submit {
+      margin-top: 15px;
+      border: 0;
+      cursor: pointer;
+      width: 100%;
     }
 
-    .btn{
-        width:100%;
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 0;
+      background: #080a0c;
+      border-top: 1px solid var(--border);
     }
 
-    .floating{
-        left:12px;
-        bottom:12px;
-    }
-}
+    .footer-inner {
+      width: min(100% - 32px, var(--max));
+      margin: auto;
 
-</style>
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      font-weight: 900;
+    }
+
+    .footer-brand span {
+      color: var(--yellow);
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+
+    /* =========================
+       FLOATING BUTTONS
+    ========================= */
+
+    .floating {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 900;
+
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .float-btn {
+      width: 50px;
+      height: 50px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 20px;
+
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    }
+
+    .float-call {
+      background: var(--yellow);
+      color: #111;
+    }
+
+    .float-whatsapp {
+      background: #25d366;
+      color: white;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      nav {
+        display: none;
+
+        position: absolute;
+        top: 74px;
+        right: 16px;
+        left: 16px;
+
+        background: #111418;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+
+        padding: 15px;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 13px 8px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      nav a:last-child {
+        border-bottom: 0;
+      }
+
+      .header-call {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    @media (max-width: 600px) {
+
+      .header-inner {
+        height: 66px;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .hero {
+        min-height: 650px;
+        padding-top: 66px;
+      }
+
+      .hero-overlay {
+        background:
+          linear-gradient(
+            180deg,
+            rgba(11,13,15,0.82),
+            rgba(11,13,15,0.94)
+          );
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .stats {
+        margin-top: -25px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        height: 230px;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 35px 24px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.6s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+  </style>
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-<header>
+  <header>
 
-<div class="container nav">
+    <div class="header-inner">
 
-<a href="#home" class="logo">
-حقیقت <span>سوله</span>
-</a>
+      <a href="#home" class="logo">
+        <div class="logo-mark">ح</div>
+        <span>حقیقت سوله</span>
+      </a>
 
-<nav class="nav-links">
+      <nav id="nav">
 
-<a href="#home">خانه</a>
-<a href="#categories">دسته‌بندی</a>
-<a href="#products">محصولات</a>
-<a href="#why">مزیت‌ها</a>
-<a href="#contact">تماس با ما</a>
+        <a href="#home">خانه</a>
+        <a href="#products">محصولات</a>
+        <a href="#why">چرا ما؟</a>
+        <a href="#contact">تماس با ما</a>
 
-</nav>
+      </nav>
 
-<div class="nav-actions">
+      <a
+        class="header-call"
+        href="tel:09121326034"
+      >
+        📞 ۰۹۱۲۱۳۲۶۰۳۴
+      </a>
 
-<a href="tel:09121326034" class="header-call">
-تماس با ما
-</a>
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="باز کردن منو"
+      >
+        ☰
+      </button>
 
-<button class="theme-btn" id="themeBtn">
-🌙
-</button>
+    </div>
 
-<button class="menu-btn" id="menuBtn">
-☰
-</button>
+  </header>
 
-</div>
 
-</div>
 
+  <!-- =========================
+       HERO
+  ========================= -->
 
-<div class="mobile-menu" id="mobileMenu">
+  <main id="home">
 
-<a href="#home">خانه</a>
-<a href="#categories">دسته‌بندی محصولات</a>
-<a href="#products">محصولات</a>
-<a href="#why">چرا حقیقت سوله؟</a>
-<a href="#contact">تماس با ما</a>
+    <section class="hero">
 
-<a href="tel:09121326034" class="mobile-call">
-📞 تماس مستقیم
-</a>
+      <div class="hero-image">
 
-</div>
+        <img
+          src="soule.jpg"
+          alt="آهن‌آلات و محصولات فولادی حقیقت سوله"
+          onerror="this.style.display='none'"
+        >
 
-</header>
+      </div>
 
+      <div class="hero-overlay"></div>
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+      <div class="hero-content">
 
-<main id="home">
+        <div class="hero-small">
+          تأمین و فروش آهن‌آلات
+        </div>
 
-<section class="hero">
+        <h1>
+          آهن مورد نیاز پروژه‌ات،
+          <span>مطمئن تأمین کن.</span>
+        </h1>
 
-<div class="hero-image placeholder" id="heroImage">
+        <p>
+          حقیقت سوله تأمین‌کننده انواع آهن‌آلات و محصولات فولادی
+          برای پروژه‌های ساختمانی، صنعتی و عمرانی است.
+        </p>
 
-<img
-src="soule.jpg"
-alt="حقیقت سوله"
-id="heroImg"
->
+        <div class="hero-buttons">
 
-</div>
+          <a
+            class="btn btn-primary"
+            href="#products"
+          >
+            مشاهده محصولات
+          </a>
 
-<div class="hero-bg"></div>
+          <a
+            class="btn btn-secondary"
+            href="https://wa.me/989121326034?text=سلام، برای خرید آهن‌آلات نیاز به استعلام قیمت دارم."
+            target="_blank"
+          >
+            استعلام قیمت در واتساپ
+          </a>
 
-<div class="container">
+        </div>
 
-<div class="hero-content reveal">
+      </div>
 
-<div class="badge">
-فروش و تأمین آهن‌آلات و محصولات فولادی
-</div>
+    </section>
 
-<h1>
-آهن مورد نیاز پروژه‌تان،
-<br>
-با <span>حقیقت سوله</span>
-</h1>
 
-<p>
-تأمین انواع آهن‌آلات و محصولات فولادی
-برای پروژه‌های ساختمانی، صنعتی و سوله‌سازی.
-برای دریافت قیمت و مشاوره با ما در ارتباط باشید.
-</p>
 
-<div class="hero-buttons">
+    <!-- =========================
+         STATS
+    ========================= -->
 
-<a href="#products" class="btn btn-primary">
-مشاهده محصولات
-</a>
+    <div class="stats">
 
-<a href="#contact" class="btn btn-outline">
-استعلام قیمت
-</a>
+      <div class="container">
 
-</div>
+        <div class="stats-grid">
 
-</div>
+          <div class="stat reveal">
+            <strong>۴+</strong>
+            <span>دسته اصلی محصولات</span>
+          </div>
 
-</div>
+          <div class="stat reveal">
+            <strong>مستقیم</strong>
+            <span>تأمین و فروش آهن‌آلات</span>
+          </div>
 
-</section>
+          <div class="stat reveal">
+            <strong>سریع</strong>
+            <span>پاسخگویی و استعلام سفارش</span>
+          </div>
 
+        </div>
 
-<!-- =====================================================
-     CATEGORIES
-===================================================== -->
+      </div>
 
-<section class="categories" id="categories">
+    </div>
 
-<div class="container">
 
-<div class="section-title reveal">
 
-<small>دسته‌بندی محصولات</small>
+    <!-- =========================
+         PRODUCTS
+    ========================= -->
 
-<h2>هر چیزی که برای پروژه لازم دارید</h2>
+    <section class="products" id="products">
 
-<p>
-محصول مورد نظر خود را انتخاب کنید و برای دریافت قیمت با ما در ارتباط باشید.
-</p>
+      <div class="container">
 
-</div>
+        <div class="section-head reveal">
 
+          <div class="section-label">
+            محصولات
+          </div>
 
-<div class="category-grid">
+          <h2 class="section-title">
+            آهن‌آلات مورد نیاز شما
+          </h2>
 
+          <p class="section-description">
+            برای اطلاع از موجودی و قیمت روز هر محصول،
+            با کارشناسان حقیقت سوله در ارتباط باشید.
+          </p>
 
-<a href="#products" class="category reveal">
+        </div>
 
-<div class="category-icon">▰</div>
 
-<strong>تیرآهن</strong>
+        <div class="products-grid">
 
-<span>سایزهای مختلف</span>
 
-</a>
+          <!-- تیرآهن -->
 
+          <article class="product-card reveal">
 
-<a href="#products" class="category reveal">
+            <div class="product-image">
 
-<div class="category-icon">╋</div>
+              <img
+                src="tirahan.jpg"
+                alt="تیرآهن"
+                onerror="this.style.display='none'"
+              >
 
-<strong>میلگرد</strong>
+            </div>
 
-<span>سایزهای مختلف</span>
+            <div class="product-body">
 
-</a>
+              <span class="product-tag">
+                مقاطع فولادی
+              </span>
 
+              <h3>
+                تیرآهن
+              </h3>
 
-<a href="#products" class="category reveal">
+              <p>
+                انواع تیرآهن مناسب برای پروژه‌های ساختمانی
+                و سازه‌های مختلف.
+              </p>
 
-<div class="category-icon">▤</div>
+              <a
+                class="product-btn"
+                href="https://wa.me/989121326034?text=سلام، برای خرید تیرآهن درخواست استعلام قیمت دارم."
+                target="_blank"
+              >
+                استعلام قیمت
+              </a>
 
-<strong>ورق فولادی</strong>
+            </div>
 
-<span>ضخامت‌های مختلف</span>
+          </article>
 
-</a>
 
 
-<a href="#products" class="category reveal">
+          <!-- میلگرد -->
 
-<div class="category-icon">▥</div>
+          <article class="product-card reveal">
 
-<strong>پروفیل</strong>
+            <div class="product-image">
 
-<span>مقاطع فولادی</span>
+              <img
+                src="milgerd.jpg"
+                alt="میلگرد"
+                onerror="this.style.display='none'"
+              >
 
-</a>
+            </div>
 
+            <div class="product-body">
 
-<a href="#products" class="category reveal">
+              <span class="product-tag">
+                مقاطع فولادی
+              </span>
 
-<div class="category-icon">Z</div>
+              <h3>
+                میلگرد
+              </h3>
 
-<strong>زد / پرلین</strong>
+              <p>
+                تأمین میلگرد مورد نیاز پروژه‌های ساختمانی
+                و عمرانی در سایزهای مختلف.
+              </p>
 
-<span>مخصوص سازه</span>
-
-</a>
-
-
-<a href="#products" class="category reveal">
-
-<div class="category-icon">L</div>
-
-<strong>نبشی و ناودانی</strong>
-
-<span>مقاطع فولادی</span>
-
-</a>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     PRODUCTS
-===================================================== -->
-
-<section class="products" id="products">
-
-<div class="container">
-
-<div class="section-title reveal">
-
-<small>محصولات</small>
-
-<h2>فروش آهن‌آلات</h2>
-
-<p>
-لیست اولیه محصولات حقیقت سوله. برای قیمت روز، روی «استعلام قیمت» بزنید.
-</p>
-
-</div>
-
-
-<div class="product-tools">
-
-<input
-type="text"
-class="search"
-id="searchInput"
-placeholder="جستجوی محصول؛ مثلاً تیرآهن، میلگرد..."
->
-
-<div class="filter-list">
-
-<button class="filt
+              <a
+                class="product-btn"
+                href="https://wa.me/989121326034?text=سلام، برای خرید میلگرد درخواست استعلام قیمت
