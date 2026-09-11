@@ -3,36 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111111">
-  <meta name="description" content="حقیقت سوله؛ فروش آهن‌آلات، فونداسیون، جرثقیل و سوله‌سازی از سال ۱۳۸۹ تاکنون">
-  <title>حقیقت سوله | فروش آهن‌آلات و خدمات صنعتی</title>
+
+  <title>حقیقت سوله | تأمین آهن‌آلات و خدمات صنعتی</title>
+
+  <meta
+    name="description"
+    content="حقیقت سوله؛ تأمین آهن‌آلات، سوله‌سازی، اجرای فونداسیون و تجهیزات جرثقیل صنعتی."
+  >
+
+  <!-- فونت فارسی -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+    /* ========================================
+       DESIGN SYSTEM
+       حقیقت سوله
+    ======================================== */
+
     :root {
-      --bg: #0d0f10;
-      --bg-soft: #171a1b;
-      --card: #1c2021;
-      --text: #f4f4f4;
-      --muted: #a7adae;
-      --border: rgba(255,255,255,0.12);
-      --accent: #e4b83e;
-      --accent-hover: #f3cf67;
-      --black: #111111;
+      /* رنگ‌های اصلی */
+      --color-bg: #111315;
+      --color-bg-secondary: #1B1F22;
+      --color-bg-soft: #24292D;
+
+      /* رنگ متن */
+      --color-text: #F2F0EA;
+      --color-text-muted: #A7ADB0;
+      --color-text-dark: #111315;
+
+      /* رنگ تأکیدی */
+      --color-accent: #FF6A00;
+      --color-accent-hover: #FF8A3D;
+
+      /* خطوط */
+      --color-border: #30363A;
+      --color-border-light: rgba(255, 255, 255, 0.12);
+
+      /* وضعیت‌ها */
+      --color-success: #38B36B;
+      --color-danger: #E05252;
+
+      /* تایپوگرافی */
+      --font-main: "Vazirmatn", sans-serif;
+
+      /* اندازه‌ها */
+      --container-width: 1240px;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+
+      /* سایه */
+      --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.18);
+
+      /* انتقال */
+      --transition: 0.25s ease;
     }
 
-    body.light {
-      --bg: #f3f3ef;
-      --bg-soft: #ffffff;
-      --card: #ffffff;
-      --text: #181a19;
-      --muted: #626866;
-      --border: rgba(0,0,0,0.12);
-      --accent: #ad7d0b;
-      --accent-hover: #ca951b;
-      --black: #ffffff;
-    }
+    /* ========================================
+       RESET
+    ======================================== */
 
-    * {
+    *,
+    *::before,
+    *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -43,16 +81,22 @@
     }
 
     body {
-      font-family: Tahoma, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.9;
-      transition: background 0.3s ease, color 0.3s ease;
+      font-family: var(--font-main);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.8;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     button,
@@ -64,680 +108,107 @@
 
     button {
       cursor: pointer;
+      border: none;
     }
 
+    ul,
+    ol {
+      list-style: none;
+    }
+
+    /* ========================================
+       GLOBAL UTILITIES
+    ======================================== */
+
     .container {
-      width: calc(100% - 32px);
-      max-width: 1180px;
-      margin: 0 auto;
+      width: min(100% - 40px, var(--container-width));
+      margin-inline: auto;
     }
 
     .section {
-      padding: 85px 0;
+      padding: 100px 0;
     }
 
-    .eyebrow {
-      display: block;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 10px;
+    .text-accent {
+      color: var(--color-accent);
     }
 
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 30px;
-      margin-bottom: 40px;
+    .hidden {
+      display: none !important;
     }
 
-    .section-title {
-      font-size: clamp(27px, 5vw, 48px);
-      line-height: 1.4;
-      font-weight: 900;
-      margin-bottom: 12px;
-    }
-
-    .section-description {
-      color: var(--muted);
-      font-size: 13px;
-      max-width: 540px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 48px;
-      padding: 10px 21px;
-      border-radius: 7px;
-      font-size: 13px;
-      font-weight: bold;
-      border: 1px solid transparent;
-      transition: 0.25s;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #111;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border-color: var(--border);
-      color: var(--text);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* Header */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .header-inner {
-      min-height: 76px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-logo {
-      width: 46px;
-      height: 46px;
-      object-fit: contain;
-      border-radius: 6px;
-      background: white;
-      padding: 3px;
-    }
-
-    .brand-text strong {
-      display: block;
-      font-size: 15px;
-      line-height: 1.4;
-    }
-
-    .brand-text small {
-      display: block;
-      color: var(--muted);
-      font-size: 10px;
-    }
-
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      font-size: 13px;
-    }
-
-    .desktop-nav a {
-      color: var(--muted);
-      transition: 0.2s;
-    }
-
-    .desktop-nav a:hover {
-      color: var(--accent);
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .header-call {
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      padding: 7px 12px;
-      border-radius: 7px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .icon-button {
-      width: 39px;
-      height: 39px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text);
-      border-radius: 7px;
-      font-size: 18px;
-    }
-
-    .icon-button:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .menu-button {
-      display: none;
-    }
-
-    .mobile-menu {
-      display: none;
-      background: var(--bg-soft);
-      border-top: 1px solid var(--border);
-      padding: 12px 16px 18px;
-    }
-
-    .mobile-menu.active {
-      display: block;
-    }
-
-    .mobile-menu a {
-      display: block;
-      color: var(--muted);
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 13px;
-    }
-
-    /* Hero */
-
-    .hero {
-      min-height: 700px;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(13,15,16,0.98) 5%,
-          rgba(13,15,16,0.82) 55%,
-          rgba(13,15,16,0.3)
-        ),
-        url("images/home/industrial-complex-aerial.jpg") center/cover no-repeat;
-    }
-
-    body.light .hero {
-      background:
-        linear-gradient(
-          90deg,
-          rgba(243,243,239,0.98) 5%,
-          rgba(243,243,239,0.82) 55%,
-          rgba(243,243,239,0.3)
-        ),
-        url("images/home/industrial-complex-aerial.jpg") center/cover no-repeat;
-    }
-
-    .hero-content {
-      max-width: 740px;
-      padding: 80px 0;
-    }
-
-    .hero-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 22px;
-    }
-
-    .hero-label::before {
-      content: "";
-      width: 38px;
-      height: 2px;
-      background: var(--accent);
-    }
-
-    .hero-title {
-      font-size: clamp(42px, 7vw, 82px);
-      line-height: 1.2;
-      font-weight: 900;
-      letter-spacing: -3px;
-      margin-bottom: 24px;
-    }
-
-    .hero-title span {
-      color: var(--accent);
-    }
-
-    .hero-description {
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 590px;
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .hero-note {
-      margin-top: 23px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* Stats */
-
-    .stats {
-      position: relative;
-      z-index: 5;
-      margin-top: -55px;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 13px;
-      overflow: hidden;
-      box-shadow: 0 15px 45px rgba(0,0,0,0.25);
-    }
-
-    .stat {
-      padding: 26px 15px;
-      text-align: center;
-      border-left: 1px solid var(--border);
-    }
-
-    .stat:last-child {
-      border-left: none;
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--accent);
-      font-size: 24px;
-      margin-bottom: 3px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 11px;
-    }
+    /* ========================================
+       RESPONSIVE BASE
+    ======================================== */
 
-    /* Services */
+    @media (max-width: 768px) {
+      .container {
+        width: min(100% - 28px, var(--container-width));
+      }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      .section {
+        padding: 70px 0;
+      }
     }
 
-    .service-card {
-      position: relative;
-      min-height: 345px;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--card);
-      transition: 0.3s;
+    @media (max-width: 480px) {
+      .section {
+        padding: 55px 0;
+      }
     }
+  </style>
+</head>
 
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--accent);
-    }
-
-    .service-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          0deg,
-          rgba(0,0,0,0.95),
-          rgba(0,0,0,0.15)
-        ),
-        var(--service-image) center/cover no-repeat;
-      transition: 0.4s;
-    }
-
-    .service-card:hover::before {
-      transform: scale(1.05);
-    }
-
-    .service-content {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      padding: 23px;
-    }
-
-    .service-number {
-      display: block;
-      color: var(--accent);
-      font-size: 11px;
-      margin-bottom: 35px;
-    }
-
-    .service-content h3 {
-      font-size: 21px;
-      margin-bottom: 8px;
-    }
-
-    .service-content p {
-      color: #d0d0d0;
-      font-size: 12px;
-      line-height: 1.9;
-      margin-bottom: 12px;
-    }
-
-    .service-link {
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    /* Products */
-
-    .products-section {
-      background: var(--bg-soft);
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .product-card {
-      overflow: hidden;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      transition: 0.3s;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
-    }
-
-    .product-image {
-      height: 205px;
-      background-position: center;
-      background-size: cover;
-      position: relative;
-    }
-
-    .product-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.55),
-        transparent
-      );
-    }
-
-    .product-body {
-      padding: 20px;
-    }
-
-    .product-body h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .product-body p {
-      color: var(--muted);
-      font-size: 12px;
-      min-height: 48px;
-      margin-bottom: 17px;
-    }
-
-    .product-action {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-      background: var(--accent);
-      color: #111;
-      border-radius: 7px;
-      font-size: 12px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-
-    .product-action:hover {
-      background: var(--accent-hover);
-    }
-
-    /* Details */
-
-    .detail-section {
-      border-bottom: 1px solid var(--border);
-    }
+<body>
 
-    .detail-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 55px;
-    }
-
-    .detail-grid.reverse .detail-image {
-      order: 2;
-    }
-
-    .detail-grid.reverse .detail-content {
-      order: 1;
-    }
-
-    .detail-image {
-      height: 420px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background-position: center;
-      background-size: cover;
-      box-shadow: 0 15px 45px rgba(0,0,0,0.2);
-    }
-
-    .detail-content h2 {
-      font-size: clamp(29px, 4vw, 48px);
-      line-height: 1.4;
-      margin-bottom: 18px;
-    }
-
-    .detail-content h2 span {
-      color: var(--accent);
-    }
-
-    .detail-content p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 22px;
-    }
-
-    .feature-list {
-      list-style: none;
-      display: grid;
-      gap: 11px;
-      margin-bottom: 25px;
-    }
-
-    .feature-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-    }
-
-    .feature-list li::before {
-      content: "✓";
-      width: 22px;
-      height: 22px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      color: var(--accent);
-      background: rgba(229,184,63,0.14);
-      font-weight: bold;
-    }
-
-    /* About */
-
-    .about-section {
-      background: var(--bg-soft);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    .about-box {
-      position: relative;
-      overflow: hidden;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 35px;
-    }
+  <!-- ========================================
+       HEADER
+       در مرحله ۲ ساخته می‌شود
+  ======================================== -->
 
-    .about-box::after {
-      content: "۱۳۸۹";
-      position: absolute;
-      left: -10px;
-      bottom: -25px;
-      font-size: 115px;
-      line-height: 1;
-      font-weight: 900;
-      color: rgba(229,184,63,0.06);
-    }
+  <header id="site-header"></header>
 
-    .about-box h3 {
-      position: relative;
-      z-index: 1;
-      font-size: 28px;
-      margin-bottom: 18px;
-    }
 
-    .about-box p {
-      position: relative;
-      z-index: 1;
-      color: var(--muted);
-      font-size: 14px;
-    }
+  <!-- ========================================
+       MAIN CONTENT
+       بخش‌ها در مراحل بعدی اضافه می‌شوند
+  ======================================== -->
 
-    .about-points {
-      display: grid;
-      gap: 20px;
-    }
+  <main id="main-content">
 
-    .about-point {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-    }
+    <!-- HERO در مرحله ۳ -->
 
-    .about-icon {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--accent);
-      border-radius: 8px;
-      color: var(--accent);
-      font-size: 18px;
-    }
+    <!-- ABOUT در مرحله ۴ -->
 
-    .about-point h4 {
-      font-size: 15px;
-      margin-bottom: 3px;
-    }
+    <!-- PRODUCTS در مرحله ۵ -->
 
-    .about-point p {
-      color: var(--muted);
-      font-size: 12px;
-    }
+    <!-- SERVICES در مرحله ۶ -->
 
-    /* CTA */
+    <!-- PROJECTS در مرحله ۷ -->
 
-    .cta {
-      padding: 75px 0;
-    }
+    <!-- BENEFITS در مرحله ۸ -->
 
-    .cta-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-      padding: 55px;
-      border-radius: 15px;
-      color: #111;
-      background:
-        linear-gradient(
-          110deg,
-          rgba(228,184,62,0.97),
-          rgba(174,130,20,0.94)
-        ),
-        url("images/home/industrial-complex-aerial.jpg") center/cover;
-    }
+    <!-- CONTACT در مرحله ۹ -->
 
-    .cta-box h2 {
-      font-size: clamp(26px, 4vw, 44px);
-      line-height: 1.4;
-      margin-bottom: 10px;
-    }
+  </main>
 
-    .cta-box p {
-      max-width: 590px;
-      font-size: 14px;
-    }
 
-    .cta-box .btn-outline {
-      color: #111;
-      border-color: #111;
-      white-space: nowrap;
-    }
+  <!-- ========================================
+       FOOTER
+       در مرحله ۹ ساخته می‌شود
+  ======================================== -->
 
-    .cta-box .btn-outline:hover {
-      background: #111;
-      color: white;
-    }
+  <footer id="site-footer"></footer>
 
-    /* Contact */
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 25px;
-    }
+  <!-- ========================================
+       JAVASCRIPT
+       اسکریپت‌ها در مراحل بعدی اضافه می‌شوند
+  ======================================== -->
 
-    .contact-card,
-    .form-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 30px;
-    }
+  <script>
+    // JavaScript در مراحل بعدی اضافه خواهد شد.
+  </script>
 
-    .contact-card h3
+</body>
+</html>
