@@ -1,988 +1,1125 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111111">
-  <title>حقیقت سوله | فروش آهن‌آلات و خدمات صنعتی</title>
-
-  <style>
-    :root {
-      --bg: #0d0f10;
-      --card: #171a1c;
-      --card2: #202427;
-      --text: #f4f4f4;
-      --muted: #a7abad;
-      --line: rgba(255,255,255,0.1);
-      --accent: #f5b400;
-      --accent-dark: #c98d00;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: Tahoma, Arial, sans-serif;
-      line-height: 1.9;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-    }
-
-    .container {
-      width: min(1150px, 92%);
-      margin: auto;
-    }
-
-    .section {
-      padding: 75px 0;
-    }
-
-    .section-title {
-      margin-bottom: 35px;
-    }
-
-    .section-title small {
-      display: inline-block;
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    .section-title h2 {
-      font-size: clamp(25px, 5vw, 40px);
-      line-height: 1.4;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: var(--muted);
-      max-width: 650px;
-      font-size: 14px;
-    }
-
-    /* Header */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(13,15,16,0.96);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(12px);
-    }
-
-    .header-inner {
-      min-height: 75px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    .logo-mark {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      background: var(--accent);
-      color: #111;
-      font-size: 19px;
-      font-weight: 900;
-      transform: skew(-8deg);
-    }
-
-    .logo-text strong {
-      display: block;
-      font-size: 15px;
-    }
-
-    .logo-text span {
-      display: block;
-      color: var(--muted);
-      font-size: 10px;
-      direction: ltr;
-      text-align: right;
-      letter-spacing: 1px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-    }
-
-    nav a {
-      color: #d5d5d5;
-      font-size: 13px;
-      transition: 0.2s;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    .header-call {
-      background: var(--accent);
-      color: #111;
-      padding: 8px 14px;
-      border-radius: 5px;
-      font-weight: bold;
-      font-size: 12px;
-    }
-
-    /* Hero */
-
-    .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(13,15,16,0.98) 5%, rgba(13,15,16,0.82) 45%, rgba(13,15,16,0.35)),
-        url("images/iron/steel-beams.jpg") center/cover no-repeat;
-    }
-
-    .hero-content {
-      max-width: 680px;
-      padding: 90px 0;
-    }
-
-    .hero-label {
-      display: inline-block;
-      color: var(--accent);
-      border-right: 3px solid var(--accent);
-      padding-right: 12px;
-      font-size: 13px;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 {
-      font-size: clamp(32px, 7vw, 64px);
-      line-height: 1.35;
-      margin-bottom: 20px;
-      font-weight: 900;
-    }
-
-    .hero h1 span {
-      color: var(--accent);
-    }
-
-    .hero p {
-      color: #c2c5c6;
-      font-size: 15px;
-      max-width: 570px;
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 9px 20px;
-      border-radius: 5px;
-      font-size: 13px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #111;
-    }
-
-    .btn-primary:hover {
-      background: #ffc62e;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,0.3);
-      color: white;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* Stats */
-
-    .stats {
-      margin-top: -35px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-
-    .stat {
-      background: var(--card);
-      padding: 25px 15px;
-      text-align: center;
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--accent);
-      font-size: 25px;
-      margin-bottom: 4px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* Services */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .service-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-      transition: 0.25s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--accent);
-    }
-
-    .service-image {
-      height: 190px;
-      overflow: hidden;
-      background: #25292b;
-    }
-
-    .service-image img {
-      height: 100%;
-      object-fit: cover;
-      transition: 0.4s;
-    }
-
-    .service-card:hover .service-image img {
-      transform: scale(1.06);
-    }
-
-    .service-content {
-      padding: 20px;
-    }
-
-    .service-number {
-      color: var(--accent);
-      font-size: 12px;
-      direction: ltr;
-      text-align: left;
-      margin-bottom: 5px;
-    }
-
-    .service-content h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .service-content p {
-      color: var(--muted);
-      font-size: 12px;
-      min-height: 48px;
-      margin-bottom: 15px;
-    }
-
-    .service-link {
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    /* Products */
-
-    .dark-section {
-      background: #111416;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .product-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      overflow: hidden;
-      border-radius: 7px;
-    }
-
-    .product-image {
-      height: 180px;
-      background: #25292b;
-    }
-
-    .product-image img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .product-content {
-      padding: 17px;
-    }
-
-    .product-content h3 {
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
-
-    .product-content p {
-      color: var(--muted);
-      font-size: 12px;
-      margin-bottom: 12px;
-    }
-
-    .product-price {
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    /* Detail sections */
-
-    .detail-section {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .detail-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .detail-image {
-      height: 360px;
-      background: #222;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-    }
-
-    .detail-image img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .detail-text h2 {
-      font-size: clamp(25px, 4vw, 38px);
-      margin-bottom: 15px;
-    }
-
-    .detail-text h2 span {
-      color: var(--accent);
-    }
-
-    .detail-text p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    .feature-list {
-      list-style: none;
-      margin-bottom: 25px;
-    }
-
-    .feature-list li {
-      color: #d5d5d5;
-      font-size: 13px;
-      margin-bottom: 8px;
-    }
-
-    .feature-list li::before {
-      content: "✓";
-      color: var(--accent);
-      font-weight: bold;
-      margin-left: 8px;
-    }
-
-    /* CTA */
-
-    .cta {
-      background:
-        linear-gradient(90deg, rgba(245,180,0,0.92), rgba(201,141,0,0.85)),
-        url("images/home/industrial-complex-aerial.jpg") center/cover;
-      color: #111;
-      padding: 45px 0;
-    }
-
-    .cta-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .cta h2 {
-      font-size: clamp(23px, 4vw, 36px);
-      line-height: 1.4;
-      margin-bottom: 5px;
-    }
-
-    .cta p {
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    .btn-dark {
-      background: #111;
-      color: white;
-      white-space: nowrap;
-    }
-
-    /* Contact */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .contact-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      padding: 28px;
-      border-radius: 8px;
-    }
-
-    .contact-card h3 {
-      color: var(--accent);
-      font-size: 18px;
-      margin-bottom: 15px;
-    }
-
-    .contact-item {
-      color: #d0d0d0;
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
-
-    .contact-item strong {
-      color: white;
-    }
-
-    .contact-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    /* Footer */
-
-    footer {
-      background: #080909;
-      padding: 30px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .footer-inner p {
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .footer-brand {
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    /* Floating buttons */
-
-    .floating-buttons {
-      position: fixed;
-      left: 15px;
-      bottom: 18px;
-      z-index: 90;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .floating-button {
-      width: 47px;
-      height: 47px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 18px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.35);
-      font-weight: bold;
-    }
-
-    .floating-call {
-      background: var(--accent);
-      color: #111;
-    }
-
-    .floating-whatsapp {
-      background: #25d366;
-      color: white;
-    }
-
-    /* Mobile */
-
-    @media (max-width: 900px) {
-      nav {
-        gap: 12px;
-      }
-
-      .header-call {
-        display: none;
-      }
-
-      .services-grid,
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .detail-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .detail-image {
-        height: 280px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .section {
-        padding: 55px 0;
-      }
-
-      .header-inner {
-        min-height: 65px;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .hero {
-        min-height: 600px;
-        background:
-          linear-gradient(90deg, rgba(13,15,16,0.96), rgba(13,15,16,0.68)),
-          url("images/iron/steel-beams.jpg") center/cover no-repeat;
-      }
-
-      .hero-content {
-        padding: 70px 0;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero p {
-        font-size: 13px;
-      }
-
-      .stats {
-        margin-top: 0;
-      }
-
-      .stats-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .stat {
-        padding: 17px 5px;
-      }
-
-      .stat strong {
-        font-size: 20px;
-      }
-
-      .stat span {
-        font-size: 10px;
-      }
-
-      .services-grid,
-      .products-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-
-      .service-image {
-        height: 140px;
-      }
-
-      .service-content {
-        padding: 13px;
-      }
-
-      .service-content h3 {
-        font-size: 14px;
-      }
-
-      .service-content p {
-        font-size: 11px;
-        min-height: auto;
-      }
-
-      .product-image {
-        height: 135px;
-      }
-
-      .product-content {
-        padding: 12px;
-      }
-
-      .product-content h3 {
-        font-size: 13px;
-      }
-
-      .detail-text h2 {
-        font-size: 27px;
-      }
-
-      .detail-text p {
-        font-size: 13px;
-      }
-
-      .cta-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-card {
-        padding: 22px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+
+<title>حقیقت سوله | فروش آهن‌آلات و خدمات صنعتی</title>
+
+<style>
+:root {
+  --bg: #0d0f10;
+  --surface: #151819;
+  --surface-2: #202426;
+  --text: #f5f5f5;
+  --muted: #a6abad;
+  --border: rgba(255,255,255,.11);
+  --accent: #f5b400;
+  --accent-hover: #ffc928;
+  --dark-text: #111;
+  --shadow: 0 15px 40px rgba(0,0,0,.2);
+}
+
+body.light {
+  --bg: #f2f3f4;
+  --surface: #ffffff;
+  --surface-2: #e7e9eb;
+  --text: #151719;
+  --muted: #5d6368;
+  --border: rgba(0,0,0,.12);
+  --shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Tahoma, Arial, sans-serif;
+  line-height: 1.9;
+  transition: background .25s, color .25s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1160px, 92%);
+  margin: auto;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-heading {
+  margin-bottom: 38px;
+}
+
+.section-heading .eyebrow {
+  display: block;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  letter-spacing: .3px;
+}
+
+.section-heading h2 {
+  font-size: clamp(26px, 5vw, 43px);
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.section-heading p {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Header */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-symbol {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: #111;
+  font-size: 21px;
+  font-weight: 900;
+  transform: skew(-8deg);
+}
+
+.logo-title {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.logo-subtitle {
+  direction: ltr;
+  text-align: right;
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+nav a {
+  color: var(--muted);
+  font-size: 13px;
+  transition: color .2s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-button,
+.menu-button {
+  width: 39px;
+  height: 39px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.header-contact {
+  background: var(--accent);
+  color: #111;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.menu-button {
+  display: none;
+}
+
+/* Mobile menu */
+
+.mobile-menu {
+  display: none;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding: 12px 4%;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-size: 13px;
+}
+
+/* Hero */
+
+.hero {
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(13,15,16,.98) 8%, rgba(13,15,16,.82) 45%, rgba(13,15,16,.35)),
+    url("images/iron/steel-beams.jpg") center/cover no-repeat;
+}
+
+body.light .hero {
+  background:
+    linear-gradient(90deg, rgba(242,243,244,.97) 8%, rgba(242,243,244,.84) 48%, rgba(242,243,244,.42)),
+    url("images/iron/steel-beams.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 95px 0;
+}
+
+.hero-tag {
+  display: inline-block;
+  border-right: 3px solid var(--accent);
+  padding-right: 12px;
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 7vw, 67px);
+  line-height: 1.35;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero p {
+  color: #c5c8ca;
+  max-width: 570px;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+body.light .hero p {
+  color: #3e4448;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 9px 21px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #111;
+}
+
+.button-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.button-outline {
+  color: white;
+  border: 1px solid rgba(255,255,255,.35);
+}
+
+body.light .button-outline {
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.button-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Stats */
+
+.stats {
+  margin-top: -35px;
+  position: relative;
+  z-index: 5;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  background: var(--border);
+  gap: 1px;
+}
+
+.stat {
+  background: var(--surface);
+  text-align: center;
+  padding: 24px 10px;
+}
+
+.stat strong {
+  display: block;
+  color: var(--accent);
+  font-size: 25px;
+  line-height: 1.3;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+/* Services */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.service-card {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: .25s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.service-image {
+  height: 195px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.service-image img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+
+.service-card:hover img {
+  transform: scale(1.06);
+}
+
+.service-content {
+  padding: 19px;
+}
+
+.service-number {
+  direction: ltr;
+  text-align: left;
+  color: var(--accent);
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.service-content h3 {
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.service-content p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+  min-height: 47px;
+  margin-bottom: 14px;
+}
+
+.service-more {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* General dark section */
+
+.alternate-section {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Products */
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.product-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: .2s;
+}
+
+.product-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.product-image {
+  height: 180px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.product-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 17px;
+}
+
+.product-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.product-info p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 11px;
+}
+
+.product-status {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* Detail sections */
+
+.detail-section {
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.detail-image {
+  height: 365px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.detail-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-content h2 {
+  font-size: clamp(27px, 5vw, 42px);
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.detail-content h2 span {
+  color: var(--accent);
+}
+
+.detail-content p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.detail-list {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.detail-list li {
+  color: var(--text);
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+.detail-list li::before {
+  content: "✓";
+  color: var(--accent);
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+/* CTA */
+
+.cta {
+  background:
+    linear-gradient(90deg, rgba(245,180,0,.94), rgba(201,141,0,.86)),
+    url("images/home/industrial-complex-aerial.jpg") center/cover no-repeat;
+  color: #111;
+  padding: 48px 0;
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.cta h2 {
+  font-size: clamp(25px, 5vw, 39px);
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+.cta p {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.button-dark {
+  background: #111;
+  color: white;
+  white-space: nowrap;
+}
+
+/* Contact */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 28px;
+}
+
+.contact-box h3 {
+  color: var(--accent);
+  font-size: 19px;
+  margin-bottom: 17px;
+}
+
+.contact-line {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.contact-line strong {
+  color: var(--text);
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+/* Footer */
+
+footer {
+  background: #080909;
+  padding: 30px 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-brand {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.footer-inner p {
+  color: #858b8e;
+  font-size: 11px;
+}
+
+/* Floating buttons */
+
+.floating {
+  position: fixed;
+  left: 16px;
+  bottom: 18px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.float-button {
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  font-weight: bold;
+  box-shadow: 0 5px 20px rgba(0,0,0,.3);
+}
+
+.float-call {
+  background: var(--accent);
+  color: #111;
+}
+
+.float-whatsapp {
+  background: #25d366;
+  color: white;
+}
+
+/* Responsive */
+
+@media (max-width: 950px) {
+  nav {
+    gap: 14px;
+  }
+
+  .header-contact {
+    display: none;
+  }
+
+  .services-grid,
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-grid {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 650px) {
+  .section {
+    padding: 58px 0;
+  }
+
+  .header-inner {
+    min-height: 66px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .hero {
+    min-height: 600px;
+    background:
+      linear-gradient(90deg, rgba(13,15,16,.96), rgba(13,15,16,.68)),
+      url("images/iron/steel-beams.jpg") center/cover no-repeat;
+  }
+
+  body.light .hero {
+    background:
+      linear-gradient(90deg, rgba(242,243,244,.96), rgba(242,243,244,.7)),
+      url("images/iron/steel-beams.jpg") center/cover no-repeat;
+  }
+
+  .hero-content {
+    padding: 75px 0;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .stats {
+    margin-top: 0;
+  }
+
+  .stat {
+    padding: 17px 5px;
+  }
+
+  .stat strong {
+    font-size: 20px;
+  }
+
+  .stat span {
+    font-size: 9px;
+  }
+
+  .services-grid,
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .service-image {
+    height: 140px;
+  }
+
+  .service-content {
+    padding: 13px;
+  }
+
+  .service-content h3 {
+    font-size: 14px;
+  }
+
+  .service-content p {
+    font-size: 11px;
+    min-height: auto;
+  }
+
+  .service-more {
+    font-size: 11px;
+  }
+
+  .product-image {
+    height: 135px;
+  }
+
+  .product-info {
+    padding: 12px;
+  }
+
+  .product-info h3 {
+    font-size: 13px;
+  }
+
+  .product-info p {
+    font-size: 11px;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .detail-image {
+    height: 270px;
+  }
+
+  .detail-content h2 {
+    font-size: 28px;
+  }
+
+  .detail-content p {
+    font-size: 13px;
+  }
+
+  .cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-box {
+    padding: 22px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container header-inner">
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
 
-      <a href="#top" class="logo">
-        <div class="logo-mark">ح</div>
-        <div class="logo-text">
-          <strong>حقیقت سوله</strong>
-          <span>HAGHIGHAT STEEL</span>
-        </div>
-      </a>
+    <a href="#top" class="logo">
+      <div class="logo-symbol">ح</div>
+      <div>
+        <div class="logo-title">حقیقت سوله</div>
+        <span class="logo-subtitle">HAGHIGHAT STEEL</span>
+      </div>
+    </a>
 
-      <nav>
-        <a href="#services">خدمات</a>
-        <a href="#iron">آهن‌آلات</a>
-        <a href="#about">درباره ما</a>
-        <a href="#contact">تماس</a>
-      </nav>
+    <nav>
+      <a href="#services">خدمات</a>
+      <a href="#iron">آهن‌آلات</a>
+      <a href="#about">درباره ما</a>
+      <a href="#contact">تماس با ما</a>
+    </nav>
 
-      <a class="header-call" href="tel:09121326034">
-        تماس با ما
-      </a>
+    <div class="header-actions">
+      <a href="tel:09121326034" class="header-contact">تماس با ما</a>
 
+      <button class="theme-button" id="themeButton" aria-label="تغییر پوسته">
+        ☀
+      </button>
+
+      <button class="menu-button" id="menuButton" aria-label="بازکردن منو">
+        ☰
+      </button>
     </div>
-  </header>
+
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">خدمات ما</a>
+    <a href="#iron">فروش آهن‌آلات</a>
+    <a href="#about">درباره حقیقت سوله</a>
+    <a href="#contact">تماس با ما</a>
+  </div>
+</header>
 
 
-  <!-- Hero -->
-  <main id="top">
+<main id="top">
 
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
 
-          <div class="hero-label">
-            تأمین، اجرا و خدمات تخصصی صنعت فولاد
-          </div>
-
-          <h1>
-            قدرت فولاد،<br>
-            <span>پشتوانه پروژه‌های شما</span>
-          </h1>
-
-          <p>
-            شرکت حقیقت سوله با ارائه خدمات تخصصی در زمینه فروش آهن‌آلات،
-            سوله‌سازی، فونداسیون و تجهیزات صنعتی، همراه مطمئن پروژه‌های شماست.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#services" class="btn btn-primary">
-              مشاهده خدمات
-            </a>
-
-            <a href="#contact" class="btn btn-outline">
-              دریافت مشاوره
-            </a>
-          </div>
-
+        <div class="hero-tag">
+          تأمین، اجرا و خدمات تخصصی صنعت فولاد
         </div>
+
+        <h1>
+          قدرت فولاد،<br>
+          <span>پشتوانه پروژه‌های شما</span>
+        </h1>
+
+        <p>
+          شرکت حقیقت سوله با ارائه خدمات تخصصی در زمینه فروش آهن‌آلات،
+          سوله‌سازی، فونداسیون و تجهیزات صنعتی، همراه مطمئن پروژه‌های شماست.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#services" class="button button-primary">
+            مشاهده خدمات
+          </a>
+
+          <a href="#contact" class="button button-outline">
+            دریافت مشاوره
+          </a>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
 
-    <!-- Stats -->
-    <section class="stats">
-      <div class="container">
-        <div class="stats-grid">
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
 
-          <div class="stat">
-            <strong>۴+</strong>
-            <span>حوزه تخصصی فعالیت</span>
-          </div>
-
-          <div class="stat">
-            <strong>۱۰۰٪</strong>
-            <span>تعهد به کیفیت</span>
-          </div>
-
-          <div class="stat">
-            <strong>۲۴/۷</strong>
-            <span>پاسخگویی و مشاوره</span>
-          </div>
-
+        <div class="stat">
+          <strong>۴+</strong>
+          <span>حوزه تخصصی فعالیت</span>
         </div>
+
+        <div class="stat">
+          <strong>۱۰۰٪</strong>
+          <span>تعهد به کیفیت</span>
+        </div>
+
+        <div class="stat">
+          <strong>۲۴/۷</strong>
+          <span>پاسخگویی و مشاوره</span>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
 
-    <!-- Services -->
-    <section class="section" id="services">
-      <div class="container">
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
 
-        <div class="section-title">
-          <small>WHAT WE DO / خدمات ما</small>
-          <h2>راهکارهای تخصصی برای پروژه‌های صنعتی</h2>
-          <p>
-            برای مشاهده جزئیات هر حوزه، روی کارت موردنظر لمس کنید.
-          </p>
-        </div>
-
-        <div class="services-grid">
-
-          <!-- Iron -->
-          <a href="#iron" class="service-card">
-            <div class="service-image">
-              <img
-                src="images/iron/steel-profiles.jpg"
-                alt="فروش آهن‌آلات"
-                onerror="this.style.display='none'"
-              >
-            </div>
-
-            <div class="service-content">
-              <div class="service-number">01 / IRON</div>
-              <h3>فروش آهن‌آلات</h3>
-              <p>
-                تأمین انواع تیرآهن، میلگرد، ورق، پروفیل و مقاطع فولادی.
-              </p>
-              <div class="service-link">مشاهده محصولات ←</div>
-            </div>
-          </a>
-
-
-          <!-- Foundation -->
-          <a href="#foundation" class="service-card">
-            <div class="service-image">
-              <img
-                src="images/foundation/foundation-rebar-work.jpg"
-                alt="فونداسیون صنعتی"
-                onerror="this.style.display='none'"
-              >
-            </div>
-
-            <div class="service-content">
-              <div class="service-number">02 / FOUNDATION</div>
-              <h3>فونداسیون</h3>
-              <p>
-                اجرای اصولی فونداسیون و عملیات عمرانی پروژه‌های صنعتی.
-              </p>
-              <div class="service-link">مشاهده خدمات ←</div>
-            </div>
-          </a>
-
-
-          <!-- Crane -->
-          <a href="#crane" class="service-card">
-            <div class="service-image">
-              <img
-                src="images/crane/overhead-crane-industrial-hall.jpg"
-                alt="جرثقیل صنعتی"
-                onerror="this.style.display='none'"
-              >
-            </div>
-
-            <div class="service-content">
-              <div class="service-number">03 / CRANE</div>
-              <h3>جرثقیل صنعتی</h3>
-              <p>
-                تجهیزات و راهکارهای جابه‌جایی بار در محیط‌های صنعتی.
-              </p>
-              <div class="service-link">مشاهده خدمات ←</div>
-            </div>
-          </a>
-
-
-          <!-- Shed -->
-          <a href="#shed" class="service-card">
-            <div class="service-image">
-              <img
-                src="images/shed/steel-structure-installation.jpg"
-                alt="سوله‌سازی"
-                onerror="this.style.display='none'"
-              >
-            </div>
-
-            <div class="service-content">
-              <div class="service-number">04 / STEEL STRUCTURE</div>
-              <h3>سوله‌سازی</h3>
-              <p>
-                طراحی، ساخت و اجرای سازه‌های فلزی و سوله‌های صنعتی.
-              </p>
-              <div class="service-link">مشاهده خدمات ←</div>
-            </div>
-          </a>
-
-        </div>
+      <div class="section-heading">
+        <span class="eyebrow">WHAT WE DO / خدمات ما</span>
+        <h2>راهکارهای تخصصی برای پروژه‌های صنعتی</h2>
+        <p>
+          حوزه موردنظر خود را انتخاب کنید تا مستقیماً به بخش مربوطه منتقل شوید.
+        </p>
       </div>
-    </section>
+
+      <div class="services-grid">
+
+        <a href="#iron" class="service-card">
+          <div class="service-image">
+            <img
+              src="images/iron/steel-profiles.jpg"
+              alt="فروش آهن‌آلات"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="service-content">
+            <div class="service-number">01 / IRON</div>
+            <h3>فروش آهن‌آلات</h3>
+            <p>
+              تأمین انواع تیرآهن، میلگرد، ورق، پروفیل و مقاطع فولادی.
+            </p>
+            <div class="service-more">مشاهده محصولات ←</div>
+          </div>
+        </a>
 
 
-    <!-- Iron Products -->
-    <section class="section dark-section" id="iron">
-      <div class="container">
+        <a href="#foundation" class="service-card">
+          <div class="service-image">
+            <img
+              src="images/foundation/foundation-rebar-work.jpg"
+              alt="فونداسیون صنعتی"
+              onerror="this.style.display='none'"
+            >
+          </div>
 
-        <div class="section-title">
-          <small>STEEL PRODUCTS / محصولات فولادی</small>
-          <h2>فروش آهن‌آلات</h2>
-          <p>
-            جهت دریافت موجودی و قیمت روز محصولات، با کارشناسان ما تماس بگیرید.
-          </p>
+          <div class="service-content">
+            <div class="service-number">02 / FOUNDATION</div>
+            <h3>فونداسیون</h3>
+            <p>
+              اجرای اصولی فونداسیون و عملیات عمرانی پروژه‌های صنعتی.
+            </p>
+            <div class="service-more">مشاهده خدمات ←</div>
+          </div>
+        </a>
+
+
+        <a href="#crane" class="service-card">
+          <div class="service-image">
+            <img
+              src="images/crane/overhead-crane-industrial-hall.jpg"
+              alt="جرثقیل صنعتی"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="service-content">
+            <div class="service-number">03 / CRANE</div>
+            <h3>جرثقیل صنعتی</h3>
+            <p>
+              ارائه راهکارهای جابه‌جایی بار برای محیط‌های صنعتی.
+            </p>
+            <div class="service-more">مشاهده خدمات ←</div>
+          </div>
+        </a>
+
+
+        <a href="#shed" class="service-card">
+          <div class="service-image">
+            <img
+              src="images/shed/steel-structure-installation.jpg"
+              alt="سوله‌سازی"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="service-content">
+            <div class="service-number">04 / STEEL STRUCTURE</div>
+            <h3>سوله‌سازی</h3>
+            <p>
+              ساخت و اجرای سازه‌های فلزی و سوله‌های صنعتی.
+            </p>
+            <div class="service-more">مشاهده خدمات ←</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- IRON PRODUCTS -->
+  <section class="section alternate-section" id="iron">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="eyebrow">STEEL PRODUCTS / محصولات فولادی</span>
+        <h2>فروش آهن‌آلات</h2>
+        <p>
+          برای دریافت موجودی و قیمت روز، با کارشناسان حقیقت سوله تماس بگیرید.
+        </p>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="images/iron/steel-beams.jpg"
+              alt="تیرآهن"
+              onerror="this.style.display='none'"
+            >
+          </div>
+          <div class="product-info">
+            <h3>تیرآهن</h3>
+            <p>انواع تیرآهن در سایزهای مختلف</p>
+            <div class="product-status">استعلام قیمت روز</div>
+          </div>
         </div>
 
-        <div class="products-grid">
 
-          <div class="product-card">
-            <div class="product-image">
-              <img
-                src="images/iron/steel-beams.jpg"
-                alt="تیرآهن"
-                onerror="this.style.display='none'"
-              >
-            </div>
-            <div class="product-content">
-              <h3>تیرآهن</h3>
-              <p>انواع تیرآهن در سایزهای مختلف</p>
-              <div class="product-price">استعلام قیمت روز</div>
-            </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="images/iron/steel-rebar.jpg"
+              alt="میلگرد"
+              onerror="this.style.display='none'"
+            >
           </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <img
-                src="images/iron/steel-rebar.jpg"
-                alt="میلگرد"
-                onerror="this.style.display='none'"
-              >
-            </div>
-            <div class="product-content">
-              <h3>میلگرد</h3>
-              <p>میلگرد ساختمانی و صنعتی</p>
-              <div class="product-price">استعلام قیمت روز</div>
-            </div>
+          <div class="product-info">
+            <h3>میلگرد</h3>
+            <p>میلگرد ساختمانی و صنعتی</p>
+            <div class="product-status">استعلام قیمت روز</div>
           </div>
+        </div>
 
-          <div class="product-card">
-            <div class="product-image">
-              <img
-                src="images/iron/steel-sheets.jpg"
-                alt="ورق فولادی"
-                onerror="this.style.display='none'"
-              >
-            </div>
-            <div class="product-content">
-              <h3>ورق فولادی</h3>
-              <p>ورق سیاه، روغنی و انواع ورق صنعتی</p>
-              <div class="product-price">استعلام قیمت روز</div>
-            </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="images/iron/steel-sheets.jpg"
+              alt="ورق فولادی"
+              onerror="this.style.display='none'"
+            >
           </div>
+          <div class="product-info">
+            <h3>ورق فولادی</h3>
+            <p>ورق سیاه و انواع ورق صنعتی</p>
+            <div class="product-status">استعلام قیمت روز</div>
+          </div>
+        </div>
 
-          <div class="product-card">
-            <div class="product-image">
-              <img
-                src="images/iron/steel-profiles.jpg"
-                alt="پروفیل"
-                onerror="this.style.display='none'"
-              >
-            </div>
-            <div class="product-content">
-              <h3>پروفی
+
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="images/iron/steel-profiles.jpg"
+              alt="پروفیل"
+              onerror="this.style.display='none'"
+            >
+          </div>
+          <div class="product-info">
+            <h3>پروفیل</h3>
+            <p>پروفیل ساختمانی و صنعتی</p>
+            <div class="product-status">استعلام قیمت روز</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:28px;">
+        <a
+          class="button button-primary"
+          href="https://wa.me/989121326034?text=سلام، برای دریافت قیمت آهن‌آلات راهنمایی می‌خواستم"
+        >
+          دریافت قیمت در واتساپ
+        </a>
+      </di
