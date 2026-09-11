@@ -1,1452 +1,1705 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>حقیقت سوله | تأمین و اجرای پروژه‌های صنعتی</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="حقیقت سوله | فروش آهن‌آلات، فونداسیون، جرثقیل و سوله‌سازی"
+  >
+
+  <title>
+    حقیقت سوله | تأمین و اجرای پروژه‌های صنعتی
+  </title>
+
 
   <style>
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
+
 
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
-      margin: 0;
-      background: #0b0b0b;
-      color: #ffffff;
-      font-family: Tahoma, Arial, sans-serif;
+      font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+      background: var(--bg);
+      color: var(--text);
+
+      line-height: 1.8;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
     }
+
 
     a {
       text-decoration: none;
       color: inherit;
     }
 
-    /* =========================
+
+    img {
+      max-width: 100%;
+    }
+
+
+    button {
+      font-family: inherit;
+    }
+
+
+
+    /* =====================================================
+       DARK MODE
+    ===================================================== */
+
+    :root {
+
+      --bg: #0a0a0a;
+
+      --bg-2: #111111;
+
+      --card: #151515;
+
+      --card-2: #1a1a1a;
+
+      --border: #292929;
+
+      --text: #ffffff;
+
+      --muted: #999999;
+
+      --yellow: #f2c200;
+
+      --yellow-dark: #cba300;
+
+      --header: rgba(10,10,10,0.94);
+
+      --shadow:
+        0 20px 60px rgba(0,0,0,0.35);
+    }
+
+
+
+    /* =====================================================
+       LIGHT MODE
+    ===================================================== */
+
+    body.light {
+
+      --bg: #f4f4f2;
+
+      --bg-2: #ffffff;
+
+      --card: #ffffff;
+
+      --card-2: #eeeeeb;
+
+      --border: #ddddda;
+
+      --text: #151515;
+
+      --muted: #666666;
+
+      --yellow: #d8a900;
+
+      --yellow-dark: #b68f00;
+
+      --header: rgba(255,255,255,0.94);
+
+      --shadow:
+        0 20px 60px rgba(0,0,0,0.08);
+    }
+
+
+
+    /* =====================================================
        HEADER
-    ========================= */
+    ===================================================== */
 
     .header {
-      position: relative;
-      z-index: 10;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
 
       width: 100%;
-      padding: 18px 6%;
 
-      background: rgba(11, 11, 11, 0.96);
-      border-bottom: 1px solid #272727;
+      background:
+        var(--header);
+
+      backdrop-filter:
+        blur(14px);
+
+      -webkit-backdrop-filter:
+        blur(14px);
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+
+    .header-inner {
+
+      width: 90%;
+
+      max-width: 1300px;
+
+      height: 78px;
+
+      margin: auto;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
+      gap: 20px;
     }
+
 
     .brand {
+
       display: flex;
+
       align-items: center;
-      gap: 13px;
+
+      gap: 12px;
+
+      min-width: 0;
     }
 
-    .logo {
-      width: 52px;
-      height: 52px;
+
+    .brand-logo {
+
+      width: 48px;
+
+      height: 48px;
+
+      border-radius: 8px;
 
       object-fit: contain;
 
-      background: #ffffff;
-      border-radius: 8px;
+      background: white;
+
+      border: 1px solid var(--border);
     }
+
 
     .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+
+      min-width: 0;
     }
+
 
     .brand-name {
-      font-size: 20px;
+
+      font-size: 18px;
+
       font-weight: 900;
-      letter-spacing: -0.5px;
+
+      white-space: nowrap;
     }
+
 
     .brand-desc {
-      font-size: 11px;
-      color: #999999;
+
+      color: var(--muted);
+
+      font-size: 10px;
+
+      white-space: nowrap;
     }
 
-    .header-action {
+
+    .nav {
+
       display: flex;
+
       align-items: center;
-      gap: 10px;
+
+      gap: 24px;
     }
 
-    .header-location {
-      font-size: 11px;
-      color: #888888;
+
+    .nav a {
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      transition:
+        color 0.2s ease;
     }
 
-    .call-button {
-      display: inline-flex;
+
+    .nav a:hover {
+
+      color: var(--yellow);
+    }
+
+
+    .header-actions {
+
+      display: flex;
+
       align-items: center;
+
+      gap: 8px;
+    }
+
+
+    .icon-button {
+
+      width: 40px;
+
+      height: 40px;
+
+      border:
+        1px solid var(--border);
+
+      background: var(--card);
+
+      color: var(--text);
+
+      border-radius: 8px;
+
+      cursor: pointer;
+
+      font-size: 17px;
+
+      display: flex;
+
+      align-items: center;
+
       justify-content: center;
 
-      padding: 10px 17px;
-
-      background: #f2c200;
-      color: #111111;
-
-      border-radius: 7px;
-
-      font-size: 13px;
-      font-weight: 900;
+      transition:
+        0.2s ease;
     }
 
-    /* =========================
+
+    .icon-button:hover {
+
+      border-color:
+        var(--yellow);
+
+      color:
+        var(--yellow);
+    }
+
+
+    .header-call {
+
+      padding:
+        9px 14px;
+
+      background:
+        var(--yellow);
+
+      color:
+        #111;
+
+      border-radius:
+        7px;
+
+      font-size:
+        11px;
+
+      font-weight:
+        900;
+    }
+
+
+    .mobile-menu {
+
+      display: none;
+    }
+
+
+
+    /* =====================================================
        HERO
-    ========================= */
+    ===================================================== */
 
     .hero {
+
       position: relative;
 
-      width: 100%;
-      min-height: 650px;
-
-      display: flex;
-      align-items: center;
+      min-height: 700px;
 
       overflow: hidden;
 
-      background: #111111;
+      display: flex;
+
+      align-items: center;
+
+      background:
+        #111;
     }
 
+
     .hero-image {
+
       position: absolute;
+
       inset: 0;
 
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
 
-      display: block;
-
-      opacity: 0.42;
+      opacity: 0.43;
     }
 
+
     .hero-overlay {
+
       position: absolute;
+
       inset: 0;
 
       background:
         linear-gradient(
           90deg,
-          rgba(0,0,0,0.92) 0%,
-          rgba(0,0,0,0.72) 42%,
-          rgba(0,0,0,0.45) 100%
+          rgba(0,0,0,0.95),
+          rgba(0,0,0,0.70),
+          rgba(0,0,0,0.35)
         );
     }
 
+
     .hero-content {
+
       position: relative;
+
       z-index: 2;
 
-      width: 88%;
-      max-width: 1250px;
+      width: 90%;
 
-      margin: 0 auto;
+      max-width: 1300px;
 
-      padding: 90px 0;
+      margin: auto;
+
+      padding:
+        100px 0 150px;
     }
 
-    .hero-label {
-      display: inline-block;
 
-      margin-bottom: 22px;
+    .hero-badge {
 
-      padding: 7px 12px;
+      display: inline-flex;
 
-      border-right: 3px solid #f2c200;
+      align-items: center;
 
-      background: rgba(242, 194, 0, 0.08);
+      gap: 8px;
 
-      color: #f2c200;
+      padding:
+        7px 12px;
 
-      font-size: 12px;
-      font-weight: bold;
+      border-right:
+        3px solid var(--yellow);
+
+      background:
+        rgba(242,194,0,0.08);
+
+      color:
+        var(--yellow);
+
+      font-size:
+        11px;
+
+      font-weight:
+        bold;
+
+      margin-bottom:
+        22px;
     }
+
 
     .hero-title {
-      max-width: 850px;
 
-      margin: 0;
+      max-width:
+        850px;
 
-      font-size: clamp(38px, 6vw, 78px);
+      font-size:
+        clamp(40px, 6vw, 78px);
 
-      line-height: 1.15;
+      line-height:
+        1.2;
 
-      font-weight: 900;
+      font-weight:
+        900;
 
-      letter-spacing: -2px;
+      letter-spacing:
+        -2px;
     }
+
 
     .hero-title span {
-      color: #f2c200;
+
+      color:
+        var(--yellow);
     }
 
-    .hero-text {
-      max-width: 650px;
 
-      margin: 25px 0 0;
+    .hero-description {
 
-      color: #c5c5c5;
+      max-width:
+        650px;
 
-      font-size: 17px;
+      margin-top:
+        25px;
 
-      line-height: 2;
+      color:
+        #cccccc;
+
+      font-size:
+        16px;
+
+      line-height:
+        2.1;
     }
+
 
     .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
 
-      gap: 12px;
+      display:
+        flex;
 
-      margin-top: 32px;
+      flex-wrap:
+        wrap;
+
+      gap:
+        12px;
+
+      margin-top:
+        32px;
     }
 
-    .hero-primary {
-      padding: 14px 24px;
 
-      background: #f2c200;
-      color: #111111;
+    .btn-primary {
 
-      border-radius: 7px;
+      padding:
+        13px 23px;
 
-      font-size: 14px;
-      font-weight: 900;
+      background:
+        var(--yellow);
+
+      color:
+        #111;
+
+      border-radius:
+        7px;
+
+      font-size:
+        12px;
+
+      font-weight:
+        900;
     }
 
-    .hero-secondary {
-      padding: 14px 24px;
 
-      background: rgba(255,255,255,0.04);
+    .btn-secondary {
 
-      border: 1px solid #555555;
+      padding:
+        13px 23px;
 
-      color: #ffffff;
+      border:
+        1px solid #555;
 
-      border-radius: 7px;
+      background:
+        rgba(255,255,255,0.05);
 
-      font-size: 14px;
-      font-weight: bold;
+      color:
+        white;
+
+      border-radius:
+        7px;
+
+      font-size:
+        12px;
+
+      font-weight:
+        bold;
     }
 
-    /* =========================
-       HERO BOTTOM INFO
-    ========================= */
 
-    .hero-info {
+    .hero-stats {
+
       position: absolute;
+
       z-index: 3;
 
       bottom: 0;
+
       left: 0;
 
       width: 100%;
 
-      background: rgba(5,5,5,0.78);
+      display:
+        grid;
 
-      border-top: 1px solid rgba(255,255,255,0.08);
+      grid-template-columns:
+        repeat(3, 1fr);
 
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      background:
+        rgba(0,0,0,0.75);
+
+      border-top:
+        1px solid rgba(255,255,255,0.1);
     }
 
-    .hero-info-item {
-      padding: 18px 6%;
 
-      border-left: 1px solid rgba(255,255,255,0.08);
+    .hero-stat {
+
+      padding:
+        18px 6%;
+
+      border-left:
+        1px solid rgba(255,255,255,0.1);
     }
 
-    .hero-info-item:last-child {
-      border-left: none;
+
+    .hero-stat:last-child {
+
+      border-left:
+        none;
     }
 
-    .hero-info-title {
-      font-size: 13px;
-      font-weight: bold;
+
+    .hero-stat strong {
+
+      display:
+        block;
+
+      color:
+        white;
+
+      font-size:
+        13px;
     }
 
-    .hero-info-text {
-      margin-top: 3px;
 
-      color: #888888;
+    .hero-stat span {
 
-      font-size: 11px;
+      color:
+        #999;
+
+      font-size:
+        10px;
     }
 
-    /* =========================
-       NEXT SECTION PREVIEW
-    ========================= */
 
-    .intro {
-      width: 88%;
-      max-width: 1250px;
 
-      margin: 0 auto;
+    /* =====================================================
+       GENERAL SECTION
+    ===================================================== */
 
-      padding: 80px 0;
+    .section {
+
+      width: 90%;
+
+      max-width: 1300px;
+
+      margin: auto;
+
+      padding:
+        100px 0;
     }
 
-    .intro-label {
-      color: #f2c200;
 
-      font-size: 12px;
-      font-weight: bold;
+    .section-header {
+
+      max-width:
+        750px;
+
+      margin-bottom:
+        45px;
     }
 
-    .intro-title {
-      margin: 10px 0 0;
 
-      font-size: 32px;
+    .section-label {
+
+      color:
+        var(--yellow);
+
+      font-size:
+        11px;
+
+      font-weight:
+        900;
+
+      margin-bottom:
+        10px;
     }
 
-    .intro-text {
-      max-width: 700px;
 
-      color: #999999;
+    .section-title {
 
-      line-height: 2;
+      font-size:
+        clamp(30px,4vw,48px);
 
-      font-size: 15px;
+      line-height:
+        1.3;
+
+      font-weight:
+        900;
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
 
-    @media (max-width: 700px) {
+    .section-title span {
 
-      .header {
-        padding: 14px 5%;
-      }
-
-      .logo {
-        width: 45px;
-        height: 45px;
-      }
-
-      .brand-name {
-        font-size: 17px;
-      }
-
-      .brand-desc {
-        font-size: 9px;
-      }
-
-      .header-location {
-        display: none;
-      }
-
-      .call-button {
-        padding: 9px 12px;
-
-        font-size: 11px;
-      }
-
-      .hero {
-        min-height: 680px;
-      }
-
-      .hero-content {
-        width: 90%;
-
-        padding: 90px 0 150px;
-      }
-
-      .hero-title {
-        font-size: 42px;
-
-        letter-spacing: -1.5px;
-      }
-
-      .hero-text {
-        font-size: 14px;
-
-        line-height: 2;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-
-        align-items: stretch;
-      }
-
-      .hero-primary,
-      .hero-secondary {
-        text-align: center;
-      }
-
-      .hero-info {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-info-item {
-        padding: 10px 5%;
-
-        border-left: none;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-      }
-
-      .hero-info-item:last-child {
-        border-bottom: none;
-      }
-
-      .intro {
-        padding: 55px 0;
-      }
-
-      .intro-title {
-        font-size: 25px;
-      }
+      color:
+        var(--yellow);
     }
-  </style>
-</head>
 
-<body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+    .section-description {
 
-  <header class="header">
+      margin-top:
+        15px;
 
-    <a href="#" class="brand">
+      color:
+        var(--muted);
 
-      <img
-        class="logo"
-        src="images/branding/haghighat-soleh-logo.jpg"
-        alt="لوگوی حقیقت سوله"
-      >
+      font-size:
+        14px;
 
-      <div class="brand-text">
+      line-height:
+        2;
+    }
 
-        <div class="brand-name">
-          حقیقت سوله
-        </div>
 
-        <div class="brand-desc">
-          تأمین و اجرای پروژه‌های صنعتی
-        </div>
 
-      </div>
-
-    </a>
-
-
-    <div class="header-action">
-
-      <div class="header-location">
-        شهرک صنعتی شمس‌آباد
-      </div>
-
-      <a
-        href="tel:09121326034"
-        class="call-button"
-      >
-        تماس با ما
-      </a>
-
-    </div>
-
-  </header>
-
-
-  <!-- =========================
-       HERO
-  ========================== -->
-
-  <main>
-
-    <section class="hero">
-
-      <img
-        class="hero-image"
-        src="images/iron/steel-beams.jpg"
-        alt="مقاطع فولادی و آهن‌آلات"
-      >
-
-      <div class="hero-overlay"></div>
-
-
-      <div class="hero-content">
-
-        <div class="hero-label">
-          HAGHIGHAT SOLEH
-        </div>
-
-        <h1 class="hero-title">
-          راهکارهای
-          <span>صنعتی</span>
-          برای پروژه‌های بزرگ
-        </h1>
-
-        <p class="hero-text">
-          حقیقت سوله در چهار حوزه اصلی فعالیت می‌کند:
-          فروش و تأمین آهن‌آلات، اجرای فونداسیون،
-          جرثقیل و سوله‌سازی.
-        </p>
-
-
-        <div class="hero-buttons">
-
-          <a
-            href="#services"
-            class="hero-primary"
-          >
-            مشاهده خدمات
-          </a>
-
-          <a
-            href="tel:09121326034"
-            class="hero-secondary"
-          >
-            دریافت مشاوره
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- اطلاعات پایین هیرو -->
-
-      <div class="hero-info">
-
-        <div class="hero-info-item">
-
-          <div class="hero-info-title">
-            فروش و تأمین آهن‌آلات
-          </div>
-
-          <div class="hero-info-text">
-            انواع مقاطع و محصولات فولادی
-          </div>
-
-        </div>
-
-
-        <div class="hero-info-item">
-
-          <div class="hero-info-title">
-            اجرای پروژه‌های صنعتی
-          </div>
-
-          <div class="hero-info-text">
-            از فونداسیون تا اجرای سازه
-          </div>
-
-        </div>
-
-
-        <div class="hero-info-item">
-
-          <div class="hero-info-title">
-            شهرک صنعتی شمس‌آباد
-          </div>
-
-          <div class="hero-info-text">
-            تهران
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         INTRO
-    ========================== -->
-    <!-- =========================
-     SERVICES
-========================== -->
-
-<section class="services-section" id="services">
-
-  <div class="services-container">
-
-    <div class="services-heading">
-
-      <div class="services-label">
-        خدمات و فعالیت‌ها
-      </div>
-
-      <h2>
-        از تأمین آهن تا اجرای پروژه
-      </h2>
-
-      <p>
-        حقیقت سوله مجموعه‌ای از خدمات تخصصی مورد نیاز
-        پروژه‌های صنعتی را در یک مجموعه ارائه می‌کند.
-      </p>
-
-    </div>
-
-
-    <div class="services-grid">
-
-
-      <!-- 01 -->
-
-      <a href="#iron" class="service-card">
-
-        <div class="service-number">
-          01
-        </div>
-
-        <div class="service-content">
-
-          <h3>
-            فروش آهن‌آلات
-          </h3>
-
-          <p>
-            تأمین انواع تیرآهن، میلگرد، ورق فولادی،
-            پروفیل و سایر مقاطع مورد نیاز پروژه‌های صنعتی.
-          </p>
-
-          <span class="service-link">
-            مشاهده محصولات ←
-          </span>
-
-        </div>
-
-      </a>
-
-
-      <!-- 02 -->
-
-      <a href="#foundation" class="service-card">
-
-        <div class="service-number">
-          02
-        </div>
-
-        <div class="service-content">
-
-          <h3>
-            فونداسیون
-          </h3>
-
-          <p>
-            اجرای عملیات فونداسیون و آماده‌سازی زیرساخت
-            برای پروژه‌های صنعتی و سازه‌های فلزی.
-          </p>
-
-          <span class="service-link">
-            اطلاعات بیشتر ←
-          </span>
-
-        </div>
-
-      </a>
-
-
-      <!-- 03 -->
-
-      <a href="#crane" class="service-card">
-
-        <div class="service-number">
-          03
-        </div>
-
-        <div class="service-content">
-
-          <h3>
-            جرثقیل
-          </h3>
-
-          <p>
-            اجرای تجهیزات و سازه‌های مرتبط با جرثقیل‌های
-            صنعتی و سالن‌های تولیدی.
-          </p>
-
-          <span class="service-link">
-            اطلاعات بیشتر ←
-          </span>
-
-        </div>
-
-      </a>
-
-
-      <!-- 04 -->
-
-      <a href="#shed" class="service-card">
-
-        <div class="service-number">
-          04
-        </div>
-
-        <div class="service-content">
-
-          <h3>
-            سوله‌سازی
-          </h3>
-
-          <p>
-            ساخت و اجرای سازه‌های فلزی و سوله‌های صنعتی
-            متناسب با نیاز پروژه.
-          </p>
-
-          <span class="service-link">
-            اطلاعات بیشتر ←
-          </span>
-
-        </div>
-
-      </a>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     SERVICES CSS
-========================== -->
-
-<style>
-
-  .services-section {
-    width: 100%;
-    background: #0b0b0b;
-    padding: 100px 0;
-    border-top: 1px solid #202020;
-  }
-
-  .services-container {
-    width: 88%;
-    max-width: 1250px;
-    margin: 0 auto;
-  }
-
-  .services-heading {
-    max-width: 720px;
-    margin-bottom: 45px;
-  }
-
-  .services-label {
-    color: #f2c200;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 12px;
-  }
-
-  .services-heading h2 {
-    margin: 0;
-    font-size: clamp(30px, 4vw, 48px);
-    line-height: 1.3;
-    font-weight: 900;
-  }
-
-  .services-heading p {
-    margin: 15px 0 0;
-    color: #8d8d8d;
-    font-size: 15px;
-    line-height: 2;
-  }
-
-
-  /* GRID */
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-
-  /* CARD */
-
-  .service-card {
-    position: relative;
-
-    min-height: 285px;
-
-    padding: 30px;
-
-    background: #151515;
-
-    border: 1px solid #292929;
-
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    transition:
-      transform 0.25s ease,
-      border-color 0.25s ease,
-      background 0.25s ease;
-  }
-
-
-  .service-card::after {
-    content: "";
-
-    position: absolute;
-
-    width: 150px;
-    height: 150px;
-
-    left: -70px;
-    bottom: -70px;
-
-    border: 1px solid rgba(242,194,0,0.12);
-
-    border-radius: 50%;
-  }
-
-
-  .service-card:hover {
-    transform: translateY(-5px);
-
-    background: #191919;
-
-    border-color: #f2c200;
-  }
-
-
-  /* NUMBER */
-
-  .service-number {
-    color: #f2c200;
-
-    font-size: 13px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-  }
-
-
-  .service-content {
-    position: relative;
-    z-index: 2;
-  }
-
-
-  .service-content h3 {
-    margin: 0 0 12px;
-
-    font-size: 26px;
-
-    font-weight: 900;
-  }
-
-
-  .service-content p {
-    max-width: 520px;
-
-    margin: 0;
-
-    color: #999999;
-
-    font-size: 14px;
-
-    line-height: 2;
-  }
-
-
-  .service-link {
-    display: inline-block;
-
-    margin-top: 20px;
-
-    color: #f2c200;
-
-    font-size: 12px;
-
-    font-weight: bold;
-  }
-
-
-  /* MOBILE */
-
-  @media (max-width: 700px) {
+    /* =====================================================
+       SERVICES
+    ===================================================== */
 
     .services-section {
-      padding: 70px 0;
+
+      background:
+        var(--bg);
     }
 
-    .services-heading {
-      margin-bottom: 30px;
-    }
-
-    .services-heading h2 {
-      font-size: 30px;
-    }
-
-    .services-heading p {
-      font-size: 13px;
-    }
 
     .services-grid {
-      grid-template-columns: 1fr;
-      gap: 12px;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap:
+        18px;
     }
+
 
     .service-card {
-      min-height: 250px;
-      padding: 24px;
+
+      position:
+        relative;
+
+      min-height:
+        350px;
+
+      overflow:
+        hidden;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        14px;
+
+      background:
+        var(--card);
+
+      box-shadow:
+        var(--shadow);
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
     }
+
+
+    .service-card:hover {
+
+      transform:
+        translateY(-7px);
+
+      border-color:
+        var(--yellow);
+    }
+
+
+    .service-image {
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      min-height:
+        350px;
+
+      object-fit:
+        cover;
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      opacity:
+        0.52;
+
+      transition:
+        transform 0.5s ease;
+    }
+
+
+    .service-card:hover
+    .service-image {
+
+      transform:
+        scale(1.05);
+    }
+
+
+    .service-overlay {
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      background:
+        linear-gradient(
+          0deg,
+          rgba(0,0,0,0.94),
+          rgba(0,0,0,0.35)
+        );
+    }
+
+
+    .service-number {
+
+      position:
+        absolute;
+
+      top:
+        20px;
+
+      left:
+        22px;
+
+      color:
+        var(--yellow);
+
+      font-size:
+        12px;
+
+      font-weight:
+        900;
+
+      z-index:
+        2;
+    }
+
+
+    .service-content {
+
+      position:
+        absolute;
+
+      z-index:
+        2;
+
+      right:
+        25px;
+
+      bottom:
+        24px;
+
+      left:
+        25px;
+
+      color:
+        white;
+    }
+
 
     .service-content h3 {
-      font-size: 23px;
+
+      font-size:
+        27px;
+
+      font-weight:
+        900;
+
+      margin-bottom:
+        7px;
     }
+
 
     .service-content p {
-      font-size: 13px;
+
+      max-width:
+        600px;
+
+      color:
+        #cccccc;
+
+      font-size:
+        12px;
+
+      line-height:
+        2;
     }
 
-  }
 
-</style>
-    <!-- =========================
-     IRON PRODUCTS
-========================== -->
+    .service-link {
 
-<section class="iron-section" id="iron">
+      display:
+        inline-block;
 
-  <div class="iron-container">
+      margin-top:
+        13px;
 
-    <div class="iron-heading">
+      color:
+        var(--yellow);
 
-      <div class="iron-label">
-        فروش و تأمین آهن‌آلات
-      </div>
+      font-size:
+        11px;
 
-      <h2>
-        محصولات فولادی
-        <span>مورد نیاز پروژه</span>
-      </h2>
-
-      <p>
-        تأمین انواع آهن‌آلات و مقاطع فولادی برای
-        پروژه‌های ساختمانی و صنعتی.
-        برای دریافت موجودی و قیمت روز با ما تماس بگیرید.
-      </p>
-
-    </div>
-
-
-    <div class="iron-grid">
-
-
-      <!-- تیرآهن -->
-
-      <article class="iron-card">
-
-        <div class="iron-image">
-
-          <img
-            src="images/iron/steel-beams.jpg"
-            alt="تیرآهن"
-          >
-
-          <div class="iron-tag">
-            محصول فولادی
-          </div>
-
-        </div>
-
-        <div class="iron-body">
-
-          <h3>
-            تیرآهن
-          </h3>
-
-          <p>
-            تأمین تیرآهن مورد استفاده در سازه‌های
-            فولادی و پروژه‌های صنعتی.
-          </p>
-
-          <a
-            href="tel:09121326034"
-            class="iron-button"
-          >
-            استعلام قیمت
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- ورق فولادی -->
-
-      <article class="iron-card">
-
-        <div class="iron-image">
-
-          <img
-            src="images/iron/steel-sheets.jpg"
-            alt="ورق فولادی"
-          >
-
-          <div class="iron-tag">
-            محصول فولادی
-          </div>
-
-        </div>
-
-        <div class="iron-body">
-
-          <h3>
-            ورق فولادی
-          </h3>
-
-          <p>
-            تأمین ورق‌های فولادی مورد نیاز
-            پروژه‌ها و ساخت سازه‌های صنعتی.
-          </p>
-
-          <a
-            href="tel:09121326034"
-            class="iron-button"
-          >
-            استعلام قیمت
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- میلگرد -->
-
-      <article class="iron-card">
-
-        <div class="iron-image">
-
-          <img
-            src="images/iron/steel-rebar.jpg"
-            alt="میلگرد"
-          >
-
-          <div class="iron-tag">
-            محصول فولادی
-          </div>
-
-        </div>
-
-        <div class="iron-body">
-
-          <h3>
-            میلگرد
-          </h3>
-
-          <p>
-            تأمین میلگرد مورد استفاده در
-            فونداسیون و پروژه‌های عمرانی.
-          </p>
-
-          <a
-            href="tel:09121326034"
-            class="iron-button"
-          >
-            استعلام قیمت
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- پروفیل -->
-
-      <article class="iron-card">
-
-        <div class="iron-image">
-
-          <img
-            src="images/iron/steel-profiles.jpg"
-            alt="پروفیل فولادی"
-          >
-
-          <div class="iron-tag">
-            محصول فولادی
-          </div>
-
-        </div>
-
-        <div class="iron-body">
-
-          <h3>
-            پروفیل و مقاطع
-          </h3>
-
-          <p>
-            تأمین انواع پروفیل و مقاطع فولادی
-            متناسب با نیاز پروژه.
-          </p>
-
-          <a
-            href="tel:09121326034"
-            class="iron-button"
-          >
-            استعلام قیمت
-          </a>
-
-        </div>
-
-      </article>
-
-
-    </div>
-
-
-    <!-- CTA -->
-
-    <div class="iron-cta">
-
-      <div>
-
-        <strong>
-          محصول مورد نظرتان را پیدا نکردید؟
-        </strong>
-
-        <p>
-          برای استعلام سایر آهن‌آلات و موجودی روز
-          با کارشناسان حقیقت سوله تماس بگیرید.
-        </p>
-
-      </div>
-
-      <a
-        href="tel:09121326034"
-        class="iron-cta-button"
-      >
-        تماس با واحد فروش
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     IRON CSS
-========================== -->
-
-<style>
-
-  .iron-section {
-    width: 100%;
-    background: #101010;
-    padding: 100px 0;
-    border-top: 1px solid #202020;
-  }
-
-  .iron-container {
-    width: 88%;
-    max-width: 1250px;
-    margin: 0 auto;
-  }
-
-  .iron-heading {
-    max-width: 750px;
-    margin-bottom: 45px;
-  }
-
-  .iron-label {
-    color: #f2c200;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 12px;
-  }
-
-  .iron-heading h2 {
-    margin: 0;
-    font-size: clamp(30px, 4vw, 48px);
-    line-height: 1.3;
-    font-weight: 900;
-  }
-
-  .iron-heading h2 span {
-    color: #f2c200;
-  }
-
-  .iron-heading p {
-    margin: 18px 0 0;
-    color: #8d8d8d;
-    font-size: 15px;
-    line-height: 2;
-  }
-
-
-  /* PRODUCTS GRID */
-
-  .iron-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-
-
-  /* CARD */
-
-  .iron-card {
-    background: #171717;
-    border: 1px solid #292929;
-    border-radius: 12px;
-    overflow: hidden;
-
-    transition:
-      transform 0.25s ease,
-      border-color 0.25s ease;
-  }
-
-  .iron-card:hover {
-    transform: translateY(-5px);
-    border-color: #f2c200;
-  }
-
-
-  /* IMAGE */
-
-  .iron-image {
-    position: relative;
-    height: 220px;
-    background: #222222;
-    overflow: hidden;
-  }
-
-  .iron-image img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    transition: transform 0.35s ease;
-  }
-
-  .iron-card:hover .iron-image img {
-    transform: scale(1.04);
-  }
-
-
-  /* TAG */
-
-  .iron-tag {
-    position: absolute;
-
-    top: 12px;
-    right: 12px;
-
-    padding: 5px 9px;
-
-    background: rgba(0,0,0,0.75);
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    color: #f2c200;
-
-    border-radius: 5px;
-
-    font-size: 9px;
-    font-weight: bold;
-  }
-
-
-  /* BODY */
-
-  .iron-body {
-    padding: 22px;
-  }
-
-  .iron-body h3 {
-    margin: 0 0 9px;
-
-    font-size: 22px;
-
-    font-weight: 900;
-  }
-
-  .iron-body p {
-    min-height: 70px;
-
-    margin: 0;
-
-    color: #8d8d8d;
-
-    font-size: 12px;
-
-    line-height: 2;
-  }
-
-
-  /* BUTTON */
-
-  .iron-button {
-    display: block;
-
-    margin-top: 18px;
-
-    padding: 11px;
-
-    background: #f2c200;
-    color: #111111;
-
-    border-radius: 6px;
-
-    text-align: center;
-
-    font-size: 12px;
-    font-weight: 900;
-  }
-
-
-  /* CTA */
-
-  .iron-cta {
-    margin-top: 35px;
-
-    padding: 25px 28px;
-
-    background: #181818;
-
-    border: 1px solid #292929;
-
-    border-right: 3px solid #f2c200;
-
-    border-radius: 10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 25px;
-  }
-
-  .iron-cta strong {
-    font-size: 16px;
-  }
-
-  .iron-cta p {
-    margin: 5px 0 0;
-
-    color: #888888;
-
-    font-size: 12px;
-  }
-
-  .iron-cta-button {
-    flex-shrink: 0;
-
-    padding: 12px 20px;
-
-    background: #f2c200;
-    color: #111111;
-
-    border-radius: 6px;
-
-    font-size: 12px;
-    font-weight: 900;
-  }
-
-
-  /* MOBILE */
-
-  @media (max-width: 900px) {
-
-    .iron-grid {
-      grid-template-columns: repeat(2, 1fr);
+      font-weight:
+        bold;
     }
 
-  }
 
 
-  @media (max-width: 600px) {
+    /* =====================================================
+       IRON
+    ===================================================== */
 
     .iron-section {
-      padding: 70px 0;
+
+      background:
+        var(--bg-2);
+
+      border-top:
+        1px solid var(--border);
     }
 
-    .iron-heading {
-      margin-bottom: 30px;
+
+    .products-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap:
+        16px;
     }
 
-    .iron-heading h2 {
-      font-size: 30px;
+
+    .product-card {
+
+      overflow:
+        hidden;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        12px;
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
     }
 
-    .iron-heading p {
-      font-size: 13px;
+
+    .product-card:hover {
+
+      transform:
+        translateY(-5px);
+
+      border-color:
+        var(--yellow);
     }
 
-    .iron-grid {
-      grid-template-columns: 1fr;
-      gap: 14px;
+
+    .product-image {
+
+      position:
+        relative;
+
+      height:
+        210px;
+
+      overflow:
+        hidden;
+
+      background:
+        #222;
     }
 
-    .iron-image {
-      height: 230px;
+
+    .product-image img {
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      object-fit:
+        cover;
+
+      display:
+        block;
+
+      transition:
+        transform 0.4s ease;
     }
 
-    .iron-body h3 {
-      font-size: 21px;
+
+    .product-card:hover
+    .product-image img {
+
+      transform:
+        scale(1.05);
     }
 
-    .iron-body p {
-      min-height: auto;
+
+    .product-body {
+
+      padding:
+        20px;
     }
 
-    .iron-cta {
-      flex-direction: column;
-      align-items: stretch;
+
+    .product-body h3 {
+
+      font-size:
+        20px;
+
+      margin-bottom:
+        7px;
     }
 
-    .iron-cta-button {
-      text-align: center;
+
+    .product-body p {
+
+      color:
+        var(--muted);
+
+      font-size:
+        11px;
+
+      line-height:
+        2;
     }
 
-  }
 
-</style>
-  <!-- =========================
+    .product-button {
+
+      display:
+        block;
+
+      margin-top:
+        15px;
+
+      padding:
+        10px;
+
+      background:
+        var(--yellow);
+
+      color:
+        #111;
+
+      border-radius:
+        6px;
+
+      text-align:
+        center;
+
+      font-size:
+        11px;
+
+      font-weight:
+        900;
+    }
+
+
+
+    /* =====================================================
+       PROJECT SERVICE SECTIONS
+    ===================================================== */
+
+    .service-detail {
+
+      border-top:
+        1px solid var(--border);
+
+      background:
+        var(--bg);
+    }
+
+
+    .detail-box {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:
+        45px;
+
+      align-items:
+        center;
+    }
+
+
+    .detail-image {
+
+      width:
+        100%;
+
+      height:
+        450px;
+
+      object-fit:
+        cover;
+
+      border-radius:
+        14px;
+
+      border:
+        1px solid var(--border);
+    }
+
+
+    .detail-content h2 {
+
+      font-size:
+        clamp(30px,4vw,48px);
+
+      line-height:
+        1.3;
+
+      margin-bottom:
+        18px;
+    }
+
+
+    .detail-content h2 span {
+
+      color:
+        var(--yellow);
+    }
+
+
+    .detail-content p {
+
+      color:
+        var(--muted);
+
+      font-size:
+        14px;
+
+      line-height:
+        2.2;
+    }
+
+
+    .detail-list {
+
+      list-style:
+        none;
+
+      margin-top:
+        25px;
+
+      display:
+        grid;
+
+      gap:
+        10px;
+    }
+
+
+    .detail-list li {
+
+      padding:
+        11px 14px;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        7px;
+
+      font-size:
+        12px;
+    }
+
+
+    .detail-list li::before {
+
+      content:
+        "✓";
+
+      color:
+        var(--yellow);
+
+      font-weight:
+        bold;
+
+      margin-left:
+        8px;
+    }
+
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta-section {
+
+      padding:
+        80px 0;
+
+      background:
+        var(--bg-2);
+    }
+
+
+    .cta {
+
+      width:
+        90%;
+
+      max-width:
+        1300px;
+
+      margin:
+        auto;
+
+      padding:
+        45px;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid var(--border);
+
+      border-right:
+        4px solid var(--yellow);
+
+      border-radius:
+        14px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        30px;
+    }
+
+
+    .cta h2 {
+
+      font-size:
+        28px;
+
+      margin-bottom:
+        8px;
+    }
+
+
+    .cta p {
+
+      color:
+        var(--muted);
+
+      font-size:
+        13px;
+    }
+
+
+    .cta-buttons {
+
+      display:
+        flex;
+
+      gap:
+        10px;
+
+      flex-shrink:
+        0;
+    }
+
+
+    .whatsapp {
+
+      padding:
+        13px 20px;
+
+      background:
+        #168c4a;
+
+      color:
+        white;
+
+      border-radius:
+        7px;
+
+      font-size:
+        12px;
+
+      font-weight:
+        bold;
+    }
+
+
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .contact-section {
+
+      background:
+        var(--bg);
+
+      border-top:
+        1px solid var(--border);
+    }
+
+
+    .contact-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap:
+        15px;
+    }
+
+
+    .contact-card {
+
+      padding:
+        28px;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        10px;
+    }
+
+
+    .contact-card small {
+
+      display:
+        block;
+
+      color:
+        var(--yellow);
+
+      font-size:
+        10px;
+
+      margin-bottom:
+        7px;
+    }
+
+
+    .contact-card strong {
+
+      font-size:
+        15px;
+    }
+
+
+    .contact-card p {
+
+      color:
+        var(--muted);
+
+      font-size:
+        11px;
+
+      margin-top:
+        5px;
+    }
+
+
+
+    /* =====================================================
        FOOTER
-  ========================== -->
+    ===================================================== */
 
-  <footer
-    style="
-      padding:30px 6%;
-      border-top:1px solid #272727;
-      color:#777777;
-      text-align:center;
-      font-size:12px;
-    "
-  >
-    حقیقت سوله | تأمین و اجرای پروژه‌های صنعتی
-  </footer>
+    .footer {
 
-</body>
-</html>
+      padding:
+        35px 5%;
+
+      background:
+        #080808;
+
+      color:
+        #777;
+
+      text-align:
+        center;
+
+      font-size:
+        11px;
+
+      border-top:
+        1px solid #222;
+    }
+
+
+    body.light .footer {
+
+      background:
+        #151515;
+
+      color:
+        #aaa;
+    }
+
+
+
+    /* =====================================================
+       FLOATING BUTTONS
+    ===================================================== */
+
+    .floating {
+
+      position:
+        fixed;
+
+      z-index:
+        999;
+
+      left:
+        18px;
+
+      bottom:
+        18px;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      gap:
+        8px;
+    }
+
+
+    .floating a {
+
+      width:
+        48px;
+
+      height:
+        48px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      border-radius:
+        50%;
+
+      font-size:
+        18px;
+
+      box-shadow:
+        0 5px 20px rgba(0,0,0,0.25);
+    }
+
+
+    .floating-call {
+
+      background:
+        var(--yellow);
+
+      color:
+        #111;
+    }
+
+
+    .floating-whatsapp {
+
+      background:
+        #168c4a;
+
+      color:
+        white;
+    }
+
+
+
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
+
+    .back-top {
+
+      position:
+        fixed;
+
+      right:
+        18px;
+
+      bottom:
+        18px;
+
+      width:
+        42px;
+
+      height:
+        42px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        50%;
+
+      background:
+        var(--card);
+
+      color:
+        var(--text);
+
+      cursor:
+        pointer;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      font-size:
+        17px;
+
+      z-index:
+        900;
+    }
+
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 850px) {
+
+      .nav {
+        display:
+          none;
+      }
+
+
+      .mobile-menu {
+        display:
+          flex;
+      }
+
+
+      .header-inner {
+        height:
+          68px;
+      }
+
+
+      .header-call {
+        display:
+          none;
+      }
+
+
+      .hero {
+        min-height:
+          690px;
+      }
+
+
+      .hero-content {
+        width:
+          90%;
+
+        padding:
+          80px 0 155px;
+      }
+
+
+      .hero-title {
+        font-size:
+          42px;
+
+        letter-spacing:
+          -1px;
+      }
+
+
+      .hero-description {
+        font-size:
+          13px;
+      }
+
+
+      .hero-buttons {
+        flex-direction:
+          column;
+      }
+
+
+      .btn-primary,
+      .btn-secondary {
+        text-align:
+          center;
+      }
+
+
+      .hero-stats {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .hero-stat {
+
+        padding:
+          9px 5%;
+
+        border-left:
+          none;
+
+        border-bottom:
+          1px solid rgba(255,255,255,0.08);
+      }
+
+
+      .hero-stat:last-child {
+
+        border-bottom:
+          none;
+      }
+
+
+      .services-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .service-card {
+
+        min-height:
+          300px;
+      }
+
+
+      .service-image {
+
+        min-height:
+          300px;
+      }
+
+
+      .products-grid {
+
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+
+      .detail-box {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          25px;
+      }
