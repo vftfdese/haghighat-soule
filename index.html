@@ -1,1283 +1,474 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>حقیقت سوله | فروش آهن‌آلات و اجرای پروژه‌های صنعتی</title>
+  <title>حقیقت سوله | تأمین و اجرای پروژه‌های صنعتی</title>
 
-<meta name="description" content="حقیقت سوله؛ تأمین و فروش آهن‌آلات، اجرای فونداسیون، جرثقیل و سوله‌سازی در شهرک صنعتی شمس‌آباد تهران.">
-<meta name="theme-color" content="#111315">
-
-<style>
-/* =========================
-   RESET
-========================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:
-        Tahoma,
-        Arial,
-        sans-serif;
-    background:#101214;
-    color:#f4f4f4;
-    line-height:1.9;
-    overflow-x:hidden;
-}
-
-img{
-    max-width:100%;
-    display:block;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-button{
-    font-family:inherit;
-}
-
-:root{
-    --bg:#101214;
-    --bg2:#151719;
-    --card:#191c1f;
-    --card2:#202428;
-    --text:#f5f5f5;
-    --muted:#a7adb3;
-    --yellow:#f5b900;
-    --yellow2:#ffc928;
-    --border:rgba(255,255,255,.09);
-    --shadow:0 20px 60px rgba(0,0,0,.3);
-    --radius:22px;
-}
-
-body.light{
-    --bg:#f4f4f1;
-    --bg2:#ffffff;
-    --card:#ffffff;
-    --card2:#eeeeea;
-    --text:#111315;
-    --muted:#62676c;
-    --border:rgba(0,0,0,.09);
-    --shadow:0 20px 50px rgba(0,0,0,.08);
-}
-
-
-/* =========================
-   GLOBAL
-========================= */
-
-.container{
-    width:min(1180px,92%);
-    margin:auto;
-}
-
-section{
-    padding:100px 0;
-    position:relative;
-}
-
-.section-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:end;
-    gap:30px;
-    margin-bottom:45px;
-}
-
-.section-label{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    color:var(--yellow);
-    font-size:13px;
-    font-weight:bold;
-    margin-bottom:12px;
-}
-
-.section-label::before{
-    content:"";
-    width:28px;
-    height:2px;
-    background:var(--yellow);
-}
-
-.section-title{
-    font-size:clamp(30px,5vw,48px);
-    line-height:1.35;
-    font-weight:900;
-    letter-spacing:-1px;
-}
-
-.section-description{
-    max-width:540px;
-    color:var(--muted);
-    font-size:15px;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    min-height:50px;
-    padding:0 22px;
-    border-radius:12px;
-    border:1px solid var(--border);
-    font-weight:bold;
-    font-size:14px;
-    transition:.25s ease;
-    cursor:pointer;
-}
-
-.btn-primary{
-    background:var(--yellow);
-    color:#111;
-    border-color:var(--yellow);
-}
-
-.btn-primary:hover{
-    background:var(--yellow2);
-    transform:translateY(-2px);
-}
-
-.btn-dark{
-    background:rgba(255,255,255,.05);
-}
-
-body.light .btn-dark{
-    background:#fff;
-}
-
-.btn-dark:hover{
-    transform:translateY(-2px);
-    border-color:var(--yellow);
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-    position:fixed;
-    top:0;
-    right:0;
-    left:0;
-    z-index:1000;
-    background:rgba(16,18,20,.82);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid var(--border);
-}
-
-body.light header{
-    background:rgba(244,244,241,.88);
-}
-
-.nav{
-    height:78px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    min-width:180px;
-}
-
-.logo-image{
-    width:45px;
-    height:45px;
-    object-fit:cover;
-    border-radius:10px;
-    background:#fff;
-}
-
-.logo-text strong{
-    display:block;
-    font-size:17px;
-    line-height:1.2;
-}
-
-.logo-text span{
-    display:block;
-    color:var(--muted);
-    font-size:10px;
-    margin-top:3px;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:28px;
-}
-
-.nav-links a{
-    color:var(--muted);
-    font-size:13px;
-    transition:.2s;
-}
-
-.nav-links a:hover{
-    color:var(--yellow);
-}
-
-.nav-actions{
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.icon-btn{
-    width:42px;
-    height:42px;
-    border-radius:11px;
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.04);
-    color:var(--text);
-    cursor:pointer;
-    font-size:17px;
-}
-
-.menu-btn{
-    display:none;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    min-height:100vh;
-    padding-top:78px;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
-}
-
-.hero-bg{
-    position:absolute;
-    inset:0;
-    z-index:-3;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(10,11,12,.96) 0%,
-            rgba(10,11,12,.86) 40%,
-            rgba(10,11,12,.52) 100%
-        ),
-        url("images/home/industrial-complex-aerial.jpg")
-        center/cover no-repeat;
-}
-
-body.light .hero-bg{
-    background:
-        linear-gradient(
-            90deg,
-            rgba(244,244,241,.94) 0%,
-            rgba(244,244,241,.82) 45%,
-            rgba(244,244,241,.48) 100%
-        ),
-        url("images/home/industrial-complex-aerial.jpg")
-        center/cover no-repeat;
-}
-
-.hero-grid{
-    display:grid;
-    grid-template-columns:1.15fr .85fr;
-    gap:50px;
-    align-items:center;
-}
-
-.hero-content{
-    max-width:760px;
-}
-
-.hero-tag{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:8px 13px;
-    border:1px solid rgba(245,185,0,.35);
-    background:rgba(245,185,0,.08);
-    color:var(--yellow);
-    border-radius:30px;
-    font-size:12px;
-    margin-bottom:22px;
-}
-
-.hero-tag span{
-    width:7px;
-    height:7px;
-    background:var(--yellow);
-    border-radius:50%;
-    box-shadow:0 0 15px var(--yellow);
-}
-
-.hero h1{
-    font-size:clamp(40px,7vw,78px);
-    line-height:1.15;
-    letter-spacing:-3px;
-    font-weight:900;
-    margin-bottom:25px;
-}
-
-.hero h1 em{
-    color:var(--yellow);
-    font-style:normal;
-}
-
-.hero-text{
-    max-width:650px;
-    color:#c4c8cc;
-    font-size:17px;
-    line-height:2;
-    margin-bottom:32px;
-}
-
-body.light .hero-text{
-    color:#555;
-}
-
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.hero-stats{
-    margin-top:55px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:35px;
-}
-
-.stat strong{
-    display:block;
-    font-size:25px;
-    color:var(--text);
-}
-
-.stat span{
-    color:var(--muted);
-    font-size:11px;
-}
-
-.hero-card{
-    background:rgba(20,23,25,.76);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:28px;
-    padding:22px;
-    backdrop-filter:blur(12px);
-    box-shadow:var(--shadow);
-}
-
-body.light .hero-card{
-    background:rgba(255,255,255,.78);
-}
-
-.hero-card-image{
-    height:330px;
-    border-radius:18px;
-    overflow:hidden;
-    background:var(--card2);
-}
-
-.hero-card-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.hero-card-info{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    padding-top:18px;
-}
-
-.hero-card-info strong{
-    font-size:15px;
-}
-
-.hero-card-info span{
-    display:block;
-    color:var(--muted);
-    font-size:11px;
-    margin-top:3px;
-}
-
-
-/* =========================
-   SERVICES
-========================= */
-
-.services{
-    background:var(--bg2);
-}
-
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
-}
-
-.service-card{
-    position:relative;
-    min-height:350px;
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    overflow:hidden;
-    background:var(--card);
-    transition:.3s ease;
-}
-
-.service-card:hover{
-    transform:translateY(-7px);
-    border-color:rgba(245,185,0,.45);
-}
-
-.service-image{
-    height:190px;
-    background:var(--card2);
-    overflow:hidden;
-}
-
-.service-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.5s ease;
-}
-
-.service-card:hover .service-image img{
-    transform:scale(1.05);
-}
-
-.service-body{
-    padding:22px;
-}
-
-.service-number{
-    color:var(--yellow);
-    font-size:11px;
-    font-weight:bold;
-}
-
-.service-body h3{
-    font-size:21px;
-    margin:4px 0 8px;
-}
-
-.service-body p{
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.9;
-}
-
-
-/* =========================
-   IRON
-========================= */
-
-.iron{
-    background:var(--bg);
-}
-
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
-}
-
-.product-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:20px;
-    overflow:hidden;
-    transition:.3s;
-}
-
-.product-card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(245,185,0,.4);
-}
-
-.product-image{
-    height:230px;
-    background:var(--card2);
-    overflow:hidden;
-}
-
-.product-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.product-info{
-    padding:20px;
-}
-
-.product-info h3{
-    font-size:18px;
-    margin-bottom:6px;
-}
-
-.product-info p{
-    color:var(--muted);
-    font-size:12px;
-    margin-bottom:16px;
-}
-
-.product-link{
-    color:var(--yellow);
-    font-size:12px;
-    font-weight:bold;
-}
-
-
-/* =========================
-   FEATURE SECTIONS
-========================= */
-
-.feature{
-    background:var(--bg2);
-}
-
-.feature-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
-}
-
-.feature.reverse .feature-image{
-    order:2;
-}
-
-.feature-image{
-    height:500px;
-    border-radius:28px;
-    overflow:hidden;
-    background:var(--card);
-    border:1px solid var(--border);
-}
-
-.feature-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.feature-content h2{
-    font-size:clamp(30px,5vw,50px);
-    line-height:1.3;
-    margin-bottom:20px;
-}
-
-.feature-content > p{
-    color:var(--muted);
-    font-size:15px;
-    margin-bottom:25px;
-}
-
-.feature-list{
-    display:grid;
-    gap:12px;
-    margin-bottom:30px;
-}
-
-.feature-list li{
-    list-style:none;
-    display:flex;
-    align-items:flex-start;
-    gap:12px;
-    color:var(--text);
-    font-size:13px;
-}
-
-.feature-list li::before{
-    content:"✓";
-    flex-shrink:0;
-    width:22px;
-    height:22px;
-    display:grid;
-    place-items:center;
-    border-radius:50%;
-    background:rgba(245,185,0,.12);
-    color:var(--yellow);
-    font-weight:bold;
-}
-
-
-/* =========================
-   PROJECTS
-========================= */
-
-.projects{
-    background:var(--bg);
-}
-
-.project-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
-}
-
-.project{
-    position:relative;
-    height:330px;
-    border-radius:22px;
-    overflow:hidden;
-    background:var(--card);
-    border:1px solid var(--border);
-}
-
-.project img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.5s;
-}
-
-.project:hover img{
-    transform:scale(1.06);
-}
-
-.project-overlay{
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:flex-end;
-    padding:24px;
-    background:
-        linear-gradient(
-            transparent 35%,
-            rgba(0,0,0,.9)
-        );
-}
-
-.project-overlay h3{
-    font-size:18px;
-}
-
-.project-overlay p{
-    color:#bbb;
-    font-size:11px;
-    margin-top:3px;
-}
-
-
-/* =========================
-   CTA
-========================= */
-
-.cta{
-    padding:90px 0;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(245,185,0,.13),
-            transparent 50%
-        ),
-        var(--bg2);
-}
-
-.cta-box{
-    border:1px solid rgba(245,185,0,.25);
-    background:
-        linear-gradient(
-            135deg,
-            rgba(245,185,0,.08),
-            rgba(255,255,255,.015)
-        );
-    border-radius:30px;
-    padding:55px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:40px;
-}
-
-.cta h2{
-    font-size:clamp(28px,5vw,48px);
-    line-height:1.35;
-    margin-bottom:10px;
-}
-
-.cta p{
-    color:var(--muted);
-    font-size:14px;
-}
-
-.cta-buttons{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact{
-    background:var(--bg);
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.contact-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:22px;
-    padding:28px;
-}
-
-.contact-card h3{
-    margin-bottom:22px;
-    font-size:22px;
-}
-
-.contact-items{
-    display:grid;
-    gap:14px;
-}
-
-.contact-item{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    padding:14px;
-    border-radius:14px;
-    background:rgba(255,255,255,.035);
-}
-
-body.light .contact-item{
-    background:#f3f3ef;
-}
-
-.contact-icon{
-    width:40px;
-    height:40px;
-    display:grid;
-    place-items:center;
-    border-radius:11px;
-    background:rgba(245,185,0,.12);
-    color:var(--yellow);
-    font-size:18px;
-}
-
-.contact-item strong{
-    display:block;
-    font-size:13px;
-}
-
-.contact-item span{
-    display:block;
-    color:var(--muted);
-    font-size:11px;
-    margin-top:2px;
-}
-
-.map-box{
-    min-height:100%;
-    border-radius:22px;
-    overflow:hidden;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(245,185,0,.08),
-            transparent
-        ),
-        var(--card);
-    border:1px solid var(--border);
-    padding:30px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-.map-placeholder{
-    min-height:260px;
-    border-radius:18px;
-    border:1px dashed rgba(245,185,0,.3);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:30px;
-    background:
-        repeating-linear-gradient(
-            45deg,
-            rgba(255,255,255,.025) 0,
-            rgba(255,255,255,.025) 1px,
-            transparent 1px,
-            transparent 12px
-        );
-}
-
-.map-placeholder strong{
-    display:block;
-    font-size:20px;
-    margin-bottom:8px;
-}
-
-.map-placeholder span{
-    color:var(--muted);
-    font-size:12px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    background:#0a0b0c;
-    border-top:1px solid var(--border);
-    padding:55px 0 25px;
-}
-
-body.light footer{
-    background:#151719;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:1.4fr .8fr .8fr;
-    gap:50px;
-    padding-bottom:40px;
-}
-
-.footer-brand p{
-    color:#8e9499;
-    font-size:12px;
-    max-width:430px;
-    margin-top:15px;
-}
-
-.footer-title{
-    font-size:13px;
-    margin-bottom:15px;
-    color:#fff;
-}
-
-.footer-links{
-    display:grid;
-    gap:9px;
-}
-
-.footer-links a{
-    color:#8e9499;
-    font-size:11px;
-    transition:.2s;
-}
-
-.footer-links a:hover{
-    color:var(--yellow);
-}
-
-.footer-bottom{
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,.07);
-    color:#777;
-    font-size:10px;
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-}
-
-
-/* =========================
-   FLOATING BUTTONS
-========================= */
-
-.floating{
-    position:fixed;
-    left:18px;
-    bottom:18px;
-    z-index:900;
-    display:flex;
-    flex-direction:column;
-    gap:9px;
-}
-
-.float-btn{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    background:var(--yellow);
-    color:#111;
-    font-size:19px;
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
-    transition:.25s;
-}
-
-.float-btn:hover{
-    transform:translateY(-3px) scale(1.03);
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1000px){
-
-    .nav-links{
-        gap:16px;
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    .service-grid,
-    .product-grid{
-        grid-template-columns:repeat(2,1fr);
+    html {
+      scroll-behavior: smooth;
     }
 
-    .hero-grid{
-        grid-template-columns:1fr;
+    body {
+      margin: 0;
+      background: #111111;
+      color: #ffffff;
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 1.8;
     }
 
-    .hero-card{
-        max-width:600px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .feature-grid{
-        gap:35px;
+    .header {
+      width: 100%;
+      padding: 18px 6%;
+      background: #151515;
+      border-bottom: 1px solid #333333;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-}
-
-@media(max-width:760px){
-
-    section{
-        padding:75px 0;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .container{
-        width:min(92%,600px);
+    .logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 8px;
     }
 
-    .nav{
-        height:68px;
+    .brand-title {
+      font-size: 20px;
+      font-weight: bold;
     }
 
-    .nav-links{
-        position:absolute;
-        top:68px;
-        right:4%;
-        left:4%;
-        display:none;
-        flex-direction:column;
-        align-items:stretch;
-        gap:0;
-        padding:10px;
-        background:var(--card);
-        border:1px solid var(--border);
-        border-radius:18px;
-        box-shadow:var(--shadow);
+    .brand-subtitle {
+      font-size: 12px;
+      color: #aaaaaa;
     }
 
-    .nav-links.active{
-        display:flex;
+    .test {
+      padding: 8px 14px;
+      background: #f2c200;
+      color: #111111;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: bold;
     }
 
-    .nav-links a{
-        padding:13px;
-        border-radius:10px;
+    .hero {
+      width: 88%;
+      max-width: 1200px;
+      margin: 35px auto;
+      padding: 35px;
+      background: #1b1b1b;
+      border: 1px solid #333333;
+      border-radius: 16px;
     }
 
-    .nav-links a:hover{
-        background:rgba(245,185,0,.08);
+    .hero h1 {
+      margin: 0 0 15px;
+      font-size: 38px;
+      line-height: 1.4;
     }
 
-    .menu-btn{
-        display:block;
+    .hero h1 span {
+      color: #f2c200;
     }
 
-    .logo{
-        min-width:auto;
+    .hero p {
+      color: #cccccc;
+      font-size: 17px;
+      max-width: 700px;
     }
 
-    .logo-text strong{
-        font-size:14px;
+    .hero-image {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      display: block;
+      margin-top: 25px;
+      border-radius: 12px;
+      border: 1px solid #444444;
     }
 
-    .logo-text span{
-        font-size:8px;
+    .image-fallback {
+      margin-top: 10px;
+      padding: 10px;
+      background: #252525;
+      color: #aaaaaa;
+      font-size: 12px;
+      border-radius: 6px;
     }
 
-    .logo-image{
-        width:40px;
-        height:40px;
+    .section {
+      width: 88%;
+      max-width: 1200px;
+      margin: 60px auto;
     }
 
-    .nav-actions{
-        margin-right:auto;
+    .section-title {
+      margin-bottom: 25px;
     }
 
-    .hero{
-        min-height:auto;
-        padding-top:125px;
-        padding-bottom:75px;
+    .section-title h2 {
+      margin: 0;
+      font-size: 28px;
     }
 
-    .hero-bg{
-        background:
-            linear-gradient(
-                180deg,
-                rgba(10,11,12,.84),
-                rgba(10,11,12,.97)
-            ),
-            url("images/home/industrial-complex-aerial.jpg")
-            center/cover no-repeat;
+    .section-title p {
+      color: #999999;
+      margin-top: 5px;
     }
 
-    body.light .hero-bg{
-        background:
-            linear-gradient(
-                180deg,
-                rgba(244,244,241,.78),
-                rgba(244,244,241,.96)
-            ),
-            url("images/home/industrial-complex-aerial.jpg")
-            center/cover no-repeat;
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
     }
 
-    .hero h1{
-        font-size:43px;
-        letter-spacing:-1.5px;
+    .service {
+      padding: 25px;
+      background: #1b1b1b;
+      border: 1px solid #333333;
+      border-radius: 12px;
     }
 
-    .hero-text{
-        font-size:14px;
+    .service-number {
+      color: #f2c200;
+      font-size: 14px;
+      font-weight: bold;
     }
 
-    .hero-card{
-        display:none;
+    .service h3 {
+      margin: 8px 0;
+      font-size: 22px;
     }
 
-    .hero-stats{
-        margin-top:35px;
-        gap:25px;
+    .service p {
+      margin: 0;
+      color: #aaaaaa;
     }
 
-    .section-head{
-        display:block;
-        margin-bottom:30px;
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
     }
 
-    .section-description{
-        margin-top:15px;
+    .product {
+      background: #1b1b1b;
+      border: 1px solid #333333;
+      border-radius: 10px;
+      overflow: hidden;
     }
 
-    .service-grid,
-    .product-grid,
-    .project-grid{
-        grid-template-columns:1fr;
+    .product img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
     }
 
-    .service-card{
-        min-height:auto;
+    .product h3 {
+      padding: 12px;
+      margin: 0;
+      font-size: 16px;
     }
 
-    .service-image{
-        height:220px;
+    .contact {
+      background: #f2c200;
+      color: #111111;
+      padding: 30px;
+      border-radius: 14px;
+      text-align: center;
     }
 
-    .product-image{
-        height:250px;
+    .contact h2 {
+      margin-top: 0;
     }
 
-    .feature-grid{
-        grid-template-columns:1fr;
-        gap:30px;
+    .phone {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 25px;
+      background: #111111;
+      color: #ffffff;
+      border-radius: 8px;
+      font-weight: bold;
     }
 
-    .feature.reverse .feature-image{
-        order:0;
+    .footer {
+      text-align: center;
+      padding: 30px;
+      color: #777777;
+      border-top: 1px solid #292929;
+      margin-top: 70px;
     }
 
-    .feature-image{
-        height:320px;
+    @media (max-width: 700px) {
+
+      .header {
+        padding: 15px 5%;
+      }
+
+      .brand-title {
+        font-size: 17px;
+      }
+
+      .hero {
+        width: 92%;
+        padding: 22px;
+        margin-top: 20px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section {
+        width: 92%;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product img {
+        height: 120px;
+      }
+
+      .test {
+        display: none;
+      }
     }
-
-    .cta-box{
-        padding:32px 24px;
-        display:block;
-    }
-
-    .cta-buttons{
-        margin-top:25px;
-    }
-
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .map-box{
-        min-height:350px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-        gap:30px;
-    }
-
-    .footer-bottom{
-        display:block;
-    }
-
-    .footer-bottom span{
-        display:block;
-        margin-top:7px;
-    }
-
-    .floating{
-        left:12px;
-        bottom:12px;
-    }
-
-    .float-btn{
-        width:46px;
-        height:46px;
-    }
-
-}
-
-@media(max-width:390px){
-
-    .hero h1{
-        font-size:37px;
-    }
-
-    .hero-buttons{
-        display:grid;
-        grid-template-columns:1fr;
-    }
-
-    .btn{
-        width:100%;
-    }
-
-    .logo-text{
-        display:none;
-    }
-
-}
-
-
-/* =========================
-   IMAGE FALLBACK
-========================= */
-
-.image-fallback{
-    width:100%;
-    height:100%;
-    min-height:180px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:var(--muted);
-    background:
-        linear-gradient(
-            135deg,
-            rgba(245,185,0,.08),
-            transparent
-        ),
-        var(--card2);
-    padding:20px;
-    font-size:12px;
-}
-</style>
+  </style>
 </head>
-
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
+  <!-- HEADER -->
+  <header class="header">
 
-<header>
+    <div class="brand">
 
-<div class="container nav">
+      <img
+        class="logo"
+        src="images/branding/haghighat-soleh-logo.jpg"
+        alt="لوگوی حقیقت سوله"
+      >
 
-<a href="#home" class="logo">
+      <div>
+        <div class="brand-title">حقیقت سوله</div>
+        <div class="brand-subtitle">
+          تأمین و اجرای پروژه‌های صنعتی
+        </div>
+      </div>
 
-<img
-class="logo-image"
-src="images/branding/haghighat-soleh-logo.jpg"
-alt="لوگوی حقیقت سوله"
-onerror="imageError(this)"
->
+    </div>
 
-<div class="logo-text">
-<strong>حقیقت سوله</strong>
-<span>تأمین و اجرای پروژه‌های صنعتی</span>
-</div>
+    <div class="test">
+      نسخه تست
+    </div>
 
-</a>
-
-
-<nav class="nav-links" id="navLinks">
-
-<a href="#home">خانه</a>
-<a href="#services">خدمات</a>
-<a href="#iron">فروش آهن‌آلات</a>
-<a href="#projects">پروژه‌ها</a>
-<a href="#contact">تماس با ما</a>
-
-</nav>
+  </header>
 
 
-<div class="nav-actions">
+  <!-- HERO -->
+  <main>
 
-<button
-class="icon-btn"
-id="themeBtn"
-aria-label="تغییر حالت نمایش">
-☼
-</button>
+    <section class="hero">
 
-<button
-class="icon-btn menu-btn"
-id="menuBtn"
-aria-label="باز کردن منو">
-☰
-</button>
+      <h1>
+        تأمین و اجرای
+        <span>پروژه‌های صنعتی</span>
+      </h1>
 
-</div>
+      <p>
+        حقیقت سوله؛ ارائه خدمات تخصصی در زمینه فروش و تأمین آهن‌آلات،
+        فونداسیون، جرثقیل و سوله‌سازی.
+      </p>
 
-</div>
+      <img
+        class="hero-image"
+        src="images/iron/steel-beams.jpg"
+        alt="تیرآهن و مقاطع فولادی"
+      >
 
-</header>
+      <div class="image-fallback">
+        اگر تصویر بالا نمایش داده نشد، مشکل مسیر تصویر است.
+      </div>
+
+    </section>
 
 
+    <!-- SERVICES -->
+    <section class="section">
 
-<!-- =======
+      <div class="section-title">
+        <h2>خدمات حقیقت سوله</h2>
+        <p>
+          چهار حوزه اصلی فعالیت مجموعه
+        </p>
+      </div>
+
+
+      <div class="services">
+
+        <div class="service">
+          <div class="service-number">01</div>
+          <h3>فروش آهن‌آلات</h3>
+          <p>
+            تأمین و فروش انواع تیرآهن، ورق فولادی،
+            میلگرد، پروفیل و مقاطع فولادی.
+          </p>
+        </div>
+
+
+        <div class="service">
+          <div class="service-number">02</div>
+          <h3>فونداسیون</h3>
+          <p>
+            اجرای عملیات فونداسیون و آماده‌سازی
+            زیرساخت پروژه‌های صنعتی.
+          </p>
+        </div>
+
+
+        <div class="service">
+          <div class="service-number">03</div>
+          <h3>جرثقیل</h3>
+          <p>
+            تأمین و اجرای تجهیزات و سازه‌های مرتبط
+            با جرثقیل‌های صنعتی.
+          </p>
+        </div>
+
+
+        <div class="service">
+          <div class="service-number">04</div>
+          <h3>سوله‌سازی</h3>
+          <p>
+            طراحی، ساخت و اجرای سازه‌های فلزی
+            و سوله‌های صنعتی.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- IRON -->
+    <section class="section">
+
+      <div class="section-title">
+        <h2>محصولات آهن‌آلات</h2>
+        <p>
+          بخشی از محصولات قابل تأمین
+        </p>
+      </div>
+
+
+      <div class="products">
+
+        <div class="product">
+          <img
+            src="images/iron/steel-beams.jpg"
+            alt="تیرآهن"
+          >
+          <h3>تیرآهن</h3>
+        </div>
+
+
+        <div class="product">
+          <img
+            src="images/iron/steel-sheets.jpg"
+            alt="ورق فولادی"
+          >
+          <h3>ورق فولادی</h3>
+        </div>
+
+
+        <div class="product">
+          <img
+            src="images/iron/steel-rebar.jpg"
+            alt="میلگرد"
+          >
+          <h3>میلگرد</h3>
+        </div>
+
+
+        <div class="product">
+          <img
+            src="images/iron/steel-profiles.jpg"
+            alt="پروفیل"
+          >
+          <h3>پروفیل و مقاطع</h3>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="section">
+
+      <div class="contact">
+
+        <h2>
+          برای استعلام و مشاوره تماس بگیرید
+        </h2>
+
+        <p>
+          شهرک صنعتی شمس‌آباد، تهران
+        </p>
+
+        <a
+          class="phone"
+          href="tel:09121326034"
+        >
+          09121326034
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    حقیقت سوله
+    <br>
+    تأمین و اجرای پروژه‌های صنعتی
+
+  </footer>
+
+</body>
+   </html>
