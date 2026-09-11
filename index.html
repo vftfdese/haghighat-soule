@@ -1,1125 +1,1077 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111111">
-
-<title>حقیقت سوله | فروش آهن‌آلات و خدمات صنعتی</title>
-
-<style>
-:root {
-  --bg: #0d0f10;
-  --surface: #151819;
-  --surface-2: #202426;
-  --text: #f5f5f5;
-  --muted: #a6abad;
-  --border: rgba(255,255,255,.11);
-  --accent: #f5b400;
-  --accent-hover: #ffc928;
-  --dark-text: #111;
-  --shadow: 0 15px 40px rgba(0,0,0,.2);
-}
-
-body.light {
-  --bg: #f2f3f4;
-  --surface: #ffffff;
-  --surface-2: #e7e9eb;
-  --text: #151719;
-  --muted: #5d6368;
-  --border: rgba(0,0,0,.12);
-  --shadow: 0 15px 40px rgba(0,0,0,.08);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: Tahoma, Arial, sans-serif;
-  line-height: 1.9;
-  transition: background .25s, color .25s;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font-family: inherit;
-}
-
-img {
-  width: 100%;
-  max-width: 100%;
-  display: block;
-}
-
-.container {
-  width: min(1160px, 92%);
-  margin: auto;
-}
-
-.section {
-  padding: 80px 0;
-}
-
-.section-heading {
-  margin-bottom: 38px;
-}
-
-.section-heading .eyebrow {
-  display: block;
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  letter-spacing: .3px;
-}
-
-.section-heading h2 {
-  font-size: clamp(26px, 5vw, 43px);
-  line-height: 1.45;
-  margin-bottom: 10px;
-}
-
-.section-heading p {
-  max-width: 650px;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* Header */
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-}
-
-.header-inner {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo-symbol {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  background: var(--accent);
-  color: #111;
-  font-size: 21px;
-  font-weight: 900;
-  transform: skew(-8deg);
-}
-
-.logo-title {
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 1.3;
-}
-
-.logo-subtitle {
-  direction: ltr;
-  text-align: right;
-  display: block;
-  color: var(--muted);
-  font-size: 9px;
-  letter-spacing: 1px;
-  margin-top: 2px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-nav a {
-  color: var(--muted);
-  font-size: 13px;
-  transition: color .2s;
-}
-
-nav a:hover {
-  color: var(--accent);
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.theme-button,
-.menu-button {
-  width: 39px;
-  height: 39px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text);
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 17px;
-}
-
-.header-contact {
-  background: var(--accent);
-  color: #111;
-  padding: 8px 15px;
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.menu-button {
-  display: none;
-}
-
-/* Mobile menu */
-
-.mobile-menu {
-  display: none;
-  border-top: 1px solid var(--border);
-  background: var(--surface);
-  padding: 12px 4%;
-}
-
-.mobile-menu.active {
-  display: block;
-}
-
-.mobile-menu a {
-  display: block;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-  color: var(--text);
-  font-size: 13px;
-}
-
-/* Hero */
-
-.hero {
-  min-height: 650px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  background:
-    linear-gradient(90deg, rgba(13,15,16,.98) 8%, rgba(13,15,16,.82) 45%, rgba(13,15,16,.35)),
-    url("images/iron/steel-beams.jpg") center/cover no-repeat;
-}
-
-body.light .hero {
-  background:
-    linear-gradient(90deg, rgba(242,243,244,.97) 8%, rgba(242,243,244,.84) 48%, rgba(242,243,244,.42)),
-    url("images/iron/steel-beams.jpg") center/cover no-repeat;
-}
-
-.hero-content {
-  max-width: 700px;
-  padding: 95px 0;
-}
-
-.hero-tag {
-  display: inline-block;
-  border-right: 3px solid var(--accent);
-  padding-right: 12px;
-  color: var(--accent);
-  font-size: 13px;
-  margin-bottom: 22px;
-}
-
-.hero h1 {
-  font-size: clamp(35px, 7vw, 67px);
-  line-height: 1.35;
-  font-weight: 900;
-  margin-bottom: 20px;
-}
-
-.hero h1 span {
-  color: var(--accent);
-}
-
-.hero p {
-  color: #c5c8ca;
-  max-width: 570px;
-  font-size: 15px;
-  margin-bottom: 30px;
-}
-
-body.light .hero p {
-  color: #3e4448;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 9px 21px;
-  border-radius: 5px;
-  font-size: 13px;
-  font-weight: bold;
-  transition: .2s;
-}
-
-.button-primary {
-  background: var(--accent);
-  color: #111;
-}
-
-.button-primary:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
-}
-
-.button-outline {
-  color: white;
-  border: 1px solid rgba(255,255,255,.35);
-}
-
-body.light .button-outline {
-  color: var(--text);
-  border-color: var(--border);
-}
-
-.button-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-/* Stats */
-
-.stats {
-  margin-top: -35px;
-  position: relative;
-  z-index: 5;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border: 1px solid var(--border);
-  background: var(--border);
-  gap: 1px;
-}
-
-.stat {
-  background: var(--surface);
-  text-align: center;
-  padding: 24px 10px;
-}
-
-.stat strong {
-  display: block;
-  color: var(--accent);
-  font-size: 25px;
-  line-height: 1.3;
-}
-
-.stat span {
-  display: block;
-  color: var(--muted);
-  font-size: 11px;
-  margin-top: 4px;
-}
-
-/* Services */
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.service-card {
-  overflow: hidden;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  transition: .25s;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent);
-  box-shadow: var(--shadow);
-}
-
-.service-image {
-  height: 195px;
-  background: var(--surface-2);
-  overflow: hidden;
-}
-
-.service-image img {
-  height: 100%;
-  object-fit: cover;
-  transition: transform .4s;
-}
-
-.service-card:hover img {
-  transform: scale(1.06);
-}
-
-.service-content {
-  padding: 19px;
-}
-
-.service-number {
-  direction: ltr;
-  text-align: left;
-  color: var(--accent);
-  font-size: 11px;
-  margin-bottom: 4px;
-}
-
-.service-content h3 {
-  font-size: 17px;
-  margin-bottom: 7px;
-}
-
-.service-content p {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
-  min-height: 47px;
-  margin-bottom: 14px;
-}
-
-.service-more {
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: bold;
-}
-
-/* General dark section */
-
-.alternate-section {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-/* Products */
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.product-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: .2s;
-}
-
-.product-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-4px);
-}
-
-.product-image {
-  height: 180px;
-  background: var(--surface-2);
-  overflow: hidden;
-}
-
-.product-image img {
-  height: 100%;
-  object-fit: cover;
-}
-
-.product-info {
-  padding: 17px;
-}
-
-.product-info h3 {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.product-info p {
-  color: var(--muted);
-  font-size: 12px;
-  margin-bottom: 11px;
-}
-
-.product-status {
-  color: var(--accent);
-  font-size: 11px;
-  font-weight: bold;
-}
-
-/* Detail sections */
-
-.detail-section {
-  border-bottom: 1px solid var(--border);
-}
-
-.detail-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
-
-.detail-image {
-  height: 365px;
-  overflow: hidden;
-  border-radius: 8px;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-}
-
-.detail-image img {
-  height: 100%;
-  object-fit: cover;
-}
-
-.detail-content h2 {
-  font-size: clamp(27px, 5vw, 42px);
-  line-height: 1.4;
-  margin-bottom: 15px;
-}
-
-.detail-content h2 span {
-  color: var(--accent);
-}
-
-.detail-content p {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 18px;
-}
-
-.detail-list {
-  list-style: none;
-  margin-bottom: 25px;
-}
-
-.detail-list li {
-  color: var(--text);
-  font-size: 13px;
-  margin-bottom: 7px;
-}
-
-.detail-list li::before {
-  content: "✓";
-  color: var(--accent);
-  font-weight: bold;
-  margin-left: 8px;
-}
-
-/* CTA */
-
-.cta {
-  background:
-    linear-gradient(90deg, rgba(245,180,0,.94), rgba(201,141,0,.86)),
-    url("images/home/industrial-complex-aerial.jpg") center/cover no-repeat;
-  color: #111;
-  padding: 48px 0;
-}
-
-.cta-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-}
-
-.cta h2 {
-  font-size: clamp(25px, 5vw, 39px);
-  line-height: 1.4;
-  margin-bottom: 5px;
-}
-
-.cta p {
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.button-dark {
-  background: #111;
-  color: white;
-  white-space: nowrap;
-}
-
-/* Contact */
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.contact-box {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 28px;
-}
-
-.contact-box h3 {
-  color: var(--accent);
-  font-size: 19px;
-  margin-bottom: 17px;
-}
-
-.contact-line {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 10px;
-}
-
-.contact-line strong {
-  color: var(--text);
-}
-
-.contact-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 22px;
-}
-
-/* Footer */
-
-footer {
-  background: #080909;
-  padding: 30px 0;
-  border-top: 1px solid var(--border);
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.footer-brand {
-  color: var(--accent);
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.footer-inner p {
-  color: #858b8e;
-  font-size: 11px;
-}
-
-/* Floating buttons */
-
-.floating {
-  position: fixed;
-  left: 16px;
-  bottom: 18px;
-  z-index: 900;
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-
-.float-button {
-  width: 47px;
-  height: 47px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 19px;
-  font-weight: bold;
-  box-shadow: 0 5px 20px rgba(0,0,0,.3);
-}
-
-.float-call {
-  background: var(--accent);
-  color: #111;
-}
-
-.float-whatsapp {
-  background: #25d366;
-  color: white;
-}
-
-/* Responsive */
-
-@media (max-width: 950px) {
-  nav {
-    gap: 14px;
-  }
-
-  .header-contact {
-    display: none;
-  }
-
-  .services-grid,
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .detail-grid {
-    gap: 25px;
-  }
-}
-
-@media (max-width: 650px) {
-  .section {
-    padding: 58px 0;
-  }
-
-  .header-inner {
-    min-height: 66px;
-  }
-
-  nav {
-    display: none;
-  }
-
-  .menu-button {
-    display: block;
-  }
-
-  .hero {
-    min-height: 600px;
-    background:
-      linear-gradient(90deg, rgba(13,15,16,.96), rgba(13,15,16,.68)),
-      url("images/iron/steel-beams.jpg") center/cover no-repeat;
-  }
-
-  body.light .hero {
-    background:
-      linear-gradient(90deg, rgba(242,243,244,.96), rgba(242,243,244,.7)),
-      url("images/iron/steel-beams.jpg") center/cover no-repeat;
-  }
-
-  .hero-content {
-    padding: 75px 0;
-  }
-
-  .hero h1 {
-    font-size: 35px;
-  }
-
-  .hero p {
-    font-size: 13px;
-  }
-
-  .stats {
-    margin-top: 0;
-  }
-
-  .stat {
-    padding: 17px 5px;
-  }
-
-  .stat strong {
-    font-size: 20px;
-  }
-
-  .stat span {
-    font-size: 9px;
-  }
-
-  .services-grid,
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .service-image {
-    height: 140px;
-  }
-
-  .service-content {
-    padding: 13px;
-  }
-
-  .service-content h3 {
-    font-size: 14px;
-  }
-
-  .service-content p {
-    font-size: 11px;
-    min-height: auto;
-  }
-
-  .service-more {
-    font-size: 11px;
-  }
-
-  .product-image {
-    height: 135px;
-  }
-
-  .product-info {
-    padding: 12px;
-  }
-
-  .product-info h3 {
-    font-size: 13px;
-  }
-
-  .product-info p {
-    font-size: 11px;
-  }
-
-  .detail-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .detail-image {
-    height: 270px;
-  }
-
-  .detail-content h2 {
-    font-size: 28px;
-  }
-
-  .detail-content p {
-    font-size: 13px;
-  }
-
-  .cta-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-box {
-    padding: 22px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header>
-  <div class="container header-inner">
-
-    <a href="#top" class="logo">
-      <div class="logo-symbol">ح</div>
-      <div>
-        <div class="logo-title">حقیقت سوله</div>
-        <span class="logo-subtitle">HAGHIGHAT STEEL</span>
-      </div>
-    </a>
-
-    <nav>
-      <a href="#services">خدمات</a>
-      <a href="#iron">آهن‌آلات</a>
-      <a href="#about">درباره ما</a>
-      <a href="#contact">تماس با ما</a>
-    </nav>
-
-    <div class="header-actions">
-      <a href="tel:09121326034" class="header-contact">تماس با ما</a>
-
-      <button class="theme-button" id="themeButton" aria-label="تغییر پوسته">
-        ☀
-      </button>
-
-      <button class="menu-button" id="menuButton" aria-label="بازکردن منو">
-        ☰
-      </button>
-    </div>
-
-  </div>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#services">خدمات ما</a>
-    <a href="#iron">فروش آهن‌آلات</a>
-    <a href="#about">درباره حقیقت سوله</a>
-    <a href="#contact">تماس با ما</a>
-  </div>
-</header>
-
-
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-
-        <div class="hero-tag">
-          تأمین، اجرا و خدمات تخصصی صنعت فولاد
-        </div>
-
-        <h1>
-          قدرت فولاد،<br>
-          <span>پشتوانه پروژه‌های شما</span>
-        </h1>
-
-        <p>
-          شرکت حقیقت سوله با ارائه خدمات تخصصی در زمینه فروش آهن‌آلات،
-          سوله‌سازی، فونداسیون و تجهیزات صنعتی، همراه مطمئن پروژه‌های شماست.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#services" class="button button-primary">
-            مشاهده خدمات
-          </a>
-
-          <a href="#contact" class="button button-outline">
-            دریافت مشاوره
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- STATS -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-
-        <div class="stat">
-          <strong>۴+</strong>
-          <span>حوزه تخصصی فعالیت</span>
-        </div>
-
-        <div class="stat">
-          <strong>۱۰۰٪</strong>
-          <span>تعهد به کیفیت</span>
-        </div>
-
-        <div class="stat">
-          <strong>۲۴/۷</strong>
-          <span>پاسخگویی و مشاوره</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- SERVICES -->
-  <section class="section" id="services">
-    <div class="container">
-
-      <div class="section-heading">
-        <span class="eyebrow">WHAT WE DO / خدمات ما</span>
-        <h2>راهکارهای تخصصی برای پروژه‌های صنعتی</h2>
-        <p>
-          حوزه موردنظر خود را انتخاب کنید تا مستقیماً به بخش مربوطه منتقل شوید.
-        </p>
-      </div>
-
-      <div class="services-grid">
-
-        <a href="#iron" class="service-card">
-          <div class="service-image">
-            <img
-              src="images/iron/steel-profiles.jpg"
-              alt="فروش آهن‌آلات"
-              onerror="this.style.display='none'"
-            >
-          </div>
-
-          <div class="service-content">
-            <div class="service-number">01 / IRON</div>
-            <h3>فروش آهن‌آلات</h3>
-            <p>
-              تأمین انواع تیرآهن، میلگرد، ورق، پروفیل و مقاطع فولادی.
-            </p>
-            <div class="service-more">مشاهده محصولات ←</div>
-          </div>
-        </a>
-
-
-        <a href="#foundation" class="service-card">
-          <div class="service-image">
-            <img
-              src="images/foundation/foundation-rebar-work.jpg"
-              alt="فونداسیون صنعتی"
-              onerror="this.style.display='none'"
-            >
-          </div>
-
-          <div class="service-content">
-            <div class="service-number">02 / FOUNDATION</div>
-            <h3>فونداسیون</h3>
-            <p>
-              اجرای اصولی فونداسیون و عملیات عمرانی پروژه‌های صنعتی.
-            </p>
-            <div class="service-more">مشاهده خدمات ←</div>
-          </div>
-        </a>
-
-
-        <a href="#crane" class="service-card">
-          <div class="service-image">
-            <img
-              src="images/crane/overhead-crane-industrial-hall.jpg"
-              alt="جرثقیل صنعتی"
-              onerror="this.style.display='none'"
-            >
-          </div>
-
-          <div class="service-content">
-            <div class="service-number">03 / CRANE</div>
-            <h3>جرثقیل صنعتی</h3>
-            <p>
-              ارائه راهکارهای جابه‌جایی بار برای محیط‌های صنعتی.
-            </p>
-            <div class="service-more">مشاهده خدمات ←</div>
-          </div>
-        </a>
-
-
-        <a href="#shed" class="service-card">
-          <div class="service-image">
-            <img
-              src="images/shed/steel-structure-installation.jpg"
-              alt="سوله‌سازی"
-              onerror="this.style.display='none'"
-            >
-          </div>
-
-          <div class="service-content">
-            <div class="service-number">04 / STEEL STRUCTURE</div>
-            <h3>سوله‌سازی</h3>
-            <p>
-              ساخت و اجرای سازه‌های فلزی و سوله‌های صنعتی.
-            </p>
-            <div class="service-more">مشاهده خدمات ←</div>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- IRON PRODUCTS -->
-  <section class="section alternate-section" id="iron">
-    <div class="container">
-
-      <div class="section-heading">
-        <span class="eyebrow">STEEL PRODUCTS / محصولات فولادی</span>
-        <h2>فروش آهن‌آلات</h2>
-        <p>
-          برای دریافت موجودی و قیمت روز، با کارشناسان حقیقت سوله تماس بگیرید.
-        </p>
-      </div>
-
-      <div class="products-grid">
-
-        <div class="product-card">
-          <div class="product-image">
-            <img
-              src="images/iron/steel-beams.jpg"
-              alt="تیرآهن"
-              onerror="this.style.display='none'"
-            >
-          </div>
-          <div class="product-info">
-            <h3>تیرآهن</h3>
-            <p>انواع تیرآهن در سایزهای مختلف</p>
-            <div class="product-status">استعلام قیمت روز</div>
-          </div>
-        </div>
-
-
-        <div class="product-card">
-          <div class="product-image">
-            <img
-              src="images/iron/steel-rebar.jpg"
-              alt="میلگرد"
-              onerror="this.style.display='none'"
-            >
-          </div>
-          <div class="product-info">
-            <h3>میلگرد</h3>
-            <p>میلگرد ساختمانی و صنعتی</p>
-            <div class="product-status">استعلام قیمت روز</div>
-          </div>
-        </div>
-
-
-        <div class="product-card">
-          <div class="product-image">
-            <img
-              src="images/iron/steel-sheets.jpg"
-              alt="ورق فولادی"
-              onerror="this.style.display='none'"
-            >
-          </div>
-          <div class="product-info">
-            <h3>ورق فولادی</h3>
-            <p>ورق سیاه و انواع ورق صنعتی</p>
-            <div class="product-status">استعلام قیمت روز</div>
-          </div>
-        </div>
-
-
-        <div class="product-card">
-          <div class="product-image">
-            <img
-              src="images/iron/steel-profiles.jpg"
-              alt="پروفیل"
-              onerror="this.style.display='none'"
-            >
-          </div>
-          <div class="product-info">
-            <h3>پروفیل</h3>
-            <p>پروفیل ساختمانی و صنعتی</p>
-            <div class="product-status">استعلام قیمت روز</div>
-          </div>
-        </div>
-
-      </div>
-
-      <div style="margin-top:28px;">
-        <a
-          class="button button-primary"
-          href="https://wa.me/989121326034?text=سلام، برای دریافت قیمت آهن‌آلات راهنمایی می‌خواستم"
-        >
-          دریافت قیمت در واتساپ
-        </a>
-      </di
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111111" />
+  <meta
+    name="description"
+    content="حقیقت سوله؛ فروش آهن‌آلات، فونداسیون، جرثقیل و سوله‌سازی از سال ۱۳۸۹ تاکنون"
+  />
+
+  <title>حقیقت سوله | فروش آهن‌آلات و خدمات صنعتی</title>
+
+  <style>
+    :root {
+      --bg: #0d0f10;
+      --bg-soft: #151819;
+      --card: #191d1e;
+      --card-2: #202526;
+      --text: #f3f3f3;
+      --muted: #a8afb0;
+      --line: rgba(255,255,255,0.1);
+      --accent: #e5b93f;
+      --accent-dark: #b78d18;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+
+    body.light {
+      --bg: #f4f4f1;
+      --bg-soft: #ffffff;
+      --card: #ffffff;
+      --card-2: #eeeeea;
+      --text: #171918;
+      --muted: #606765;
+      --line: rgba(0,0,0,0.1);
+      --accent: #b98913;
+      --accent-dark: #8c680d;
+      --white: #111111;
+      --shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 4vw, 44px);
+      line-height: 1.35;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 500px;
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.25s ease;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      background: #f0cc5c;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: var(--line);
+      color: var(--text);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-dark {
+      background: #111;
+      color: #fff;
+    }
+
+    body.light .btn-dark {
+      background: #222;
+      color: #fff;
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(13,15,16,0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    body.light header {
+      background: rgba(244,244,241,0.9);
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border: 2px solid var(--accent);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 900;
+      transform: rotate(45deg);
+    }
+
+    .logo-mark span {
+      transform: rotate(-45deg);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.35;
+    }
+
+    .logo-text strong {
+      font-size: 15px;
+    }
+
+    .logo-text small {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: normal;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 13px;
+    }
+
+    .desktop-nav a {
+      color: var(--muted);
+      transition: 0.2s;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--accent);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .header-phone {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 7px;
+      padding: 7px 13px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .icon-btn {
+      width: 39px;
+      height: 39px;
+      border-radius: 7px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: transparent;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid var(--line);
+      padding: 15px 16px 20px;
+      background: var(--bg-soft);
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 10px 0;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(13,15,16,0.96) 10%, rgba(13,15,16,0.78) 50%, rgba(13,15,16,0.38)),
+        url("images/home/industrial-complex-aerial.jpg") center/cover no-repeat;
+    }
+
+    body.light .hero {
+      background:
+        linear-gradient(90deg, rgba(244,244,241,0.97) 10%, rgba(244,244,241,0.8) 52%, rgba(244,244,241,0.38)),
+        url("images/home/industrial-complex-aerial.jpg") center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 730px;
+      padding: 80px 0;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 22px;
+    }
+
+    .hero-label::before {
+      content: "";
+      width: 35px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 82px);
+      line-height: 1.15;
+      letter-spacing: -3px;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      max-width: 570px;
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Stats */
+
+    .stats {
+      margin-top: -55px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .stat {
+      padding: 28px 20px;
+      text-align: center;
+      border-left: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-left: none;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--accent);
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Services */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      min-height: 350px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      transition: 0.3s ease;
+      display: flex;
+      align-items: end;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--accent);
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(0deg, rgba(0,0,0,0.94), rgba(0,0,0,0.08) 80%),
+        var(--service-image) center/cover no-repeat;
+      transition: 0.4s ease;
+    }
+
+    .service-card:hover::before {
+      transform: scale(1.06);
+    }
+
+    .service-content {
+      position: relative;
+      z-index: 2;
+      padding: 23px;
+      width: 100%;
+    }
+
+    .service-number {
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 35px;
+      display: block;
+    }
+
+    .service-content h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .service-content p {
+      color: #c5c5c5;
+      font-size: 12px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .service-link {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* Products */
+
+    .products-section {
+      background: var(--bg-soft);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .product-image {
+      height: 210px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .product-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.5), transparent);
+    }
+
+    .product-body {
+      padding: 20px;
+    }
+
+    .product-body h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .product-body p {
+      color: var(--muted);
+      font-size: 12px;
+      min-height: 48px;
+      margin-bottom: 17px;
+    }
+
+    .product-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background: var(--accent);
+      color: #111;
+      padding: 10px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .product-action:hover {
+      background: #f1ce61;
+    }
+
+    /* Detail Sections */
+
+    .detail-section {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .detail-grid.reverse .detail-image {
+      order: 2;
+    }
+
+    .detail-grid.reverse .detail-content {
+      order: 1;
+    }
+
+    .detail-image {
+      height: 430px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--shadow);
+    }
+
+    .detail-content h2 {
+      font-size: clamp(28px, 4vw, 45px);
+      line-height: 1.4;
+      margin-bottom: 18px;
+    }
+
+    .detail-content h2 span {
+      color: var(--accent);
+    }
+
+    .detail-content p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      margin-bottom: 25px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      display: grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      background: rgba(229,185,63,0.14);
+      color: var(--accent);
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    /* About */
+
+    .about-section {
+      background: var(--bg-soft);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-box {
+      padding: 35px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-box::before {
+      content: "۱۳۸۹";
+      position: absolute;
+      left: -10px;
+      bottom: -25px;
+      font-size: 110px;
+      font-weight: 900;
+      color: rgba(229,185,63,0.06);
+      line-height: 1;
+    }
+
+    .about-box h3 {
+      font-size: 27px;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .about-box p {
+      color: var(--muted);
+      font-size: 14px;
+      position: relative;
+    }
+
+    .about-points {
+      display: grid;
+      gap: 15px;
+    }
+
+    .about-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .about-point-icon {
+      flex: 0 0 43px;
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 8px;
+      font-size: 18px;
+    }
+
+    .about-point h4 {
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+    .about-point p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 75px 0;
+    }
+
+    .cta-box {
+      background:
+        linear-gradient(110deg, rgba(229,185,63,0.96), rgba(181,137,24,0.92)),
+        url("images/home/industrial-complex-aerial.jpg") center/cover;
+      color: #111;
+      border-radius: 16px;
+      padding: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(25px, 4vw, 43px);
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      font-size: 14px;
+      max-width: 580px;
+    }
+
+    .cta-box .btn-outline {
+      color: #111;
+      border-color: #111;
+      white-space: nowrap;
+    }
+
+    .cta-box .btn-outline:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 25px;
+    }
+
+    .contact-info,
+    .quote-form {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 30px;
+    }
+
+    .contact-info h3,
+    .quote-form h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-icon {
+      color: var(--accent);
+      font-size: 20px;
+      width: 25px;
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      margin-bottom: 3px;
+    }
+
+    .contact-item strong,
+    .contact-item a {
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .contact-item a:hover {
+      color: var(--accent);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 15px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+      color: var(--text);
+      border-radius: 7px;
+      padding: 12px;
+      outline: none;
+      font-size: 13px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 12px;
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 35px 0;
+      background: var(--bg);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Floating Buttons */
+
+    .floating-actions {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .floating-btn {
+      width: 49px;
+      height: 49px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 21px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      transition: 0.25s;
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.08);
+    }
+
+    .floating-call {
+      background: #1c77d2;
+    }
+
+    .floating-whatsapp {
+      background: #1cae5b;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 1000px) {
+      .desktop-nav {
+        gap: 14px;
+      }
+
+      .services-grid,
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-left: none;
+      }
+
+      .stat:nth-child(1),
+      .stat:nth-child(2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .detail-grid,
+      .about-grid,
+      .contact-grid {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 65px 0;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-description {
+        margin-top: 12px;
+      }
+
+      .desktop-nav,
+      .header-phone {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: grid;
+      }
+
+      .hero {
+        min-height: 680px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .detail-grid,
+      .detail-grid.reverse,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-grid.reverse .detail-image,
+      .detail-grid.reverse .detail-content {
+        order: initial;
+      }
+
+      .detail-image {
+        height: 300px;
+      }
+
+      .cta-box {
+        padding: 35px 25px;
+        display: block;
+      }
+
+      .cta-box .btn {
+        margin-top: 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        width: min(100% - 24px, 1160px);
+      }
+
+      .hero-content {
+        padding: 55px 0;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .services-grid,
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat {
+        padding: 22px 10px;
+      }
+
+      .stat strong {
+        font-size: 23px;
+      }
+
+      .service-card {
+        min-height: 310px;
+      }
+
+    
