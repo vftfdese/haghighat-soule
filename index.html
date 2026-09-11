@@ -17,22 +17,30 @@
 
     body {
       margin: 0;
-      background: #111111;
+      background: #0b0b0b;
       color: #ffffff;
       font-family: Tahoma, Arial, sans-serif;
-      line-height: 1.8;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
+    /* =========================
+       HEADER
+    ========================= */
+
     .header {
+      position: relative;
+      z-index: 10;
+
       width: 100%;
       padding: 18px 6%;
-      background: #151515;
-      border-bottom: 1px solid #333333;
+
+      background: rgba(11, 11, 11, 0.96);
+      border-bottom: 1px solid #272727;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -41,228 +49,370 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 13px;
     }
 
     .logo {
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
+
       object-fit: contain;
+
       background: #ffffff;
       border-radius: 8px;
     }
 
-    .brand-title {
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name {
       font-size: 20px;
-      font-weight: bold;
+      font-weight: 900;
+      letter-spacing: -0.5px;
     }
 
-    .brand-subtitle {
-      font-size: 12px;
-      color: #aaaaaa;
+    .brand-desc {
+      font-size: 11px;
+      color: #999999;
     }
 
-    .test {
-      padding: 8px 14px;
+    .header-action {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-location {
+      font-size: 11px;
+      color: #888888;
+    }
+
+    .call-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 10px 17px;
+
       background: #f2c200;
       color: #111111;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: bold;
+
+      border-radius: 7px;
+
+      font-size: 13px;
+      font-weight: 900;
     }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-      width: 88%;
-      max-width: 1200px;
-      margin: 35px auto;
-      padding: 35px;
-      background: #1b1b1b;
-      border: 1px solid #333333;
-      border-radius: 16px;
-    }
+      position: relative;
 
-    .hero h1 {
-      margin: 0 0 15px;
-      font-size: 38px;
-      line-height: 1.4;
-    }
+      width: 100%;
+      min-height: 650px;
 
-    .hero h1 span {
-      color: #f2c200;
-    }
+      display: flex;
+      align-items: center;
 
-    .hero p {
-      color: #cccccc;
-      font-size: 17px;
-      max-width: 700px;
+      overflow: hidden;
+
+      background: #111111;
     }
 
     .hero-image {
+      position: absolute;
+      inset: 0;
+
       width: 100%;
-      max-height: 420px;
+      height: 100%;
+
       object-fit: cover;
+
       display: block;
-      margin-top: 25px;
-      border-radius: 12px;
-      border: 1px solid #444444;
+
+      opacity: 0.42;
     }
 
-    .image-fallback {
-      margin-top: 10px;
-      padding: 10px;
-      background: #252525;
-      color: #aaaaaa;
-      font-size: 12px;
-      border-radius: 6px;
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,0.92) 0%,
+          rgba(0,0,0,0.72) 42%,
+          rgba(0,0,0,0.45) 100%
+        );
     }
 
-    .section {
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
       width: 88%;
-      max-width: 1200px;
-      margin: 60px auto;
+      max-width: 1250px;
+
+      margin: 0 auto;
+
+      padding: 90px 0;
     }
 
-    .section-title {
-      margin-bottom: 25px;
-    }
+    .hero-label {
+      display: inline-block;
 
-    .section-title h2 {
-      margin: 0;
-      font-size: 28px;
-    }
+      margin-bottom: 22px;
 
-    .section-title p {
-      color: #999999;
-      margin-top: 5px;
-    }
+      padding: 7px 12px;
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
+      border-right: 3px solid #f2c200;
 
-    .service {
-      padding: 25px;
-      background: #1b1b1b;
-      border: 1px solid #333333;
-      border-radius: 12px;
-    }
+      background: rgba(242, 194, 0, 0.08);
 
-    .service-number {
       color: #f2c200;
+
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .hero-title {
+      max-width: 850px;
+
+      margin: 0;
+
+      font-size: clamp(38px, 6vw, 78px);
+
+      line-height: 1.15;
+
+      font-weight: 900;
+
+      letter-spacing: -2px;
+    }
+
+    .hero-title span {
+      color: #f2c200;
+    }
+
+    .hero-text {
+      max-width: 650px;
+
+      margin: 25px 0 0;
+
+      color: #c5c5c5;
+
+      font-size: 17px;
+
+      line-height: 2;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 32px;
+    }
+
+    .hero-primary {
+      padding: 14px 24px;
+
+      background: #f2c200;
+      color: #111111;
+
+      border-radius: 7px;
+
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .hero-secondary {
+      padding: 14px 24px;
+
+      background: rgba(255,255,255,0.04);
+
+      border: 1px solid #555555;
+
+      color: #ffffff;
+
+      border-radius: 7px;
+
       font-size: 14px;
       font-weight: bold;
     }
 
-    .service h3 {
-      margin: 8px 0;
-      font-size: 22px;
-    }
+    /* =========================
+       HERO BOTTOM INFO
+    ========================= */
 
-    .service p {
-      margin: 0;
-      color: #aaaaaa;
-    }
+    .hero-info {
+      position: absolute;
+      z-index: 3;
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
+      bottom: 0;
+      left: 0;
 
-    .product {
-      background: #1b1b1b;
-      border: 1px solid #333333;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .product img {
       width: 100%;
-      height: 160px;
-      object-fit: cover;
-      display: block;
+
+      background: rgba(5,5,5,0.78);
+
+      border-top: 1px solid rgba(255,255,255,0.08);
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    .product h3 {
-      padding: 12px;
-      margin: 0;
-      font-size: 16px;
+    .hero-info-item {
+      padding: 18px 6%;
+
+      border-left: 1px solid rgba(255,255,255,0.08);
     }
 
-    .contact {
-      background: #f2c200;
-      color: #111111;
-      padding: 30px;
-      border-radius: 14px;
-      text-align: center;
+    .hero-info-item:last-child {
+      border-left: none;
     }
 
-    .contact h2 {
-      margin-top: 0;
-    }
-
-    .phone {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 12px 25px;
-      background: #111111;
-      color: #ffffff;
-      border-radius: 8px;
+    .hero-info-title {
+      font-size: 13px;
       font-weight: bold;
     }
 
-    .footer {
-      text-align: center;
-      padding: 30px;
-      color: #777777;
-      border-top: 1px solid #292929;
-      margin-top: 70px;
+    .hero-info-text {
+      margin-top: 3px;
+
+      color: #888888;
+
+      font-size: 11px;
     }
+
+    /* =========================
+       NEXT SECTION PREVIEW
+    ========================= */
+
+    .intro {
+      width: 88%;
+      max-width: 1250px;
+
+      margin: 0 auto;
+
+      padding: 80px 0;
+    }
+
+    .intro-label {
+      color: #f2c200;
+
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .intro-title {
+      margin: 10px 0 0;
+
+      font-size: 32px;
+    }
+
+    .intro-text {
+      max-width: 700px;
+
+      color: #999999;
+
+      line-height: 2;
+
+      font-size: 15px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 700px) {
 
       .header {
-        padding: 15px 5%;
+        padding: 14px 5%;
       }
 
-      .brand-title {
+      .logo {
+        width: 45px;
+        height: 45px;
+      }
+
+      .brand-name {
         font-size: 17px;
       }
 
+      .brand-desc {
+        font-size: 9px;
+      }
+
+      .header-location {
+        display: none;
+      }
+
+      .call-button {
+        padding: 9px 12px;
+
+        font-size: 11px;
+      }
+
       .hero {
-        width: 92%;
-        padding: 22px;
-        margin-top: 20px;
+        min-height: 680px;
       }
 
-      .hero h1 {
-        font-size: 28px;
+      .hero-content {
+        width: 90%;
+
+        padding: 90px 0 150px;
       }
 
-      .hero p {
-        font-size: 15px;
+      .hero-title {
+        font-size: 42px;
+
+        letter-spacing: -1.5px;
       }
 
-      .section {
-        width: 92%;
+      .hero-text {
+        font-size: 14px;
+
+        line-height: 2;
       }
 
-      .services {
+      .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+      }
+
+      .hero-primary,
+      .hero-secondary {
+        text-align: center;
+      }
+
+      .hero-info {
         grid-template-columns: 1fr;
       }
 
-      .products {
-        grid-template-columns: repeat(2, 1fr);
+      .hero-info-item {
+        padding: 10px 5%;
+
+        border-left: none;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
       }
 
-      .product img {
-        height: 120px;
+      .hero-info-item:last-child {
+        border-bottom: none;
       }
 
-      .test {
-        display: none;
+      .intro {
+        padding: 55px 0;
+      }
+
+      .intro-title {
+        font-size: 25px;
       }
     }
   </style>
@@ -270,10 +420,13 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header class="header">
 
-    <div class="brand">
+    <a href="#" class="brand">
 
       <img
         class="logo"
@@ -281,153 +434,136 @@
         alt="لوگوی حقیقت سوله"
       >
 
-      <div>
-        <div class="brand-title">حقیقت سوله</div>
-        <div class="brand-subtitle">
+      <div class="brand-text">
+
+        <div class="brand-name">
+          حقیقت سوله
+        </div>
+
+        <div class="brand-desc">
           تأمین و اجرای پروژه‌های صنعتی
         </div>
+
       </div>
 
-    </div>
+    </a>
 
-    <div class="test">
-      نسخه تست
+
+    <div class="header-action">
+
+      <div class="header-location">
+        شهرک صنعتی شمس‌آباد
+      </div>
+
+      <a
+        href="tel:09121326034"
+        class="call-button"
+      >
+        تماس با ما
+      </a>
+
     </div>
 
   </header>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================== -->
+
   <main>
 
     <section class="hero">
 
-      <h1>
-        تأمین و اجرای
-        <span>پروژه‌های صنعتی</span>
-      </h1>
-
-      <p>
-        حقیقت سوله؛ ارائه خدمات تخصصی در زمینه فروش و تأمین آهن‌آلات،
-        فونداسیون، جرثقیل و سوله‌سازی.
-      </p>
-
       <img
         class="hero-image"
         src="images/iron/steel-beams.jpg"
-        alt="تیرآهن و مقاطع فولادی"
+        alt="مقاطع فولادی و آهن‌آلات"
       >
 
-      <div class="image-fallback">
-        اگر تصویر بالا نمایش داده نشد، مشکل مسیر تصویر است.
-      </div>
-
-    </section>
+      <div class="hero-overlay"></div>
 
 
-    <!-- SERVICES -->
-    <section class="section">
+      <div class="hero-content">
 
-      <div class="section-title">
-        <h2>خدمات حقیقت سوله</h2>
-        <p>
-          چهار حوزه اصلی فعالیت مجموعه
+        <div class="hero-label">
+          HAGHIGHAT SOLEH
+        </div>
+
+        <h1 class="hero-title">
+          راهکارهای
+          <span>صنعتی</span>
+          برای پروژه‌های بزرگ
+        </h1>
+
+        <p class="hero-text">
+          حقیقت سوله در چهار حوزه اصلی فعالیت می‌کند:
+          فروش و تأمین آهن‌آلات، اجرای فونداسیون،
+          جرثقیل و سوله‌سازی.
         </p>
-      </div>
 
 
-      <div class="services">
+        <div class="hero-buttons">
 
-        <div class="service">
-          <div class="service-number">01</div>
-          <h3>فروش آهن‌آلات</h3>
-          <p>
-            تأمین و فروش انواع تیرآهن، ورق فولادی،
-            میلگرد، پروفیل و مقاطع فولادی.
-          </p>
-        </div>
+          <a
+            href="#services"
+            class="hero-primary"
+          >
+            مشاهده خدمات
+          </a>
 
+          <a
+            href="tel:09121326034"
+            class="hero-secondary"
+          >
+            دریافت مشاوره
+          </a>
 
-        <div class="service">
-          <div class="service-number">02</div>
-          <h3>فونداسیون</h3>
-          <p>
-            اجرای عملیات فونداسیون و آماده‌سازی
-            زیرساخت پروژه‌های صنعتی.
-          </p>
-        </div>
-
-
-        <div class="service">
-          <div class="service-number">03</div>
-          <h3>جرثقیل</h3>
-          <p>
-            تأمین و اجرای تجهیزات و سازه‌های مرتبط
-            با جرثقیل‌های صنعتی.
-          </p>
-        </div>
-
-
-        <div class="service">
-          <div class="service-number">04</div>
-          <h3>سوله‌سازی</h3>
-          <p>
-            طراحی، ساخت و اجرای سازه‌های فلزی
-            و سوله‌های صنعتی.
-          </p>
         </div>
 
       </div>
 
-    </section>
 
+      <!-- اطلاعات پایین هیرو -->
 
-    <!-- IRON -->
-    <section class="section">
+      <div class="hero-info">
 
-      <div class="section-title">
-        <h2>محصولات آهن‌آلات</h2>
-        <p>
-          بخشی از محصولات قابل تأمین
-        </p>
-      </div>
+        <div class="hero-info-item">
 
+          <div class="hero-info-title">
+            فروش و تأمین آهن‌آلات
+          </div>
 
-      <div class="products">
+          <div class="hero-info-text">
+            انواع مقاطع و محصولات فولادی
+          </div>
 
-        <div class="product">
-          <img
-            src="images/iron/steel-beams.jpg"
-            alt="تیرآهن"
-          >
-          <h3>تیرآهن</h3>
         </div>
 
 
-        <div class="product">
-          <img
-            src="images/iron/steel-sheets.jpg"
-            alt="ورق فولادی"
-          >
-          <h3>ورق فولادی</h3>
+        <div class="hero-info-item">
+
+          <div class="hero-info-title">
+            اجرای پروژه‌های صنعتی
+          </div>
+
+          <div class="hero-info-text">
+            از فونداسیون تا اجرای سازه
+          </div>
+
         </div>
 
 
-        <div class="product">
-          <img
-            src="images/iron/steel-rebar.jpg"
-            alt="میلگرد"
-          >
-          <h3>میلگرد</h3>
-        </div>
+        <div class="hero-info-item">
 
+          <div class="hero-info-title">
+            شهرک صنعتی شمس‌آباد
+          </div>
 
-        <div class="product">
-          <img
-            src="images/iron/steel-profiles.jpg"
-            alt="پروفیل"
-          >
-          <h3>پروفیل و مقاطع</h3>
+          <div class="hero-info-text">
+            تهران
+          </div>
+
         </div>
 
       </div>
@@ -435,40 +571,49 @@
     </section>
 
 
-    <!-- CONTACT -->
-    <section class="section">
+    <!-- =========================
+         INTRO
+    ========================== -->
 
-      <div class="contact">
+    <section
+      class="intro"
+      id="services"
+    >
 
-        <h2>
-          برای استعلام و مشاوره تماس بگیرید
-        </h2>
-
-        <p>
-          شهرک صنعتی شمس‌آباد، تهران
-        </p>
-
-        <a
-          class="phone"
-          href="tel:09121326034"
-        >
-          09121326034
-        </a>
-
+      <div class="intro-label">
+        حوزه‌های فعالیت
       </div>
+
+      <h2 class="intro-title">
+        یک مجموعه، چهار راهکار صنعتی
+      </h2>
+
+      <p class="intro-text">
+        در ادامه سایت، هر یک از حوزه‌های فعالیت حقیقت سوله
+        به‌صورت مجزا معرفی خواهد شد تا مشتری بتواند
+        سریع‌تر خدمات و محصولات مورد نیاز خود را پیدا کند.
+      </p>
 
     </section>
 
   </main>
 
 
-  <footer class="footer">
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-    حقیقت سوله
-    <br>
-    تأمین و اجرای پروژه‌های صنعتی
-
+  <footer
+    style="
+      padding:30px 6%;
+      border-top:1px solid #272727;
+      color:#777777;
+      text-align:center;
+      font-size:12px;
+    "
+  >
+    حقیقت سوله | تأمین و اجرای پروژه‌های صنعتی
   </footer>
 
 </body>
-   </html>
+</html>
